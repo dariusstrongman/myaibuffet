@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools Rankings & Reviews | AI Buffet</title>
+    <meta name="description" content="Discover and compare the top AI tools ranked by market performance, user ratings, and real-world effectiveness. Find the perfect AI solution for your needs.">
+    <link rel="canonical" href="https://myaibuffet.com/categories/tools">
+    <link rel="icon" type="image/png" href="../img/Logo.png">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Top AI Tools Rankings & Reviews | AI Buffet">
+    <meta property="og:description" content="Discover the best AI tools ranked by performance, popularity, and market data.">
+    <meta property="og:image" content="https://myaibuffet.com/assets/img/ai-tools-category.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://myaibuffet.com/categories/tools">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Top AI Tools Rankings & Reviews | AI Buffet">
+    <meta name="twitter:description" content="Compare and discover the best AI tools with real-time market rankings.">
+    <meta name="twitter:image" content="https://myaibuffet.com/assets/img/ai-tools-category.jpg">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "AI Tools Rankings & Reviews",
+        "description": "Top AI tools ranked by market performance, user ratings, and effectiveness",
+        "url": "https://myaibuffet.com/categories/tools",
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "AI Tools Rankings",
+            "itemListElement": []
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://myaibuffet.com"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "AI Tools",
+                    "item": "https://myaibuffet.com/categories/tools"
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.coingecko.com">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R0N7018SBX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-R0N7018SBX');
+    </script>
+    
+    <!-- Google Fonts - Futuristic Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Serif+Display:wght@400&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    
+    <!-- Critical CSS -->
+    <style>
+        /* Prevent FOUC - Keep minimal critical styles only */
+        body { 
+            font-family: Inter, system-ui, sans-serif; 
+            background: var(--color-bg, #0B1020); 
+            color: var(--color-text-primary, #E5E7EB);
+            margin: 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <a href="../" class="logo" aria-label="AI Buffet homepage">
+                    <span class="logo-icon" aria-hidden="true">🍽️</span>
+                    AI Buffet
+                </a>
+                
+                <ul class="nav-links" role="menubar">
+                    <li role="none"><a href="../" class="nav-link" role="menuitem">Home</a></li>
+                    <li role="none"><a href="news.html" class="nav-link" role="menuitem">News</a></li>
+                    <li role="none"><a href="tools.html" class="nav-link" role="menuitem" aria-current="page">Tools</a></li>
+                    <li role="none"><a href="../about.html" class="nav-link" role="menuitem">About</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <!-- Mobile menu button -->
+                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main id="main" role="main">
+        <div class="container">
+            <!-- Category Hero -->
+            <section class="category-hero" aria-labelledby="category-title">
+                <h1 id="category-title">🚀 AI Tools Rankings</h1>
+                <p>Discover the top AI tools ranked by market performance, user adoption, and real-world effectiveness. Our rankings update automatically based on market data, user reviews, and industry trends.</p>
+                <div class="ranking-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="total-tools">15+</span>
+                        <span class="stat-label">Tools Tracked</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="last-update">Live</span>
+                        <span class="stat-label">Data Updates</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="categories-count">12</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tools Filters -->
+            <section class="tools-filters">
+                <div class="filter-section">
+                    <h2 class="filter-title">Filter by Category</h2>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-category="all">All Tools</button>
+                        <button class="filter-btn" data-category="writing">Writing & Content</button>
+                        <button class="filter-btn" data-category="coding">Coding & Development</button>
+                        <button class="filter-btn" data-category="design">Design & Creative</button>
+                        <button class="filter-btn" data-category="business">Business & Analytics</button>
+                        <button class="filter-btn" data-category="research">Research & Analysis</button>
+                        <button class="filter-btn" data-category="productivity">Productivity</button>
+                    </div>
+                </div>
+                
+                <div class="sort-section">
+                    <label for="search-input" class="sort-label">Search:</label>
+                    <input type="text" id="search-input" class="sort-select" placeholder="Search tools..." style="margin-right: var(--space-4);" />
+                    <label for="sort-select" class="sort-label">Sort by:</label>
+                    <select id="sort-select" class="sort-select">
+                        <option value="rank">Market Ranking</option>
+                        <option value="popularity">Popularity</option>
+                        <option value="rating">User Rating</option>
+                        <option value="growth">Growth Rate</option>
+                        <option value="trending">Trending Score</option>
+                        <option value="price">Price (Low to High)</option>
+                        <option value="newest">Newest First</option>
+                        <option value="alphabetical">Alphabetical</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Top Tools Section (Static fallback, will be replaced by dynamic system) -->
+            <section class="top-tools" aria-labelledby="top-tools-title" style="display: none;">
+                <div class="section-header">
+                    <h2 id="top-tools-title">🏆 Top Ranked AI Tools</h2>
+                    <p class="section-subtitle">The highest-performing AI tools based on market data and user feedback</p>
+                </div>
+                
+                <div class="tools-grid" id="top-tools-grid-static">
+                    <!-- This will be hidden and replaced by the dynamic system -->
+                </div>
+            </section>
+
+            <!-- All Tools Section -->
+            <section class="all-tools" aria-labelledby="all-tools-title">
+                <div class="section-header">
+                    <h2 id="all-tools-title">📋 Complete AI Tools Directory</h2>
+                    <p class="section-subtitle">Comprehensive rankings of AI tools across all categories</p>
+                    <div class="tools-meta" id="tools-meta">
+                        <span class="tools-count">Showing <span id="visible-count">0</span> of <span id="total-count">0</span> tools</span>
+                        <span class="last-updated">Last updated: <span id="last-update-time">Loading...</span></span>
+                    </div>
+                </div>
+                
+                <!-- Dynamic Tools Grid -->
+                <div class="tools-container">
+                    <!-- Loading placeholder -->
+                    <div class="tools-loading" id="tools-loading">
+                        <div class="loading-spinner"></div>
+                        <p>Loading latest tool rankings...</p>
+                    </div>
+                    
+                    <!-- Tools Grid -->
+                    <div class="dynamic-tools-grid" id="dynamic-tools-grid" aria-live="polite">
+                        <!-- Tools will be populated dynamically -->
+                    </div>
+                    
+                    <!-- Empty State -->
+                    <div class="empty-state" id="empty-state" style="display: none;">
+                        <div class="empty-state-icon">🔍</div>
+                        <h3>No tools found</h3>
+                        <p>Try adjusting your filters or search terms</p>
+                        <button class="btn btn-primary" onclick="clearAllFilters()">Clear Filters</button>
+                    </div>
+                </div>
+                
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section footer__section--brand">
+                    <div class="footer__brand">
+                        <div class="footer__logo">
+                            <span class="logo-icon" aria-hidden="true">🍽️</span>
+                            AI Buffet
+                        </div>
+                        <p class="footer__tagline">
+                            Premium AI insights served fresh daily
+                        </p>
+                    </div>
+                    <div class="social-links" aria-label="Follow us on social media">
+                        <a href="https://www.linkedin.com/company/aibuffet" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on LinkedIn">
+                            <span aria-hidden="true">💼</span>
+                        </a>
+                        <a href="https://x.com/aibuffet" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on X (Twitter)">
+                            <span aria-hidden="true">🐦</span>
+                        </a>
+                        <a href="../rss" class="social-link" aria-label="Subscribe to RSS feed">
+                            <span aria-hidden="true">📡</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer__section">
+                    <h3 class="footer__heading">Explore</h3>
+                    <ul class="footer__links">
+                        <li><a href="news.html" class="footer__link">AI News</a></li>
+                        <li><a href="tools.html" class="footer__link">Tool Reviews</a></li>
+                        <li><a href="https://ai-buffet.com/tools" class="footer__link">Free Templates</a></li>
+                        <li><a href="../categories/" class="footer__link">All Categories</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__section">
+                    <h3 class="footer__heading">Resources</h3>
+                    <ul class="footer__links">
+                        <li><a href="../about" class="footer__link">About</a></li>
+                        <li><a href="mailto:hello@myaibuffet.com" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__section">
+                    <h3 class="footer__heading">Newsletter</h3>
+                    <p class="footer__newsletter-text">
+                        Get weekly AI insights delivered to your inbox
+                    </p>
+                    <a href="../#newsletter" class="btn btn-secondary btn-sm">
+                        Subscribe Now
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="footer__legal">
+                    <p>&copy; 2025 AI Buffet. All rights reserved.</p>
+                </div>
+                <div class="footer__credits">
+                    <p>Made with care for the AI community</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/tools-database.js"></script>
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/dynamic-tools.js" defer></script>
+</body>
+</html>
