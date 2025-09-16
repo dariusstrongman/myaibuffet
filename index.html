@@ -608,10 +608,6 @@
                         <span class="stat-number-enhanced" id="market-cap">$2.1T</span>
                         <span class="stat-label-enhanced">AI Market Value</span>
                     </div>
-                    <div class="stat-item-enhanced">
-                        <span class="stat-number-enhanced" id="accuracy-score">99.7%</span>
-                        <span class="stat-label-enhanced">Prediction Accuracy</span>
-                    </div>
                 </div>
             </section>
 
@@ -644,6 +640,19 @@
                         </p>
                         <a href="categories/tools.html" class="card-link-enhanced" title="Best AI Tools 2025 Rankings">
                             Explore AI Tools
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
+
+                    <article class="enhanced-card">
+                        <div class="card-icon-enhanced">📚</div>
+                        <h3 class="card-title-enhanced">Expert Analysis</h3>
+                        <p class="card-description-enhanced">
+                            In-depth <a href="faq.html" style="color: var(--neon-blue); text-decoration: none;">insights and analysis</a> from industry experts. 
+                            Strategic guidance, market trends, and actionable intelligence to help you navigate the AI landscape with confidence.
+                        </p>
+                        <a href="faq.html" class="card-link-enhanced" title="AI Insights and FAQ">
+                            Read Expert Analysis
                             <span aria-hidden="true">→</span>
                         </a>
                     </article>
@@ -760,6 +769,10 @@
                             <span class="btn-icon" aria-hidden="true">📰</span>
                             Read Latest News
                         </a>
+                        <a href="faq.html" class="btn-enhanced btn-secondary-enhanced">
+                            <span class="btn-icon" aria-hidden="true">🧐</span>
+                            Expert Insights
+                        </a>
                     </div>
                 </div>
             </section>
@@ -783,6 +796,10 @@
                         <a href="about.html" class="btn-enhanced btn-secondary-enhanced">
                             <span class="btn-icon" aria-hidden="true">ℹ️</span>
                             Learn More
+                        </a>
+                        <a href="#newsletter" class="btn-enhanced btn-secondary-enhanced">
+                            <span class="btn-icon" aria-hidden="true">📧</span>
+                            Subscribe Free
                         </a>
                     </div>
                 </div>
@@ -822,25 +839,17 @@
                     <ul class="footer__links">
                         <li><a href="categories/news.html" class="footer__link">AI News</a></li>
                         <li><a href="categories/tools.html" class="footer__link">Tool Reviews</a></li>
+                        <li><a href="faq.html" class="footer__link">FAQ</a></li>
                     </ul>
                 </div>
 
                 <div class="footer__section">
-                    <h3 class="footer__heading">Resources</h3>
+                    <h3 class="footer__heading">Resources & Support</h3>
                     <ul class="footer__links">
                         <li><a href="about.html" class="footer__link">About</a></li>
                         <li><a href="mailto:hello@myaibuffet.com" class="footer__link">Contact</a></li>
+                        <li><a href="#newsletter" class="footer__link">Newsletter</a></li>
                     </ul>
-                </div>
-
-                <div class="footer__section">
-                    <h3 class="footer__heading">Newsletter</h3>
-                    <p class="footer__newsletter-text">
-                        Get weekly AI insights delivered to your inbox
-                    </p>
-                    <a href="#newsletter" class="btn btn-secondary btn-sm">
-                        Subscribe Now
-                    </a>
                 </div>
             </div>
 
@@ -883,7 +892,6 @@
                         animateCounter(document.getElementById('live-articles'), 2500, 2847, 2000);
                         animateCounter(document.getElementById('tools-tracked'), 700, 847, 2500);
                         animateCounter(document.getElementById('market-cap'), 1.8, 2.1, 3000, 'T');
-                        animateCounter(document.getElementById('accuracy-score'), 95, 99.7, 2500, '%');
                         observer.unobserve(entry.target);
                     }
                 });

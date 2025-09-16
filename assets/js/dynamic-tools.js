@@ -75,11 +75,20 @@ function setupEventListeners() {
 }
 
 function handleCategoryFilter(event) {
-    // Update active filter button
+    // Update active filter button - update both class and inline styles
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.classList.remove('active');
+        // Set inactive styles
+        btn.style.background = 'var(--glass-bg)';
+        btn.style.color = 'var(--color-text-secondary)';
+        btn.style.borderColor = 'var(--glass-border)';
     });
+    
+    // Set active button styles
     event.target.classList.add('active');
+    event.target.style.background = 'var(--gradient-primary)';
+    event.target.style.color = 'white';
+    event.target.style.borderColor = 'transparent';
     
     // Update category
     activeCategory = event.target.dataset.category;
@@ -325,6 +334,48 @@ function showError(message) {
     }
     hideLoading();
 }
+
+// Clear all filters function
+function clearAllFilters() {
+    // Reset search input
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+        searchInput.value = '';
+    }
+    
+    // Reset category to 'all'
+    activeCategory = 'all';
+    
+    // Update filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.style.background = 'var(--glass-bg)';
+        btn.style.color = 'var(--color-text-secondary)';
+        btn.style.borderColor = 'var(--glass-border)';
+        
+        // Set 'All Tools' as active
+        if (btn.dataset.category === 'all') {
+            btn.classList.add('active');
+            btn.style.background = 'var(--gradient-primary)';
+            btn.style.color = 'white';
+            btn.style.borderColor = 'transparent';
+        }
+    });
+    
+    // Reset sort to default
+    const sortSelect = document.getElementById('sort-select');
+    if (sortSelect) {
+        sortSelect.value = 'rank';
+    }
+    
+    // Apply filters and render
+    applyFilters();
+    renderTools();
+    updateCounts();
+}
+
+// Make clearAllFilters available globally
+window.clearAllFilters = clearAllFilters;
 
 // Debounce function for search
 function debounce(func, wait) {
