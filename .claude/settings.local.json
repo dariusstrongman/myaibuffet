@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start categories/tools.html)",
+      "Bash(start all-articles.html)",
+      "Bash(start:*)",
+      "Bash(python:*)",
+      "Bash(where node)",
+      "Bash(npx http-server:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

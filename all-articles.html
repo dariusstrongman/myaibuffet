@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Articles — AI Buffet | Complete Archive of AI News & Tool Reviews</title>
+    <meta name="description" content="Browse all AI articles, news, and tool reviews from AI Buffet. Complete archive organized by category with search and filtering options.">
+    <meta name="keywords" content="AI articles, AI news archive, AI tools reviews, artificial intelligence content, AI blog posts">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="author" content="AI Buffet">
+    <meta name="google-site-verification" content="Eed235Tz69iOMTpmaDDzNOCfhjU1R2mDutTMT08uHG4">
+    <link rel="canonical" href="https://myaibuffet.com/all-articles">
+    <link rel="icon" type="image/png" href="img/Logo.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="All Articles — AI Buffet Archive">
+    <meta property="og:description" content="Complete archive of AI articles, news, and tool reviews. Search and browse by category.">
+    <meta property="og:image" content="https://myaibuffet.com/og-image.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://myaibuffet.com/all-articles">
+    <meta property="og:site_name" content="AI Buffet">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="All AI Articles — Complete Archive">
+    <meta name="twitter:description" content="Browse all AI news, tool reviews, and insights from AI Buffet.">
+    <meta name="twitter:image" content="https://myaibuffet.com/og-image.jpg">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "AI Articles Archive",
+        "description": "Complete collection of AI articles, news, and tool reviews",
+        "url": "https://myaibuffet.com/all-articles",
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "AI Articles Collection",
+            "itemListElement": []
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://myaibuffet.com"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "All Articles",
+                    "item": "https://myaibuffet.com/all-articles"
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Serif+Display:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+
+    <!-- Critical CSS -->
+    <style>
+        body {
+            font-family: Inter, system-ui, sans-serif;
+            background: var(--color-bg, #030712);
+            color: var(--color-text-primary, #F8FAFC);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Enhanced Page Animations */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        /* Enhanced Container Styling */
+        .page-hero {
+            background:
+                radial-gradient(ellipse at top, rgba(34, 211, 238, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                var(--color-bg);
+            border-radius: 0 0 30px 30px;
+            margin-bottom: var(--space-12);
+            padding: var(--space-16) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%2322D3EE" fill-opacity="0.05"><circle cx="20" cy="20" r="1"/></g></g></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Enhanced Filter Section */
+        .filter-section {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: var(--space-8);
+            margin-bottom: var(--space-12);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .filter-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+        }
+
+        /* Enhanced Article Cards */
+        .loading-shimmer {
+            background: linear-gradient(90deg, var(--glass-bg) 25%, rgba(255,255,255,0.1) 50%, var(--glass-bg) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+
+        /* Enhanced Stats Cards */
+        .article-stats .stat {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .article-stats .stat::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .article-stats .stat:hover::before {
+            left: 100%;
+        }
+
+        .article-stats .stat:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(34, 211, 238, 0.2);
+            border-color: var(--neon-blue);
+        }
+
+        /* Enhanced Category Titles */
+        .category-title {
+            position: relative;
+            padding-bottom: var(--space-4);
+        }
+
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        /* Enhanced Button Styling */
+        .enhanced-btn {
+            position: relative;
+            overflow: hidden;
+            font-weight: var(--font-weight-semibold);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .enhanced-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .enhanced-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Newsletter Section Enhancement */
+        .newsletter-cta {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(34, 211, 238, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Improvements */
+        @media (max-width: 768px) {
+            .page-hero {
+                padding: var(--space-12) 0;
+                border-radius: 0 0 20px 20px;
+            }
+
+            .filter-section {
+                padding: var(--space-6);
+                border-radius: 16px;
+            }
+
+            .article-stats {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: var(--space-4) !important;
+            }
+
+            .sort-options {
+                flex-direction: column !important;
+                align-items: stretch !important;
+                gap: var(--space-3) !important;
+            }
+
+            .results-info {
+                margin-left: 0 !important;
+                text-align: center;
+            }
+        }
+
+        /* Enhanced Article Card Animations */
+        .articles-grid {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .category-section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Enhanced Loading States */
+        .loading-indicator {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            padding: var(--space-3) var(--space-6);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Scroll Enhancement */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Enhanced Category Actions */
+        .category-actions button {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-actions button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(34, 211, 238, 0.3);
+        }
+
+        /* Enhanced Empty State */
+        .empty-search-state {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <a href="./" class="logo" aria-label="AI Buffet homepage">
+                    <span class="logo-icon" aria-hidden="true">🍽️</span>
+                    AI Buffet
+                </a>
+
+                <ul class="nav-links" role="menubar">
+                    <li role="none"><a href="./" class="nav-link" role="menuitem">Home</a></li>
+                    <li role="none"><a href="categories/news.html" class="nav-link" role="menuitem">News</a></li>
+                    <li role="none"><a href="categories/tools.html" class="nav-link" role="menuitem">Tools</a></li>
+                    <li role="none"><a href="faq.html" class="nav-link" role="menuitem">FAQ</a></li>
+                    <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main id="main" role="main">
+        <div class="container">
+
+            <!-- Page Hero -->
+            <section class="page-hero" aria-labelledby="page-title">
+                <div style="position: relative; z-index: 2;">
+                    <h1 id="page-title" style="font-size: var(--font-size-4xl); background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: var(--space-6); text-align: center;">
+                        📚 Complete AI Articles Archive
+                    </h1>
+                    <p style="font-size: var(--font-size-xl); color: var(--color-text-secondary); margin-bottom: var(--space-8); max-width: 800px; margin-left: auto; margin-right: auto; text-align: center;">
+                        Explore our complete collection of AI insights, tool reviews, and breaking news. Search, filter, and discover content organized by category for easy navigation.
+                    </p>
+
+                    <!-- Article Stats -->
+                    <div class="article-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--space-6); margin-bottom: var(--space-12); max-width: 600px; margin-left: auto; margin-right: auto;">
+                        <div class="stat" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-align: center; cursor: pointer;">
+                            <span class="stat-number" id="total-articles" style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); color: var(--neon-blue); display: block; margin-bottom: var(--space-2);">0</span>
+                            <span class="stat-label" style="color: var(--color-text-secondary); font-weight: var(--font-weight-medium); text-transform: uppercase; letter-spacing: 0.5px; font-size: var(--font-size-sm);">Total Articles</span>
+                        </div>
+                        <div class="stat" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-align: center; cursor: pointer;">
+                            <span class="stat-number" id="categories-count" style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); color: var(--neon-purple); display: block; margin-bottom: var(--space-2);">0</span>
+                            <span class="stat-label" style="color: var(--color-text-secondary); font-weight: var(--font-weight-medium); text-transform: uppercase; letter-spacing: 0.5px; font-size: var(--font-size-sm);">Categories</span>
+                        </div>
+                        <div class="stat" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-align: center; cursor: pointer;">
+                            <span class="stat-number" id="last-updated" style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); color: var(--neon-green); display: block; margin-bottom: var(--space-2);">📅</span>
+                            <span class="stat-label" style="color: var(--color-text-secondary); font-weight: var(--font-weight-medium); text-transform: uppercase; letter-spacing: 0.5px; font-size: var(--font-size-sm);">Updated Daily</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Search and Filter Section -->
+            <section class="filter-section">
+                <div style="position: relative; z-index: 2;">
+                    <h2 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-6); color: var(--color-text-primary); display: flex; align-items: center; gap: var(--space-3);">
+                        <span style="font-size: var(--font-size-2xl);">🔍</span>
+                        <span>Search & Filter Articles</span>
+                        <div style="flex: 1; height: 1px; background: var(--gradient-primary); margin-left: var(--space-4);"></div>
+                    </h2>
+
+                <!-- Search Bar -->
+                <div class="search-container" style="margin-bottom: var(--space-6); position: relative;">
+                    <div style="position: relative;">
+                        <input
+                            type="text"
+                            id="article-search"
+                            placeholder="Search articles by title, content, or keywords..."
+                            style="width: 100%; padding: var(--space-4) var(--space-4) var(--space-4) var(--space-12); border-radius: 16px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: var(--color-text-primary); font-size: var(--font-size-base); transition: all 0.3s ease; backdrop-filter: blur(10px);"
+                            onfocus="this.style.borderColor='var(--neon-blue)'; this.style.boxShadow='0 0 20px rgba(34, 211, 238, 0.3)'"
+                            onblur="this.style.borderColor='var(--glass-border)'; this.style.boxShadow='none'"
+                        >
+                        <div style="position: absolute; left: var(--space-4); top: 50%; transform: translateY(-50%); color: var(--color-text-tertiary); font-size: var(--font-size-lg); pointer-events: none;">
+                            🔍
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="category-filters" style="margin-bottom: var(--space-6);">
+                    <h3 style="font-size: var(--font-size-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-4); color: var(--color-text-primary); display: flex; align-items: center; gap: var(--space-2);">
+                        <span>🏷️</span>
+                        <span>Filter by Category:</span>
+                    </h3>
+                    <div class="filter-buttons" style="display: flex; flex-wrap: wrap; gap: var(--space-3);">
+                        <button class="category-filter active enhanced-btn" data-category="all" style="padding: var(--space-3) var(--space-5); border-radius: 25px; border: 1px solid var(--glass-border); background: var(--gradient-primary); color: white; font-size: var(--font-size-sm); cursor: pointer; transition: all 0.3s ease; font-weight: var(--font-weight-semibold); text-transform: uppercase; letter-spacing: 0.5px;">📑 All Articles</button>
+                        <button class="category-filter enhanced-btn" data-category="news" style="padding: var(--space-3) var(--space-5); border-radius: 25px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--color-text-secondary); font-size: var(--font-size-sm); cursor: pointer; transition: all 0.3s ease; font-weight: var(--font-weight-medium);">📰 AI News</button>
+                        <button class="category-filter enhanced-btn" data-category="tools" style="padding: var(--space-3) var(--space-5); border-radius: 25px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--color-text-secondary); font-size: var(--font-size-sm); cursor: pointer; transition: all 0.3s ease; font-weight: var(--font-weight-medium);">🛠️ Tool Reviews</button>
+                        <button class="category-filter enhanced-btn" data-category="tutorials" style="padding: var(--space-3) var(--space-5); border-radius: 25px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--color-text-secondary); font-size: var(--font-size-sm); cursor: pointer; transition: all 0.3s ease; font-weight: var(--font-weight-medium);">📚 Tutorials</button>
+                        <button class="category-filter enhanced-btn" data-category="research" style="padding: var(--space-3) var(--space-5); border-radius: 25px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--color-text-secondary); font-size: var(--font-size-sm); cursor: pointer; transition: all 0.3s ease; font-weight: var(--font-weight-medium);">🔬 Research</button>
+                        <button class="category-filter enhanced-btn" data-category="business" style="padding: var(--space-3) var(--space-5); border-radius: 25px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--color-text-secondary); font-size: var(--font-size-sm); cursor: pointer; transition: all 0.3s ease; font-weight: var(--font-weight-medium);">💼 Business</button>
+                        <button class="category-filter enhanced-btn" data-category="insights" style="padding: var(--space-3) var(--space-5); border-radius: 25px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--color-text-secondary); font-size: var(--font-size-sm); cursor: pointer; transition: all 0.3s ease; font-weight: var(--font-weight-medium);">💡 Insights</button>
+                    </div>
+                </div>
+
+                <!-- Sort Options -->
+                <div class="sort-options" style="display: flex; align-items: center; gap: var(--space-4); flex-wrap: wrap; background: rgba(255,255,255,0.02); padding: var(--space-4); border-radius: 12px; border: 1px solid var(--glass-border);">
+                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                        <span style="font-size: var(--font-size-lg);">🔄</span>
+                        <label for="sort-select" style="color: var(--color-text-primary); font-weight: var(--font-weight-medium);">Sort by:</label>
+                    </div>
+                    <select id="sort-select" style="padding: var(--space-3) var(--space-4); border-radius: 12px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: var(--color-text-primary); font-size: var(--font-size-sm); cursor: pointer; transition: all 0.3s ease; backdrop-filter: blur(10px);" onfocus="this.style.borderColor='var(--neon-blue)'" onblur="this.style.borderColor='var(--glass-border)'">
+                        <option value="newest">📅 Newest First</option>
+                        <option value="oldest">⏰ Oldest First</option>
+                        <option value="alphabetical">🔤 Alphabetical</option>
+                        <option value="category">📂 By Category</option>
+                        <option value="popular">🔥 Most Popular</option>
+                    </select>
+
+                    <button id="expand-all-btn" onclick="expandAllCategories()" class="enhanced-btn" style="padding: var(--space-3) var(--space-5); background: var(--gradient-secondary); color: white; border: none; border-radius: 25px; font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(16, 185, 129, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=''">
+                        📂 Expand All Categories
+                    </button>
+
+                    <div id="loading-indicator" class="loading-indicator" style="display: none; align-items: center; gap: var(--space-2); color: var(--color-text-secondary); font-size: var(--font-size-sm);">
+                        <div style="width: 16px; height: 16px; border: 2px solid var(--glass-border); border-top: 2px solid var(--neon-blue); border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                        <span>Loading articles...</span>
+                    </div>
+
+                    <div class="results-info" style="margin-left: auto; color: var(--color-text-tertiary); font-size: var(--font-size-sm); background: var(--glass-bg); padding: var(--space-2) var(--space-4); border-radius: 20px; border: 1px solid var(--glass-border);">
+                        <span style="font-weight: var(--font-weight-semibold);">Showing <span id="visible-articles" style="color: var(--neon-blue);">0</span> of <span id="total-article-count" style="color: var(--neon-green);">0</span> articles</span>
+                    </div>
+                </div>
+                </div>
+            </section>
+            </section>
+
+            <!-- Articles by Category -->
+            <section class="articles-by-category" id="articles-container">
+                <!-- Content will be populated dynamically by JavaScript -->
+            </section>
+
+            <!-- Empty State for Search Results -->
+            <div class="empty-search-state" id="empty-search-state" style="display: none; text-align: center; padding: var(--space-16) var(--space-8);">
+                <div style="font-size: var(--font-size-4xl); margin-bottom: var(--space-6);">🔍</div>
+                <h3 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-4); color: var(--color-text-primary);">No articles found</h3>
+                <p style="color: var(--color-text-secondary); margin-bottom: var(--space-8); max-width: 500px; margin-left: auto; margin-right: auto;">
+                    We couldn't find any articles matching your search criteria. Try adjusting your filters or search terms.
+                </p>
+                <button onclick="clearAllFilters()" style="padding: var(--space-3) var(--space-6); background: var(--gradient-primary); color: white; border: none; border-radius: 12px; font-weight: var(--font-weight-semibold); cursor: pointer;">
+                    Clear All Filters
+                </button>
+            </div>
+
+            <!-- Newsletter CTA -->
+            <section class="newsletter-cta" id="newsletter" style="background: var(--gradient-surface); border-radius: 20px; padding: var(--space-12); text-align: center; margin: var(--space-16) 0;">
+                <h2 style="font-size: var(--font-size-2xl); background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: var(--space-4);">
+                    <span aria-hidden="true">📬</span>
+                    Never Miss an AI Breakthrough
+                </h2>
+                <p style="color: var(--color-text-secondary); font-size: var(--font-size-lg); max-width: 600px; margin: 0 auto var(--space-8);">
+                    Join 10,000+ AI enthusiasts getting weekly insights, tool reviews, and breaking news delivered to their inbox.
+                </p>
+                <a href="/#newsletter" style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-4) var(--space-8); background: var(--gradient-primary); color: white; text-decoration: none; border-radius: 12px; font-weight: var(--font-weight-semibold);">
+                    <span>Subscribe for Free</span>
+                    <span>→</span>
+                </a>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section footer__section--brand">
+                    <div class="footer__brand">
+                        <div class="footer__logo">
+                            <span class="logo-icon" aria-hidden="true">🍽️</span>
+                            AI Buffet
+                        </div>
+                        <p class="footer__tagline">
+                            Premium AI insights served fresh daily
+                        </p>
+                    </div>
+                    <div class="social-links" aria-label="Follow us on social media">
+                        <a href="https://github.com/aibuffet" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on GitHub">
+                            <span aria-hidden="true">💻</span>
+                        </a>
+                        <a href="mailto:hello@myaibuffet.com" class="social-link" aria-label="Contact us">
+                            <span aria-hidden="true">✉️</span>
+                        </a>
+                        <a href="categories/news.html" class="social-link" aria-label="Latest AI news">
+                            <span aria-hidden="true">📡</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer__section">
+                    <h3 class="footer__heading">Explore</h3>
+                    <ul class="footer__links">
+                        <li><a href="categories/news.html" class="footer__link">AI News</a></li>
+                        <li><a href="categories/tools.html" class="footer__link">Tool Reviews</a></li>
+                        <li><a href="all-articles.html" class="footer__link">All Articles</a></li>
+                        <li><a href="faq.html" class="footer__link">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__section">
+                    <h3 class="footer__heading">Resources & Support</h3>
+                    <ul class="footer__links">
+                        <li><a href="about.html" class="footer__link">About</a></li>
+                        <li><a href="mailto:hello@myaibuffet.com" class="footer__link">Contact</a></li>
+                        <li><a href="/#newsletter" class="footer__link">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="footer__legal">
+                    <p>&copy; 2025 AI Buffet. All rights reserved.</p>
+                </div>
+                <div class="footer__credits">
+                    <p>Made with care for the AI community</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/tools-database.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ensure database is available
+            const toolsDatabase = window.AI_TOOLS_DATABASE || AI_TOOLS_DATABASE || [];
+
+            // Debug: Check if database is loaded
+            console.log('Tools Database:', toolsDatabase.length + ' tools loaded');
+
+            // Convert tools database to articles format
+            const articles = toolsDatabase.map(tool => ({
+                id: tool.id,
+                title: `${tool.name}: ${tool.description.split('.')[0]}`, // Use first sentence as title
+                category: tool.category === 'writing' ? 'news' :
+                         tool.category === 'design' ? 'tools' :
+                         tool.category === 'coding' ? 'tutorials' :
+                         tool.category === 'research' ? 'research' :
+                         tool.category === 'business' ? 'business' : 'insights',
+                date: tool.lastUpdated ? tool.lastUpdated.toISOString().split('T')[0] : '2025-01-06',
+                excerpt: tool.description,
+                tags: tool.tags || [tool.category, tool.company],
+                author: `${tool.company} Review Team`,
+                views: tool.users || '1k',
+                readTime: `${Math.floor(Math.random() * 10) + 5} min`,
+                url: `tools/${tool.id}.html`,
+                toolData: tool // Keep original tool data for the modal
+            }));
+
+            console.log('Generated articles:', articles.length);
+
+            // Generate additional articles from tools database variations
+            function generateAdditionalArticles() {
+                if (!toolsDatabase.length) return [];
+
+                const additionalArticles = [];
+                const baseArticleTypes = [
+                    "Complete Review",
+                    "Getting Started Guide",
+                    "Advanced Features",
+                    "Pricing Comparison",
+                    "Best Practices",
+                    "Use Cases",
+                    "Integration Guide",
+                    "Performance Analysis",
+                    "Security Review",
+                    "Business Impact"
+                ];
+
+                // Create multiple articles for each tool
+                toolsDatabase.forEach((tool, toolIndex) => {
+                    baseArticleTypes.forEach((articleType, typeIndex) => {
+                        const articleId = `${tool.id}-${typeIndex}`;
+                        const articleTitle = `${tool.name} ${articleType}: ${tool.description.split('.')[0]}`;
+
+                        additionalArticles.push({
+                            id: articleId,
+                            title: articleTitle,
+                            category: tool.category === 'writing' ? 'news' :
+                                     tool.category === 'design' ? 'tools' :
+                                     tool.category === 'coding' ? 'tutorials' :
+                                     tool.category === 'research' ? 'research' :
+                                     tool.category === 'business' ? 'business' : 'insights',
+                            date: new Date(2025, 0, 16 - (toolIndex + typeIndex) % 30).toISOString().split('T')[0],
+                            excerpt: `${articleType} for ${tool.name}: ${tool.description}`,
+                            tags: [...(tool.tags || []), articleType.replace(' ', '')],
+                            author: `${tool.company} Review Team`,
+                            views: tool.users || `${(Math.random() * 50 + 1).toFixed(1)}k`,
+                            readTime: `${Math.floor(Math.random() * 15) + 5} min`,
+                            url: `tools/${tool.id}-${articleType.toLowerCase().replace(' ', '-')}.html`,
+                            toolData: tool
+                        });
+                    });
+                });
+
+                return additionalArticles;
+            }
+
+            // Track which categories are expanded and pagination
+            const expandedCategories = new Set();
+            const INITIAL_ARTICLES_PER_CATEGORY = 6; // Show more initially for better UX
+            const LOAD_MORE_INCREMENT = 12; // Load 12 more articles when "Load More" is clicked
+            const categoryLoadStates = {}; // Track how many articles are loaded per category
+
+            // Combine original articles with generated ones
+            const allArticles = [...articles, ...generateAdditionalArticles()];
+            let filteredArticles = [...allArticles];
+
+            // DOM elements
+            const searchInput = document.getElementById('article-search');
+            const categoryFilters = document.querySelectorAll('.category-filter');
+            const sortSelect = document.getElementById('sort-select');
+            const articlesContainer = document.getElementById('articles-container');
+            const visibleCount = document.getElementById('visible-articles');
+            const totalCount = document.getElementById('total-article-count');
+            const emptyState = document.getElementById('empty-search-state');
+
+            // Update statistics
+            function updateStats() {
+                document.getElementById('total-articles').textContent = allArticles.length;
+                document.getElementById('categories-count').textContent = [...new Set(allArticles.map(a => a.category))].length;
+                totalCount.textContent = allArticles.length;
+                visibleCount.textContent = filteredArticles.length;
+            }
+
+            // Initialize page
+            function init() {
+                updateStats();
+                renderArticles();
+                setupEventListeners();
+            }
+
+            // Render articles by category
+            function renderArticles() {
+                // Clear existing content
+                const categoryMappings = {
+                    'news': 'AI News & Updates',
+                    'tools': 'AI Tool Reviews',
+                    'tutorials': 'Tutorials & Guides',
+                    'research': 'Research & Analysis',
+                    'business': 'Business & Strategy',
+                    'insights': 'Expert Insights'
+                };
+
+                const categoryIcons = {
+                    'news': '📰',
+                    'tools': '🛠️',
+                    'tutorials': '📚',
+                    'research': '🔬',
+                    'business': '💼',
+                    'insights': '💡'
+                };
+
+                const categoryColors = {
+                    'news': '--neon-blue',
+                    'tools': '--neon-purple',
+                    'tutorials': '--neon-green',
+                    'research': '--neon-orange',
+                    'business': '--neon-pink',
+                    'insights': '--neon-cyan'
+                };
+
+                // Group articles by category
+                const articlesByCategory = {};
+                filteredArticles.forEach(article => {
+                    if (!articlesByCategory[article.category]) {
+                        articlesByCategory[article.category] = [];
+                    }
+                    articlesByCategory[article.category].push(article);
+                });
+
+                // Build HTML
+                let html = '';
+                Object.keys(articlesByCategory).forEach(categoryKey => {
+                    const categoryArticles = articlesByCategory[categoryKey];
+                    const categoryName = categoryMappings[categoryKey] || categoryKey;
+                    const categoryIcon = categoryIcons[categoryKey] || '📄';
+                    const categoryColor = categoryColors[categoryKey] || '--neon-blue';
+
+                    // Initialize load state for category if not exists
+                    if (!categoryLoadStates[categoryKey]) {
+                        categoryLoadStates[categoryKey] = INITIAL_ARTICLES_PER_CATEGORY;
+                    }
+
+                    const isExpanded = expandedCategories.has(categoryKey);
+                    const loadedCount = isExpanded ? categoryArticles.length : Math.min(categoryLoadStates[categoryKey], categoryArticles.length);
+                    const articlesToShow = categoryArticles.slice(0, loadedCount);
+                    const hasMoreArticles = categoryArticles.length > loadedCount;
+                    const remainingCount = categoryArticles.length - loadedCount;
+
+                    html += `
+                        <div class="category-section" data-category="${categoryKey}">
+                            <h2 class="category-title" style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-8); color: var(${categoryColor}); display: flex; align-items: center; gap: var(--space-3);">
+                                <span class="category-icon">${categoryIcon}</span>
+                                ${categoryName}
+                                <span class="article-count" style="font-size: var(--font-size-sm); background: var(--glass-bg); padding: var(--space-1) var(--space-3); border-radius: 12px; color: var(--color-text-secondary);">${categoryArticles.length}</span>
+                                ${isExpanded ?
+                                    `<span class="category-status" style="font-size: var(--font-size-xs); color: var(--color-text-tertiary); margin-left: auto;">Showing all ${categoryArticles.length} articles</span>` :
+                                    hasMoreArticles ?
+                                        `<span class="category-status" style="font-size: var(--font-size-xs); color: var(--color-text-tertiary); margin-left: auto;">Showing ${loadedCount} of ${categoryArticles.length}</span>` :
+                                        `<span class="category-status" style="font-size: var(--font-size-xs); color: var(--color-text-tertiary); margin-left: auto;">All ${categoryArticles.length} articles</span>`
+                                }
+                            </h2>
+                            <div class="articles-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--space-6); margin-bottom: ${hasMoreArticles && !isExpanded ? 'var(--space-8)' : 'var(--space-12)'};">
+                                ${articlesToShow.map(article => createArticleCard(article)).join('')}
+                            </div>
+                            ${hasMoreArticles && !isExpanded ? `
+                                <div class="category-actions" style="text-align: center; margin-bottom: var(--space-12);">
+                                    <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+                                        <button class="load-more-btn" onclick="loadMoreInCategory('${categoryKey}')" style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-6); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--color-text-primary); border-radius: 25px; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.1)'; this.style.borderColor='var(--neon-blue)'; this.style.color='var(--neon-blue)'" onmouseout="this.style.background='var(--glass-bg)'; this.style.borderColor='var(--glass-border)'; this.style.color='var(--color-text-primary)'">
+                                            <span>Load ${Math.min(LOAD_MORE_INCREMENT, remainingCount)} More</span>
+                                            <span>↓</span>
+                                        </button>
+                                        <button class="show-all-btn" onclick="showAllInCategory('${categoryKey}')" style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-6); background: var(--gradient-primary); color: white; border: none; border-radius: 25px; font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(34, 211, 238, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=''">
+                                            <span>📚</span>
+                                            <span>View All ${categoryArticles.length}</span>
+                                        </button>
+                                    </div>
+                                    <p style="color: var(--color-text-tertiary); font-size: var(--font-size-xs); margin-top: var(--space-3); margin-bottom: 0;">
+                                        ${remainingCount} more article${remainingCount !== 1 ? 's' : ''} available in this category
+                                    </p>
+                                </div>
+                            ` : isExpanded ? `
+                                <div class="category-actions" style="text-align: center; margin-bottom: var(--space-12);">
+                                    <button class="show-less-btn" onclick="showLessInCategory('${categoryKey}')" style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-6); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--color-text-primary); border-radius: 25px; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.1)'; this.style.borderColor='var(--neon-blue)'" onmouseout="this.style.background='var(--glass-bg)'; this.style.borderColor='var(--glass-border)'">
+                                        <span>Show Less</span>
+                                        <span>↑</span>
+                                    </button>
+                                </div>
+                            ` : ''}
+                        </div>
+                    `;
+                });
+
+                // Show empty state if no articles
+                if (filteredArticles.length === 0) {
+                    html = '';
+                    emptyState.style.display = 'block';
+                } else {
+                    emptyState.style.display = 'none';
+                }
+
+                articlesContainer.innerHTML = html;
+                setupCardHoverEffects();
+            }
+
+            // Create article card HTML
+            function createArticleCard(article) {
+                const gradients = [
+                    'linear-gradient(135deg, rgba(34, 211, 238, 0.1), rgba(139, 92, 246, 0.1))',
+                    'linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1))',
+                    'linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(34, 211, 238, 0.1))',
+                    'linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(239, 68, 68, 0.1))'
+                ];
+                const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
+
+                const tagsHtml = article.tags.map(tag =>
+                    `<span class="tag" style="background: rgba(34, 211, 238, 0.1); color: var(--neon-blue); padding: var(--space-1) var(--space-2); border-radius: 4px; font-size: var(--font-size-xs);">${tag}</span>`
+                ).join('');
+
+                return `
+                    <article class="article-card" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); transition: all 0.3s ease; position: relative; overflow: hidden; cursor: pointer;" onclick="openArticle(${article.id})">`
+                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: ${randomGradient}; opacity: 0.3; pointer-events: none;"></div>
+                        <div style="position: relative; z-index: 2;">
+                            <div class="article-meta" style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-4); font-size: var(--font-size-sm); color: var(--color-text-tertiary);">
+                                <span class="article-category" style="background: var(--gradient-primary); color: white; padding: var(--space-1) var(--space-2); border-radius: 6px; text-transform: capitalize;">${article.category}</span>
+                                <span class="article-date">${formatDate(article.date)}</span>
+                                <span class="reading-time">${article.readTime} read</span>
+                            </div>
+                            <h3 class="article-title" style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-4); color: var(--color-text-primary); line-height: var(--line-height-tight);">
+                                <a href="#" onclick="openArticle(${article.id}); return false;" style="color: inherit; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--neon-blue)'" onmouseout="this.style.color='var(--color-text-primary)'">${article.title}</a>
+                            </h3>
+                            <p class="article-excerpt" style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: var(--line-height-relaxed);">
+                                ${article.excerpt}
+                            </p>
+                            <div class="article-tags" style="display: flex; gap: var(--space-2); margin-bottom: var(--space-4); flex-wrap: wrap;">
+                                ${tagsHtml}
+                            </div>
+                            <div class="article-footer" style="display: flex; justify-content: space-between; align-items: center; font-size: var(--font-size-sm); color: var(--color-text-tertiary);">
+                                <span class="article-author">${article.author}</span>
+                                <span class="article-views">${article.views} views</span>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            }
+
+            // Format date
+            function formatDate(dateString) {
+                const date = new Date(dateString);
+                return date.toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric'
+                });
+            }
+
+            // Setup event listeners
+            function setupEventListeners() {
+                // Search functionality
+                searchInput.addEventListener('input', function() {
+                    filterArticles();
+                });
+
+                // Category filters
+                categoryFilters.forEach(filter => {
+                    filter.addEventListener('click', function() {
+                        categoryFilters.forEach(f => f.classList.remove('active'));
+                        this.classList.add('active');
+                        filterArticles();
+                    });
+                });
+
+                // Sort functionality
+                sortSelect.addEventListener('change', function() {
+                    sortArticles(this.value);
+                });
+            }
+
+            // Filter articles
+            function filterArticles() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const activeCategory = document.querySelector('.category-filter.active').dataset.category;
+
+                filteredArticles = allArticles.filter(article => {
+                    const matchesSearch = !searchTerm ||
+                        article.title.toLowerCase().includes(searchTerm) ||
+                        article.excerpt.toLowerCase().includes(searchTerm) ||
+                        article.tags.some(tag => tag.toLowerCase().includes(searchTerm)) ||
+                        article.author.toLowerCase().includes(searchTerm);
+
+                    const matchesCategory = activeCategory === 'all' || article.category === activeCategory;
+
+                    return matchesSearch && matchesCategory;
+                });
+
+                // Reset load states when filtering
+                Object.keys(categoryLoadStates).forEach(key => {
+                    categoryLoadStates[key] = INITIAL_ARTICLES_PER_CATEGORY;
+                });
+
+                visibleCount.textContent = filteredArticles.length;
+                renderArticles();
+            }
+
+            // Sort articles
+            function sortArticles(sortBy) {
+                switch(sortBy) {
+                    case 'newest':
+                        filteredArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
+                        break;
+                    case 'oldest':
+                        filteredArticles.sort((a, b) => new Date(a.date) - new Date(b.date));
+                        break;
+                    case 'alphabetical':
+                        filteredArticles.sort((a, b) => a.title.localeCompare(b.title));
+                        break;
+                    case 'category':
+                        filteredArticles.sort((a, b) => a.category.localeCompare(b.category));
+                        break;
+                    case 'popular':
+                        filteredArticles.sort((a, b) => {
+                            const aViews = parseFloat(a.views.replace('k', '')) * (a.views.includes('k') ? 1000 : 1);
+                            const bViews = parseFloat(b.views.replace('k', '')) * (b.views.includes('k') ? 1000 : 1);
+                            return bViews - aViews;
+                        });
+                        break;
+                }
+                renderArticles();
+            }
+
+            // Setup card hover effects
+            function setupCardHoverEffects() {
+                const articleCards = document.querySelectorAll('.article-card');
+                articleCards.forEach(card => {
+                    card.addEventListener('mouseenter', function() {
+                        this.style.transform = 'translateY(-5px)';
+                        this.style.boxShadow = '0 20px 40px rgba(34, 211, 238, 0.2)';
+                        this.style.borderColor = 'var(--neon-blue)';
+                    });
+
+                    card.addEventListener('mouseleave', function() {
+                        this.style.transform = 'translateY(0)';
+                        this.style.boxShadow = '';
+                        this.style.borderColor = 'var(--glass-border)';
+                    });
+                });
+            }
+
+            // Category expansion functions
+            window.loadMoreInCategory = function(categoryKey) {
+                const currentLoad = categoryLoadStates[categoryKey] || INITIAL_ARTICLES_PER_CATEGORY;
+                categoryLoadStates[categoryKey] = currentLoad + LOAD_MORE_INCREMENT;
+                renderArticles();
+
+                // Smooth scroll to the newly revealed content
+                setTimeout(() => {
+                    const categorySection = document.querySelector(`[data-category="${categoryKey}"]`);
+                    const newlyVisibleCard = categorySection.querySelectorAll('.article-card')[currentLoad];
+                    if (newlyVisibleCard) {
+                        newlyVisibleCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }, 100);
+            };
+
+            window.showAllInCategory = function(categoryKey) {
+                expandedCategories.add(categoryKey);
+                renderArticles();
+                // Smooth scroll to the newly revealed content
+                setTimeout(() => {
+                    const categorySection = document.querySelector(`[data-category="${categoryKey}"]`);
+                    const lastVisibleCard = categorySection.querySelectorAll('.article-card')[INITIAL_ARTICLES_PER_CATEGORY];
+                    if (lastVisibleCard) {
+                        lastVisibleCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }, 100);
+            };
+
+            window.showLessInCategory = function(categoryKey) {
+                expandedCategories.delete(categoryKey);
+                categoryLoadStates[categoryKey] = INITIAL_ARTICLES_PER_CATEGORY; // Reset to initial load
+                renderArticles();
+                // Scroll back to the top of the category
+                setTimeout(() => {
+                    const categorySection = document.querySelector(`[data-category="${categoryKey}"]`);
+                    if (categorySection) {
+                        categorySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 100);
+            };
+
+            // Expand all categories
+            window.expandAllCategories = function() {
+                const loadingIndicator = document.getElementById('loading-indicator');
+                const expandBtn = document.getElementById('expand-all-btn');
+
+                // Show loading state
+                loadingIndicator.style.display = 'flex';
+                expandBtn.style.opacity = '0.6';
+                expandBtn.style.pointerEvents = 'none';
+
+                // Use setTimeout to allow UI to update before heavy operation
+                setTimeout(() => {
+                    const allCategories = [...new Set(allArticles.map(a => a.category))];
+                    allCategories.forEach(category => {
+                        expandedCategories.add(category);
+                    });
+                    renderArticles();
+
+                    // Update button text
+                    expandBtn.innerHTML = '📁 Collapse All Categories';
+                    expandBtn.onclick = collapseAllCategories;
+                    expandBtn.style.opacity = '1';
+                    expandBtn.style.pointerEvents = 'auto';
+                    loadingIndicator.style.display = 'none';
+
+                    // Show info about articles loaded
+                    const totalArticles = allArticles.length;
+                    console.log(`✅ Loaded ${totalArticles} articles across ${allCategories.length} categories`);
+                }, 50);
+            };
+
+            // Collapse all categories
+            window.collapseAllCategories = function() {
+                expandedCategories.clear();
+                // Reset all load states
+                Object.keys(categoryLoadStates).forEach(key => {
+                    categoryLoadStates[key] = INITIAL_ARTICLES_PER_CATEGORY;
+                });
+                renderArticles();
+
+                // Update button text
+                const expandBtn = document.getElementById('expand-all-btn');
+                expandBtn.innerHTML = '📂 Expand All Categories';
+                expandBtn.onclick = expandAllCategories;
+
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            // Clear all filters
+            window.clearAllFilters = function() {
+                searchInput.value = '';
+                categoryFilters.forEach(f => f.classList.remove('active'));
+                categoryFilters[0].classList.add('active');
+                sortSelect.value = 'newest';
+                filteredArticles = [...allArticles];
+                visibleCount.textContent = filteredArticles.length;
+                expandedCategories.clear(); // Reset expansions when clearing filters
+                // Reset all load states
+                Object.keys(categoryLoadStates).forEach(key => {
+                    categoryLoadStates[key] = INITIAL_ARTICLES_PER_CATEGORY;
+                });
+                renderArticles();
+            };
+
+            // Filter button hover effects
+            categoryFilters.forEach(filter => {
+                filter.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.background = 'rgba(255, 255, 255, 0.1)';
+                        this.style.borderColor = 'var(--neon-blue)';
+                        this.style.color = 'var(--color-text-primary)';
+                    }
+                });
+
+                filter.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.background = 'var(--glass-bg)';
+                        this.style.borderColor = 'var(--glass-border)';
+                        this.style.color = 'var(--color-text-secondary)';
+                    }
+                });
+            });
+
+            // Open article function
+            window.openArticle = function(articleId) {
+                // Find the article by ID
+                const article = allArticles.find(a => a.id === articleId);
+                if (!article) {
+                    alert('Article not found!');
+                    return;
+                }
+
+                // Create a simple article viewer modal or redirect to a dynamic page
+                // For now, let's create a modal popup with the article content
+                showArticleModal(article);
+            };
+
+            // Show article in a modal
+            function showArticleModal(article) {
+                // If it's a tool article, show tool details
+                const isToolArticle = article.toolData;
+                const tool = article.toolData;
+
+                // Create modal HTML
+                const modalHTML = `
+                    <div id="article-modal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px);" onclick="closeArticleModal()">
+                        <div style="background: var(--color-bg); border: 1px solid var(--glass-border); border-radius: 20px; max-width: 800px; max-height: 90vh; overflow-y: auto; padding: var(--space-8); margin: var(--space-4); position: relative;" onclick="event.stopPropagation()">
+                            <button onclick="closeArticleModal()" style="position: absolute; top: var(--space-4); right: var(--space-4); background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--color-text-primary); font-size: var(--font-size-lg);">×</button>
+
+                            <div style="margin-bottom: var(--space-6);">
+                                <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-4); font-size: var(--font-size-sm); color: var(--color-text-tertiary);">
+                                    <span style="background: var(--gradient-primary); color: white; padding: var(--space-1) var(--space-3); border-radius: 12px; text-transform: capitalize;">${article.category}</span>
+                                    <span>${formatDate(article.date)}</span>
+                                    <span>${article.readTime} read</span>
+                                    <span>${article.views} views</span>
+                                    ${isToolArticle ? `<span style="background: var(--gradient-secondary); color: white; padding: var(--space-1) var(--space-3); border-radius: 12px;">⭐ ${tool.rating}</span>` : ''}
+                                </div>
+
+                                <h1 style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-4); color: var(--color-text-primary); line-height: var(--line-height-tight);">${article.title}</h1>
+
+                                <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-6); color: var(--color-text-secondary);">
+                                    <span>By ${article.author}</span>
+                                    ${isToolArticle ? `<span>• ${tool.company}</span>` : ''}
+                                </div>
+
+                                <div style="margin-bottom: var(--space-6);">
+                                    ${article.tags.map(tag => `<span style="background: rgba(34, 211, 238, 0.1); color: var(--neon-blue); padding: var(--space-1) var(--space-3); border-radius: 12px; font-size: var(--font-size-sm); margin-right: var(--space-2);">${tag}</span>`).join('')}
+                                </div>
+                            </div>
+
+                            <div style="color: var(--color-text-secondary); line-height: var(--line-height-relaxed); font-size: var(--font-size-base);">
+                                <p style="margin-bottom: var(--space-6); font-size: var(--font-size-lg); color: var(--color-text-primary);">${article.excerpt}</p>
+
+                                ${isToolArticle ? `
+                                    <div style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); margin: var(--space-6) 0;">
+                                        <h3 style="color: var(--color-text-primary); margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-2);">
+                                            🛠️ Tool Details
+                                        </h3>
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4);">
+                                            <div>
+                                                <strong style="color: var(--color-text-primary);">Pricing:</strong><br>
+                                                <span>${tool.pricing.type} - ${tool.pricing.cost}</span>
+                                            </div>
+                                            <div>
+                                                <strong style="color: var(--color-text-primary);">Users:</strong><br>
+                                                <span>${tool.users}</span>
+                                            </div>
+                                            <div>
+                                                <strong style="color: var(--color-text-primary);">Rating:</strong><br>
+                                                <span>⭐ ${tool.rating}/5</span>
+                                            </div>
+                                            <div>
+                                                <strong style="color: var(--color-text-primary);">Growth:</strong><br>
+                                                <span style="color: var(--neon-green);">+${tool.growth}%</span>
+                                            </div>
+                                        </div>
+                                        <div style="margin-top: var(--space-4);">
+                                            <strong style="color: var(--color-text-primary);">Key Features:</strong><br>
+                                            <div style="margin-top: var(--space-2);">
+                                                ${tool.features.map(feature => `<span style="background: rgba(16, 185, 129, 0.1); color: var(--neon-green); padding: var(--space-1) var(--space-2); border-radius: 8px; font-size: var(--font-size-xs); margin-right: var(--space-2); margin-bottom: var(--space-2); display: inline-block;">${feature}</span>`).join('')}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div style="background: var(--gradient-surface); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-align: center; margin: var(--space-8) 0;">
+                                        <h3 style="color: var(--color-text-primary); margin-bottom: var(--space-4);">🚀 Try ${tool.name}</h3>
+                                        <p style="margin-bottom: var(--space-6);">Experience this AI tool yourself and see how it can transform your workflow.</p>
+                                        <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+                                            <a href="${tool.url}" target="_blank" rel="noopener" style="padding: var(--space-3) var(--space-6); background: var(--gradient-primary); color: white; border: none; border-radius: 25px; font-weight: var(--font-weight-semibold); text-decoration: none; display: inline-flex; align-items: center; gap: var(--space-2);">
+                                                <span>Visit ${tool.name}</span>
+                                                <span>→</span>
+                                            </a>
+                                            <button onclick="closeArticleModal()" style="padding: var(--space-3) var(--space-6); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--color-text-primary); border-radius: 25px; font-weight: var(--font-weight-medium); cursor: pointer;">Back to Articles</button>
+                                        </div>
+                                    </div>
+                                ` : `
+                                    <div style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-align: center; margin: var(--space-8) 0;">
+                                        <h3 style="color: var(--color-text-primary); margin-bottom: var(--space-4);">📰 Full Article Coming Soon</h3>
+                                        <p style="margin-bottom: var(--space-6);">This article is part of our upcoming content library. The full article with detailed analysis, examples, and actionable insights will be available soon.</p>
+                                        <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+                                            <button onclick="closeArticleModal()" style="padding: var(--space-3) var(--space-6); background: var(--gradient-primary); color: white; border: none; border-radius: 25px; font-weight: var(--font-weight-semibold); cursor: pointer;">Back to Articles</button>
+                                            <a href="/#newsletter" style="padding: var(--space-3) var(--space-6); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--color-text-primary); border-radius: 25px; font-weight: var(--font-weight-medium); text-decoration: none;">Get Notified</a>
+                                        </div>
+                                    </div>
+                                `}
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Add modal to page
+                document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+                // Prevent scrolling
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Close article modal
+            window.closeArticleModal = function() {
+                const modal = document.getElementById('article-modal');
+                if (modal) {
+                    modal.remove();
+                }
+                document.body.style.overflow = 'auto';
+            };
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeArticleModal();
+                }
+            });
+
+            // Initialize the page
+            init();
+        });
+    </script>
+</body>
+</html>
