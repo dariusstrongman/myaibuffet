@@ -140,8 +140,8 @@
                 const title = article.title || 'Untitled Article';
                 const excerpt = article.description || article.content_snippet || 'No description available';
                 const author = article.author || 'AI Buffet Team';
-                const source = article.source || 'Unknown';
-                const date = article.pub_date ? new Date(article.pub_date).toLocaleDateString() : 'Unknown date';
+                const source = article.source || article.author || 'AI Buffet';
+                const date = article.pub_date ? new Date(article.pub_date).toLocaleDateString() : new Date().toLocaleDateString();
                 const readTime = Math.max(1, Math.ceil((article.word_count || 300) / 200));
                 const link = article.link || '#';
 

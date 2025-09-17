@@ -3,49 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Tutorials & Guides — Learn AI Step by Step | AI Buffet</title>
-    <meta name="description" content="Comprehensive AI tutorials and guides for beginners and experts. Learn ChatGPT, prompt engineering, AI tools, and practical applications with step-by-step instructions.">
-    <meta name="keywords" content="AI tutorials, AI guides, ChatGPT tutorial, prompt engineering guide, AI learning, artificial intelligence tutorial, AI how-to">
+    <title>AI Tool Reviews & Comparisons — Expert Analysis | AI Buffet</title>
+    <meta name="description" content="In-depth AI tool reviews, comparisons, and expert analysis. ChatGPT vs Claude, Midjourney reviews, and comprehensive AI software evaluations.">
+    <meta name="keywords" content="AI tool reviews, AI software comparison, ChatGPT review, Claude review, AI tool analysis, artificial intelligence tools">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <meta name="author" content="AI Buffet">
-    <meta name="google-site-verification" content="Eed235Tz69iOMTpmaDDzNOCfhjU1R2mDutTMT08uHG4">
-    <link rel="canonical" href="https://myaibuffet.com/categories/tutorials">
+    <link rel="canonical" href="https://myaibuffet.com/categories/tools-articles">
     <link rel="icon" type="image/png" href="../img/Logo.png">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="AI Tutorials & Guides — Learn AI Step by Step">
-    <meta property="og:description" content="Comprehensive AI tutorials for beginners and experts. Learn ChatGPT, prompt engineering, and practical AI applications.">
-    <meta property="og:image" content="https://myaibuffet.com/og-image.jpg">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://myaibuffet.com/categories/tutorials">
-    <meta property="og:site_name" content="AI Buffet">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AI Tutorials & Guides">
-    <meta name="twitter:description" content="Learn AI with comprehensive tutorials and step-by-step guides from AI Buffet.">
-    <meta name="twitter:image" content="https://myaibuffet.com/og-image.jpg">
-
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Serif+Display:wght@400&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/components.css">
 
     <style>
-        body {
-            font-family: Inter, system-ui, sans-serif;
-            background: var(--color-bg, #030712);
-            color: var(--color-text-primary, #F8FAFC);
-            margin: 0;
-            line-height: 1.6;
-        }
+        body { font-family: Inter, system-ui, sans-serif; background: var(--color-bg, #030712); color: var(--color-text-primary, #F8FAFC); margin: 0; line-height: 1.6; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
-
-    <!-- Header -->
     <header class="header" role="banner">
         <div class="container">
             <nav class="nav" role="navigation" aria-label="Main navigation">
@@ -53,15 +28,13 @@
                     <span class="logo-icon" aria-hidden="true">🍽️</span>
                     AI Buffet
                 </a>
-
                 <ul class="nav-links" role="menubar">
                     <li role="none"><a href="../" class="nav-link" role="menuitem">Home</a></li>
                     <li role="none"><a href="news.html" class="nav-link" role="menuitem">News</a></li>
-                    <li role="none"><a href="tools.html" class="nav-link" role="menuitem">Tools</a></li>
+                    <li role="none"><a href="tools.html" class="nav-link" role="menuitem">Tools Database</a></li>
                     <li role="none"><a href="../faq.html" class="nav-link" role="menuitem">FAQ</a></li>
                     <li role="none"><a href="../about.html" class="nav-link" role="menuitem">About</a></li>
                 </ul>
-
                 <div class="nav-actions">
                     <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
                         <span class="hamburger"></span>
@@ -71,43 +44,34 @@
         </div>
     </header>
 
-    <!-- Main content -->
     <main id="main" role="main">
         <div class="container">
-
-            <!-- Page Hero -->
             <section class="page-hero" style="background: radial-gradient(ellipse at top, rgba(34, 211, 238, 0.1) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.1) 0%, transparent 50%), var(--color-bg); border-radius: 0 0 30px 30px; margin-bottom: var(--space-12); padding: var(--space-16) 0; position: relative; overflow: hidden;">
                 <div style="position: relative; z-index: 2; text-align: center;">
                     <h1 style="font-size: var(--font-size-4xl); background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: var(--space-6);">
-                        📚 AI Tutorials & Guides
+                        🛠️ AI Tool Reviews & Analysis
                     </h1>
                     <p style="font-size: var(--font-size-xl); color: var(--color-text-secondary); margin-bottom: var(--space-8); max-width: 800px; margin-left: auto; margin-right: auto;">
-                        Master AI with step-by-step tutorials, practical guides, and hands-on learning resources. From beginner to expert level.
+                        Expert reviews, comparisons, and in-depth analysis of AI tools. Find the best AI software for your needs with our comprehensive evaluations.
                     </p>
                     <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-4); flex-wrap: wrap;">
                         <span style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; padding: var(--space-2) var(--space-4); color: var(--color-text-tertiary); font-size: var(--font-size-sm);">
-                            📊 <span id="total-tutorials">Loading...</span> tutorials available
+                            📊 <span id="total-tools">Loading...</span> tool reviews
                         </span>
                         <a href="../all-articles.html" style="color: var(--neon-blue); text-decoration: none; font-size: var(--font-size-sm);">← Back to All Articles</a>
                     </div>
                 </div>
             </section>
 
-            <!-- Loading Indicator -->
             <div id="loading-indicator" style="display: flex; align-items: center; justify-content: center; gap: var(--space-3); color: var(--color-text-secondary); font-size: var(--font-size-lg); margin: var(--space-8) 0;">
                 <div style="width: 20px; height: 20px; border: 2px solid var(--glass-border); border-top: 2px solid var(--neon-blue); border-radius: 50%; animation: spin 1s linear infinite;"></div>
-                <span>Loading tutorials...</span>
+                <span>Loading tool reviews...</span>
             </div>
 
-            <!-- Articles Container -->
-            <section id="articles-container">
-                <!-- Articles will be populated by JavaScript -->
-            </section>
-
+            <section id="articles-container"></section>
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer__content">
@@ -117,108 +81,61 @@
                             <span class="logo-icon" aria-hidden="true">🍽️</span>
                             AI Buffet
                         </div>
-                        <p class="footer__tagline">
-                            Premium AI insights served fresh daily
-                        </p>
+                        <p class="footer__tagline">Premium AI insights served fresh daily</p>
                     </div>
                 </div>
-
                 <div class="footer__section">
                     <h3 class="footer__heading">Explore</h3>
                     <ul class="footer__links">
                         <li><a href="news.html" class="footer__link">AI News</a></li>
-                        <li><a href="tools.html" class="footer__link">Tool Reviews</a></li>
+                        <li><a href="tools.html" class="footer__link">Tool Database</a></li>
                         <li><a href="../all-articles.html" class="footer__link">All Articles</a></li>
-                        <li><a href="../faq.html" class="footer__link">FAQ</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer__section">
-                    <h3 class="footer__heading">Resources & Support</h3>
-                    <ul class="footer__links">
-                        <li><a href="../about.html" class="footer__link">About</a></li>
-                        <li><a href="mailto:hello@myaibuffet.com" class="footer__link">Contact</a></li>
-                        <li><a href="../#newsletter" class="footer__link">Newsletter</a></li>
                     </ul>
                 </div>
             </div>
-
             <div class="footer__bottom">
                 <div class="footer__legal">
                     <p>&copy; 2025 AI Buffet. All rights reserved.</p>
-                </div>
-                <div class="footer__credits">
-                    <p>Made with care for the AI community</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Supabase -->
     <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-
-    <!-- JavaScript -->
     <script src="../assets/js/tools-database.js"></script>
     <script src="../assets/js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Supabase Configuration
             const SUPABASE_URL = 'https://npetaroffoyjohjiwssf.supabase.co';
             const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wZXRhcm9mZm95am9oaml3c3NmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcwMDk5OTgsImV4cCI6MjA3MjU4NTk5OH0.oYJ4ETV_zIDx_7KWJlEtcrIrRqy72HYEFzAs37pPzB8';
-
             const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-            const CATEGORY = 'tutorials';
 
             let allArticles = [];
             const loadingIndicator = document.getElementById('loading-indicator');
             const articlesContainer = document.getElementById('articles-container');
 
-            // Fetch and filter articles for this category
             async function fetchCategoryArticles() {
                 try {
-                    console.log(`📡 Fetching ${CATEGORY} articles...`);
-
                     const { data, error } = await supabase
                         .from('articles')
-                        .select(`
-                            id,
-                            title,
-                            slug,
-                            description,
-                            content_snippet,
-                            link,
-                            source,
-                            author,
-                            pub_date,
-                            featured,
-                            is_top_story,
-                            trending_score,
-                            breaking_news,
-                            word_count
-                        `)
+                        .select('id, title, slug, description, content_snippet, link, source, author, pub_date, featured, is_top_story, trending_score, breaking_news, word_count')
                         .order('pub_date', { ascending: false });
 
-                    if (error) {
-                        console.error('❌ Error fetching articles:', error);
-                        throw error;
-                    }
+                    if (error) throw error;
 
-                    // Filter articles by category based on title/content
                     const categoryArticles = data.filter(article => {
                         const text = (article.title + ' ' + (article.description || article.content_snippet || '')).toLowerCase();
-                        return text.includes('tutorial') || text.includes('guide') || text.includes('how to') || text.includes('step by step');
+                        return text.includes('tool') || text.includes('review') || text.includes('vs ') || text.includes('comparison') || text.includes('app') || text.includes('software') || text.includes('platform');
                     });
 
-                    console.log(`✅ Found ${categoryArticles.length} ${CATEGORY} articles`);
+                    console.log(`✅ Found ${categoryArticles.length} tool review articles`);
                     return categoryArticles;
-
                 } catch (error) {
-                    console.error('❌ Critical error:', error);
+                    console.error('❌ Error:', error);
                     return [];
                 }
             }
 
-            // Render article card
             function renderArticleCard(article) {
                 const title = article.title || 'Untitled Article';
                 const excerpt = article.description || article.content_snippet || 'No description available';
@@ -230,68 +147,64 @@
 
                 return `
                     <article class="article-card" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); transition: all 0.3s ease; cursor: pointer; margin-bottom: var(--space-6);" onclick="window.open('${link}', '_blank')" onmouseenter="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(34, 211, 238, 0.2)'; this.style.borderColor='var(--neon-blue)'" onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow=''; this.style.borderColor='var(--glass-border)'">
-                        <div class="article-header" style="margin-bottom: var(--space-4);">
-                            <div class="article-meta" style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-3); font-size: var(--font-size-sm); color: var(--color-text-tertiary);">
-                                <span class="category-badge" style="background: var(--gradient-secondary); color: white; padding: var(--space-1) var(--space-2); border-radius: 6px;">📚 Tutorial</span>
+                        <div style="margin-bottom: var(--space-4);">
+                            <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-3); font-size: var(--font-size-sm); color: var(--color-text-tertiary);">
+                                <span style="background: var(--gradient-secondary); color: white; padding: var(--space-1) var(--space-2); border-radius: 6px;">🛠️ Tool Review</span>
                                 <span>${date}</span>
                                 <span>${readTime}m read</span>
                             </div>
-                            <h3 class="article-title" style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary); line-height: var(--line-height-tight);">
+                            <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary); line-height: var(--line-height-tight);">
                                 ${title}
                             </h3>
-                            <p class="article-excerpt" style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: var(--line-height-relaxed);">
+                            <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: var(--line-height-relaxed);">
                                 ${excerpt.length > 150 ? excerpt.substring(0, 150) + '...' : excerpt}
                             </p>
                         </div>
-                        <div class="article-footer" style="display: flex; justify-content: space-between; align-items: center; font-size: var(--font-size-sm); color: var(--color-text-tertiary);">
-                            <span class="article-author">${author}</span>
-                            <span class="article-source">${source}</span>
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: var(--font-size-sm); color: var(--color-text-tertiary);">
+                            <span>${author}</span>
+                            <span>${source}</span>
                         </div>
                     </article>
                 `;
             }
 
-            // Render articles
             function renderArticles() {
-                console.log(`🎨 Rendering ${allArticles.length} ${CATEGORY} articles...`);
-
                 if (allArticles.length === 0) {
                     articlesContainer.innerHTML = `
                         <div style="text-align: center; padding: var(--space-16); color: var(--color-text-secondary);">
-                            <div style="font-size: 4rem; margin-bottom: var(--space-4);">📚</div>
-                            <h3 style="font-size: var(--font-size-xl); margin-bottom: var(--space-2);">No tutorials found</h3>
-                            <p>Check back soon for new AI tutorials and guides!</p>
+                            <div style="font-size: 4rem; margin-bottom: var(--space-4);">🛠️</div>
+                            <h3 style="font-size: var(--font-size-xl); margin-bottom: var(--space-2);">No tool reviews found</h3>
+                            <p>Check back soon for AI tool reviews and comparisons!</p>
+                            <div style="margin-top: var(--space-6);">
+                                <a href="tools.html" style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-6); background: var(--gradient-primary); color: white; text-decoration: none; border-radius: 25px; font-weight: var(--font-weight-semibold);">
+                                    <span>Browse AI Tools Database</span>
+                                    <span>→</span>
+                                </a>
+                            </div>
                         </div>
                     `;
                     return;
                 }
 
-                const html = `
-                    <div class="articles-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--space-6);">
+                articlesContainer.innerHTML = `
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--space-6);">
                         ${allArticles.map(article => renderArticleCard(article)).join('')}
                     </div>
                 `;
-
-                articlesContainer.innerHTML = html;
-                document.getElementById('total-tutorials').textContent = allArticles.length;
+                document.getElementById('total-tools').textContent = allArticles.length;
             }
 
-            // Initialize
             async function init() {
                 try {
-                    const articles = await fetchCategoryArticles();
-                    allArticles = articles;
-
+                    allArticles = await fetchCategoryArticles();
                     loadingIndicator.style.display = 'none';
                     renderArticles();
-
-                    console.log(`✅ ${CATEGORY} page initialized with ${allArticles.length} articles`);
                 } catch (error) {
-                    console.error(`❌ Failed to initialize ${CATEGORY} page:`, error);
+                    console.error('❌ Failed to initialize:', error);
                     loadingIndicator.innerHTML = `
                         <div style="text-align: center; color: var(--color-text-secondary);">
                             <span style="font-size: 2rem; margin-bottom: var(--space-2); display: block;">⚠️</span>
-                            <span>Failed to load tutorials. Please refresh the page.</span>
+                            <span>Failed to load tool reviews. Please refresh the page.</span>
                         </div>
                     `;
                 }
@@ -300,12 +213,5 @@
             init();
         });
     </script>
-
-    <style>
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
 </body>
 </html>

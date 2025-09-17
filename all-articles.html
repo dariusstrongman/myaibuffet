@@ -268,8 +268,7 @@
                             breaking_news,
                             word_count
                         `)
-                        .order('pub_date', { ascending: false })
-                        .limit(100);
+                        .order('pub_date', { ascending: false });
 
                     if (error) {
                         console.error('❌ Error fetching articles:', error);
@@ -277,6 +276,12 @@
                     }
 
                     console.log(`✅ Fetched ${data.length} articles`);
+
+                    // Log successful data fetch
+                    if (data && data.length > 0) {
+                        console.log('✅ Article fields available:', Object.keys(data[0]));
+                    }
+
                     return data || [];
 
                 } catch (error) {
@@ -290,8 +295,8 @@
                 const title = article.title || 'Untitled Article';
                 const excerpt = article.description || article.content_snippet || 'No description available';
                 const author = article.author || 'AI Buffet Team';
-                const source = article.source || 'Unknown';
-                const date = article.pub_date ? new Date(article.pub_date).toLocaleDateString() : 'Unknown date';
+                const source = article.source || article.author || 'AI Buffet';
+                const date = article.pub_date ? new Date(article.pub_date).toLocaleDateString() : new Date().toLocaleDateString();
                 const readTime = Math.max(1, Math.ceil((article.word_count || 300) / 200));
                 const link = article.link || '#';
 
@@ -354,15 +359,15 @@
                     const text = (article.title + ' ' + (article.description || article.content_snippet || '')).toLowerCase();
                     let category = 'news';
 
-                    if (text.includes('tutorial') || text.includes('guide') || text.includes('how to')) {
+                    if (text.includes('tutorial') || text.includes('guide') || text.includes('how to') || text.includes('step by step') || text.includes('learn') || text.includes('beginner')) {
                         category = 'tutorials';
-                    } else if (text.includes('tool') || text.includes('review') || text.includes('vs ')) {
+                    } else if (text.includes('tool') || text.includes('review') || text.includes('vs ') || text.includes('comparison') || text.includes('app') || text.includes('software') || text.includes('platform')) {
                         category = 'tools';
-                    } else if (text.includes('research') || text.includes('study') || text.includes('analysis')) {
+                    } else if (text.includes('research') || text.includes('study') || text.includes('analysis') || text.includes('paper') || text.includes('findings') || text.includes('report')) {
                         category = 'research';
-                    } else if (text.includes('business') || text.includes('enterprise') || text.includes('roi')) {
+                    } else if (text.includes('business') || text.includes('enterprise') || text.includes('roi') || text.includes('strategy') || text.includes('company') || text.includes('startup')) {
                         category = 'business';
-                    } else if (text.includes('insight') || text.includes('prediction') || text.includes('future')) {
+                    } else if (text.includes('insight') || text.includes('prediction') || text.includes('future') || text.includes('trend') || text.includes('forecast') || text.includes('opinion')) {
                         category = 'insights';
                     }
 
@@ -371,6 +376,9 @@
                     }
                     articlesByCategory[category].push(article);
                 });
+
+                // Log category distribution for verification
+                console.log('📊 Categories found:', Object.keys(articlesByCategory).map(cat => `${cat}(${articlesByCategory[cat].length})`).join(', '));
 
                 const categoryNames = {
                     'news': 'AI News & Updates',
@@ -391,8 +399,8 @@
                 };
 
                 const categoryPages = {
-                    'news': 'categories/news.html',
-                    'tools': 'categories/tools.html',
+                    'news': 'categories/news-articles.html',
+                    'tools': 'categories/tools-articles.html',
                     'tutorials': 'categories/tutorials.html',
                     'research': 'categories/research.html',
                     'business': 'categories/business.html',
@@ -411,6 +419,11 @@
                     const categoryName = categoryNames[category] || category;
                     const categoryIcon = categoryIcons[category] || '📄';
                     const categoryPage = categoryPages[category] || `categories/${category}.html`;
+
+                    // Verify page mapping
+                    if (allCategoryArticles.length > 0) {
+                        console.log(`🔗 ${categoryName}: ${allCategoryArticles.length} articles → ${categoryPage}`);
+                    }
 
                     html += `
                         <div class="category-section" style="margin-bottom: var(--space-12);">
@@ -432,13 +445,9 @@
                             </div>
                             ${hasMore ? `
                                 <div style="text-align: center; margin-top: var(--space-8);">
-                                    <p style="color: var(--color-text-tertiary); font-size: var(--font-size-sm); margin-bottom: var(--space-4);">
-                                        Showing ${ARTICLES_PER_CATEGORY} of ${allCategoryArticles.length} articles • ${remainingCount} more available
+                                    <p style="color: var(--color-text-tertiary); font-size: var(--font-size-sm);">
+                                        Showing ${ARTICLES_PER_CATEGORY} of ${allCategoryArticles.length} articles in ${categoryName}
                                     </p>
-                                    <a href="${categoryPage}" style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-6); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--color-text-primary); text-decoration: none; border-radius: 25px; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.1)'; this.style.borderColor='var(--neon-blue)'; this.style.color='var(--neon-blue)'" onmouseout="this.style.background='var(--glass-bg)'; this.style.borderColor='var(--glass-border)'; this.style.color='var(--color-text-primary)'">
-                                        <span>Explore All ${categoryName}</span>
-                                        <span>📚</span>
-                                    </a>
                                 </div>
                             ` : ''}
                         </div>
