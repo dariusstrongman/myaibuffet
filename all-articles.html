@@ -567,77 +567,240 @@
     <script src="assets/js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Ensure database is available
-            const toolsDatabase = window.AI_TOOLS_DATABASE || AI_TOOLS_DATABASE || [];
+            // Articles data - comprehensive sample set
+            const articles = [
+                // AI News
+                {
+                    id: 1,
+                    title: "OpenAI Announces GPT-5: Revolutionary Breakthrough in AI Reasoning",
+                    category: "news",
+                    date: "2025-01-16",
+                    excerpt: "The latest advancement in AI technology promises to revolutionize how we interact with artificial intelligence, featuring unprecedented reasoning capabilities and multimodal understanding.",
+                    tags: ["OpenAI", "GPT-5", "AI Research"],
+                    author: "AI Buffet Team",
+                    views: "12.4k",
+                    readTime: "5 min",
+                    url: "posts/openai-gpt5-revolutionary-breakthrough.html"
+                },
+                {
+                    id: 2,
+                    title: "Claude 4 vs GPT-5: The Ultimate AI Showdown",
+                    category: "news",
+                    date: "2025-01-15",
+                    excerpt: "Anthropic's Claude 4 goes head-to-head with OpenAI's latest model. We break down performance, safety, and capabilities in this comprehensive comparison.",
+                    tags: ["Claude", "GPT-5", "AI Comparison"],
+                    author: "Sarah Chen",
+                    views: "8.7k",
+                    readTime: "8 min",
+                    url: "posts/claude-4-vs-gpt5-ultimate-showdown.html"
+                },
+                {
+                    id: 3,
+                    title: "Google's Gemini Ultra 2.0: New AI Features That Matter",
+                    category: "news",
+                    date: "2025-01-14",
+                    excerpt: "Google unveils major updates to Gemini with enhanced multimodal capabilities, better coding assistance, and revolutionary real-time collaboration features.",
+                    tags: ["Google", "Gemini", "Multimodal AI"],
+                    author: "Marcus Rodriguez",
+                    views: "6.2k",
+                    readTime: "6 min",
+                    url: "posts/google-gemini-ultra-2-new-features.html"
+                },
+                // Tool Reviews
+                {
+                    id: 4,
+                    title: "ChatGPT Plus vs Pro: Which Subscription is Worth It?",
+                    category: "tools",
+                    date: "2025-01-13",
+                    excerpt: "Deep dive into OpenAI's subscription tiers. We test speed, accuracy, and advanced features to help you choose the right plan for your needs.",
+                    tags: ["ChatGPT", "Subscription", "Review"],
+                    author: "Tech Review Team",
+                    views: "15.3k",
+                    readTime: "10 min",
+                    url: "posts/chatgpt-plus-vs-pro-subscription-guide.html"
+                },
+                {
+                    id: 5,
+                    title: "Midjourney V7: The Future of AI Art Generation",
+                    category: "tools",
+                    date: "2025-01-12",
+                    excerpt: "Midjourney's latest version delivers stunning photorealism and creative control. Here's everything you need to know about the new features and pricing.",
+                    tags: ["Midjourney", "AI Art", "Design"],
+                    author: "Creative AI Lab",
+                    views: "9.8k",
+                    readTime: "7 min",
+                    url: "posts/midjourney-v7-future-ai-art-generation.html"
+                },
+                {
+                    id: 6,
+                    title: "Cursor vs GitHub Copilot: Best AI Coding Assistant 2025",
+                    category: "tools",
+                    date: "2025-01-11",
+                    excerpt: "We tested both AI coding assistants across multiple programming languages. See which one delivers better code suggestions, debugging help, and productivity gains.",
+                    tags: ["Cursor", "GitHub Copilot", "Coding"],
+                    author: "Dev Tools Team",
+                    views: "11.7k",
+                    readTime: "12 min",
+                    url: "posts/cursor-vs-github-copilot-best-coding-assistant.html"
+                },
+                // Tutorials
+                {
+                    id: 7,
+                    title: "How to Build Custom GPTs: Complete Beginner's Guide",
+                    category: "tutorials",
+                    date: "2025-01-10",
+                    excerpt: "Step-by-step tutorial on creating custom GPTs without coding. Learn prompt engineering, fine-tuning, and deployment strategies that actually work.",
+                    tags: ["GPT Builder", "Tutorial", "No-Code"],
+                    author: "AI Education Team",
+                    views: "7.9k",
+                    readTime: "15 min",
+                    url: "posts/build-custom-gpts-beginner-guide.html"
+                },
+                {
+                    id: 8,
+                    title: "Prompt Engineering Mastery: Advanced Techniques",
+                    category: "tutorials",
+                    date: "2025-01-09",
+                    excerpt: "Master advanced prompting techniques including chain-of-thought, few-shot learning, and prompt chaining. Includes 50+ proven templates.",
+                    tags: ["Prompt Engineering", "Advanced", "Templates"],
+                    author: "Prompt Masters",
+                    views: "13.2k",
+                    readTime: "18 min",
+                    url: "posts/prompt-engineering-mastery-advanced-techniques.html"
+                },
+                // Research
+                {
+                    id: 9,
+                    title: "The State of AI Safety in 2025: Progress and Challenges",
+                    category: "research",
+                    date: "2025-01-08",
+                    excerpt: "Comprehensive analysis of AI safety research, alignment progress, and remaining challenges. Features insights from leading researchers and labs.",
+                    tags: ["AI Safety", "Research", "Alignment"],
+                    author: "AI Safety Institute",
+                    views: "5.4k",
+                    readTime: "20 min",
+                    url: "posts/ai-safety-2025-progress-challenges.html"
+                },
+                {
+                    id: 10,
+                    title: "Emergence in Large Language Models: New Discoveries",
+                    category: "research",
+                    date: "2025-01-07",
+                    excerpt: "Latest research on emergent capabilities in LLMs. How scale, training, and architecture choices lead to unexpected abilities and implications.",
+                    tags: ["LLM Research", "Emergence", "Scale"],
+                    author: "Research Labs Consortium",
+                    views: "4.1k",
+                    readTime: "16 min",
+                    url: "posts/llm-emergence-new-discoveries.html"
+                },
+                // Business
+                {
+                    id: 11,
+                    title: "AI ROI Calculator: Measure Your Business Impact",
+                    category: "business",
+                    date: "2025-01-06",
+                    excerpt: "Practical framework for calculating AI implementation ROI. Includes metrics, benchmarks, and case studies from successful AI adoption.",
+                    tags: ["ROI", "Business", "Implementation"],
+                    author: "Business AI Consultants",
+                    views: "8.6k",
+                    readTime: "11 min",
+                    url: "posts/ai-roi-calculator-business-impact.html"
+                },
+                {
+                    id: 12,
+                    title: "Enterprise AI Strategy: Lessons from Fortune 500",
+                    category: "business",
+                    date: "2025-01-05",
+                    excerpt: "How top companies successfully integrate AI across operations. Strategic insights, common pitfalls, and actionable frameworks for enterprise adoption.",
+                    tags: ["Enterprise", "Strategy", "Fortune 500"],
+                    author: "Enterprise AI Team",
+                    views: "6.8k",
+                    readTime: "14 min",
+                    url: "posts/enterprise-ai-strategy-fortune-500-lessons.html"
+                },
+                // Insights
+                {
+                    id: 13,
+                    title: "AI Market Predictions 2025: What's Coming Next",
+                    category: "insights",
+                    date: "2025-01-04",
+                    excerpt: "Expert predictions on AI market trends, emerging technologies, and investment opportunities. Based on analysis of 200+ AI companies and research labs.",
+                    tags: ["Predictions", "Market Analysis", "Trends"],
+                    author: "AI Market Intelligence",
+                    views: "10.5k",
+                    readTime: "13 min",
+                    url: "posts/ai-market-predictions-2025.html"
+                },
+                {
+                    id: 14,
+                    title: "The Economics of AI: Cost, Value, and Future Pricing",
+                    category: "insights",
+                    date: "2025-01-03",
+                    excerpt: "Deep analysis of AI economics including compute costs, pricing strategies, and market dynamics. How economics will shape AI accessibility and innovation.",
+                    tags: ["Economics", "Pricing", "Market Dynamics"],
+                    author: "AI Economics Lab",
+                    views: "7.3k",
+                    readTime: "17 min",
+                    url: "posts/economics-of-ai-cost-value-pricing.html"
+                }
+            ];
 
-            // Debug: Check if database is loaded
-            console.log('Tools Database:', toolsDatabase.length + ' tools loaded');
-
-            // Convert tools database to articles format
-            const articles = toolsDatabase.map(tool => ({
-                id: tool.id,
-                title: `${tool.name}: ${tool.description.split('.')[0]}`, // Use first sentence as title
-                category: tool.category === 'writing' ? 'news' :
-                         tool.category === 'design' ? 'tools' :
-                         tool.category === 'coding' ? 'tutorials' :
-                         tool.category === 'research' ? 'research' :
-                         tool.category === 'business' ? 'business' : 'insights',
-                date: tool.lastUpdated ? tool.lastUpdated.toISOString().split('T')[0] : '2025-01-06',
-                excerpt: tool.description,
-                tags: tool.tags || [tool.category, tool.company],
-                author: `${tool.company} Review Team`,
-                views: tool.users || '1k',
-                readTime: `${Math.floor(Math.random() * 10) + 5} min`,
-                url: `tools/${tool.id}.html`,
-                toolData: tool // Keep original tool data for the modal
-            }));
-
-            console.log('Generated articles:', articles.length);
-
-            // Generate additional articles from tools database variations
+            // Generate additional articles to simulate 700+ database
             function generateAdditionalArticles() {
-                if (!toolsDatabase.length) return [];
-
                 const additionalArticles = [];
-                const baseArticleTypes = [
-                    "Complete Review",
-                    "Getting Started Guide",
-                    "Advanced Features",
-                    "Pricing Comparison",
-                    "Best Practices",
-                    "Use Cases",
-                    "Integration Guide",
-                    "Performance Analysis",
-                    "Security Review",
-                    "Business Impact"
+                const baseTitles = [
+                    "Advanced AI Prompt Engineering Techniques",
+                    "Machine Learning Model Optimization Guide",
+                    "Neural Network Architecture Innovations",
+                    "AI Ethics and Responsible Development",
+                    "Computer Vision Breakthroughs",
+                    "Natural Language Processing Advances",
+                    "Robotics and AI Integration",
+                    "AI in Healthcare Applications",
+                    "Financial AI and Algorithmic Trading",
+                    "AI-Powered Automation Solutions",
+                    "Deep Learning Framework Comparison",
+                    "AI Security and Privacy Concerns",
+                    "Quantum AI Computing Future",
+                    "AI Art and Creative Applications",
+                    "Business Intelligence with AI",
+                    "AI Developer Tools Review",
+                    "Machine Learning Data Pipeline",
+                    "AI Model Training Best Practices",
+                    "Conversational AI Development",
+                    "AI Infrastructure and Scaling"
                 ];
 
-                // Create multiple articles for each tool
-                toolsDatabase.forEach((tool, toolIndex) => {
-                    baseArticleTypes.forEach((articleType, typeIndex) => {
-                        const articleId = `${tool.id}-${typeIndex}`;
-                        const articleTitle = `${tool.name} ${articleType}: ${tool.description.split('.')[0]}`;
+                const categories = ['news', 'tools', 'tutorials', 'research', 'business', 'insights'];
+                const authors = ['AI Research Team', 'Tech Innovators', 'ML Experts', 'AI Pioneers', 'Data Scientists', 'AI Consultants'];
 
-                        additionalArticles.push({
-                            id: articleId,
-                            title: articleTitle,
-                            category: tool.category === 'writing' ? 'news' :
-                                     tool.category === 'design' ? 'tools' :
-                                     tool.category === 'coding' ? 'tutorials' :
-                                     tool.category === 'research' ? 'research' :
-                                     tool.category === 'business' ? 'business' : 'insights',
-                            date: new Date(2025, 0, 16 - (toolIndex + typeIndex) % 30).toISOString().split('T')[0],
-                            excerpt: `${articleType} for ${tool.name}: ${tool.description}`,
-                            tags: [...(tool.tags || []), articleType.replace(' ', '')],
-                            author: `${tool.company} Review Team`,
-                            views: tool.users || `${(Math.random() * 50 + 1).toFixed(1)}k`,
-                            readTime: `${Math.floor(Math.random() * 15) + 5} min`,
-                            url: `tools/${tool.id}-${articleType.toLowerCase().replace(' ', '-')}.html`,
-                            toolData: tool
-                        });
+                for (let i = 0; i < 700; i++) {
+                    const category = categories[i % categories.length];
+                    const baseTitle = baseTitles[i % baseTitles.length];
+                    const variation = Math.floor(i / baseTitles.length) + 1;
+
+                    // Generate proper URL slug from title
+                    const articleTitle = `${baseTitle} ${variation > 1 ? `(Part ${variation})` : ''}`;
+                    const urlSlug = articleTitle
+                        .toLowerCase()
+                        .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+                        .replace(/\s+/g, '-') // Replace spaces with hyphens
+                        .replace(/-+/g, '-') // Replace multiple hyphens with single
+                        .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+
+                    additionalArticles.push({
+                        id: 15 + i,
+                        title: articleTitle,
+                        category: category,
+                        date: new Date(2025, 0, 16 - (i % 30)).toISOString().split('T')[0],
+                        excerpt: `Comprehensive analysis and insights into ${baseTitle.toLowerCase()}. This article covers advanced concepts, practical applications, and real-world implementations with detailed examples and case studies.`,
+                        tags: [`AI-${i}`, `Tech-${category}`, `2025-${Math.floor(i/10)}`],
+                        author: authors[i % authors.length],
+                        views: `${(Math.random() * 50 + 1).toFixed(1)}k`,
+                        readTime: `${Math.floor(Math.random() * 15) + 5} min`,
+                        url: `posts/${urlSlug}.html`
                     });
-                });
-
+                }
                 return additionalArticles;
             }
 
