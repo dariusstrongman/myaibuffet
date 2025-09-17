@@ -80,38 +80,6 @@
             line-height: 1.6;
         }
 
-        /* Enhanced Page Animations */
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @keyframes shimmer {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.8;
-            }
-        }
-
-        /* Enhanced Container Styling */
         .page-hero {
             background:
                 radial-gradient(ellipse at top, rgba(34, 211, 238, 0.1) 0%, transparent 50%),
@@ -122,216 +90,6 @@
             padding: var(--space-16) 0;
             position: relative;
             overflow: hidden;
-        }
-
-        .page-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%2322D3EE" fill-opacity="0.05"><circle cx="20" cy="20" r="1"/></g></g></svg>');
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        /* Enhanced Filter Section */
-        .filter-section {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: var(--space-8);
-            margin-bottom: var(--space-12);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .filter-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-primary);
-        }
-
-        /* Enhanced Article Cards */
-        .loading-shimmer {
-            background: linear-gradient(90deg, var(--glass-bg) 25%, rgba(255,255,255,0.1) 50%, var(--glass-bg) 75%);
-            background-size: 200% 100%;
-            animation: shimmer 1.5s infinite;
-        }
-
-        /* Enhanced Stats Cards */
-        .article-stats .stat {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .article-stats .stat::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .article-stats .stat:hover::before {
-            left: 100%;
-        }
-
-        .article-stats .stat:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(34, 211, 238, 0.2);
-            border-color: var(--neon-blue);
-        }
-
-        /* Enhanced Category Titles */
-        .category-title {
-            position: relative;
-            padding-bottom: var(--space-4);
-        }
-
-        .category-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--gradient-primary);
-            border-radius: 2px;
-        }
-
-        /* Enhanced Button Styling */
-        .enhanced-btn {
-            position: relative;
-            overflow: hidden;
-            font-weight: var(--font-weight-semibold);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .enhanced-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .enhanced-btn:hover::before {
-            left: 100%;
-        }
-
-        /* Newsletter Section Enhancement */
-        .newsletter-cta {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .newsletter-cta::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(34, 211, 238, 0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Responsive Improvements */
-        @media (max-width: 768px) {
-            .page-hero {
-                padding: var(--space-12) 0;
-                border-radius: 0 0 20px 20px;
-            }
-
-            .filter-section {
-                padding: var(--space-6);
-                border-radius: 16px;
-            }
-
-            .article-stats {
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: var(--space-4) !important;
-            }
-
-            .sort-options {
-                flex-direction: column !important;
-                align-items: stretch !important;
-                gap: var(--space-3) !important;
-            }
-
-            .results-info {
-                margin-left: 0 !important;
-                text-align: center;
-            }
-        }
-
-        /* Enhanced Article Card Animations */
-        .articles-grid {
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        .category-section {
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        /* Enhanced Loading States */
-        .loading-indicator {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 50px;
-            padding: var(--space-3) var(--space-6);
-            backdrop-filter: blur(10px);
-        }
-
-        /* Scroll Enhancement */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Enhanced Category Actions */
-        .category-actions button {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .category-actions button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(34, 211, 238, 0.3);
-        }
-
-        /* Enhanced Empty State */
-        .empty-search-state {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            backdrop-filter: blur(20px);
         }
     </style>
 </head>
@@ -379,126 +137,31 @@
 
                     <!-- Article Stats -->
                     <div class="article-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--space-6); margin-bottom: var(--space-12); max-width: 600px; margin-left: auto; margin-right: auto;">
-                        <div class="stat" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-align: center; cursor: pointer;">
-                            <span class="stat-number" id="total-articles" style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); color: var(--neon-blue); display: block; margin-bottom: var(--space-2);">0</span>
-                            <span class="stat-label" style="color: var(--color-text-secondary); font-weight: var(--font-weight-medium); text-transform: uppercase; letter-spacing: 0.5px; font-size: var(--font-size-sm);">Total Articles</span>
+                        <div class="stat" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-align: center;">
+                            <span id="total-articles" style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); color: var(--neon-blue); display: block; margin-bottom: var(--space-2);">0</span>
+                            <span style="color: var(--color-text-secondary); font-weight: var(--font-weight-medium); text-transform: uppercase; letter-spacing: 0.5px; font-size: var(--font-size-sm);">Total Articles</span>
                         </div>
-                        <div class="stat" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-align: center; cursor: pointer;">
-                            <span class="stat-number" id="categories-count" style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); color: var(--neon-purple); display: block; margin-bottom: var(--space-2);">0</span>
-                            <span class="stat-label" style="color: var(--color-text-secondary); font-weight: var(--font-weight-medium); text-transform: uppercase; letter-spacing: 0.5px; font-size: var(--font-size-sm);">Categories</span>
+                        <div class="stat" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-align: center;">
+                            <span id="categories-count" style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); color: var(--neon-purple); display: block; margin-bottom: var(--space-2);">0</span>
+                            <span style="color: var(--color-text-secondary); font-weight: var(--font-weight-medium); text-transform: uppercase; letter-spacing: 0.5px; font-size: var(--font-size-sm);">Categories</span>
                         </div>
-                        <div class="stat" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-align: center; cursor: pointer;">
-                            <span class="stat-number" id="last-updated" style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); color: var(--neon-green); display: block; margin-bottom: var(--space-2);">📅</span>
-                            <span class="stat-label" style="color: var(--color-text-secondary); font-weight: var(--font-weight-medium); text-transform: uppercase; letter-spacing: 0.5px; font-size: var(--font-size-sm);">Updated Daily</span>
+                        <div class="stat" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-align: center;">
+                            <span style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); color: var(--neon-green); display: block; margin-bottom: var(--space-2);">📅</span>
+                            <span style="color: var(--color-text-secondary); font-weight: var(--font-weight-medium); text-transform: uppercase; letter-spacing: 0.5px; font-size: var(--font-size-sm);">Updated Daily</span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Search and Filter Section -->
-            <section class="filter-section">
-                <div style="position: relative; z-index: 2;">
-                    <h2 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-6); color: var(--color-text-primary); display: flex; align-items: center; gap: var(--space-3);">
-                        <span style="font-size: var(--font-size-2xl);">🔍</span>
-                        <span>Search & Filter Articles</span>
-                        <div style="flex: 1; height: 1px; background: var(--gradient-primary); margin-left: var(--space-4);"></div>
-                    </h2>
-
-                <!-- Search Bar -->
-                <div class="search-container" style="margin-bottom: var(--space-6); position: relative;">
-                    <div style="position: relative;">
-                        <input
-                            type="text"
-                            id="article-search"
-                            placeholder="Search articles by title, content, or keywords..."
-                            style="width: 100%; padding: var(--space-4) var(--space-4) var(--space-4) var(--space-12); border-radius: 16px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: var(--color-text-primary); font-size: var(--font-size-base); transition: all 0.3s ease; backdrop-filter: blur(10px);"
-                            onfocus="this.style.borderColor='var(--neon-blue)'; this.style.boxShadow='0 0 20px rgba(34, 211, 238, 0.3)'"
-                            onblur="this.style.borderColor='var(--glass-border)'; this.style.boxShadow='none'"
-                        >
-                        <div style="position: absolute; left: var(--space-4); top: 50%; transform: translateY(-50%); color: var(--color-text-tertiary); font-size: var(--font-size-lg); pointer-events: none;">
-                            🔍
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category Filters -->
-                <div class="category-filters" style="margin-bottom: var(--space-6);">
-                    <h3 style="font-size: var(--font-size-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-4); color: var(--color-text-primary); display: flex; align-items: center; gap: var(--space-2);">
-                        <span>🏷️</span>
-                        <span>Filter by Category:</span>
-                    </h3>
-                    <div class="filter-buttons" style="display: flex; flex-wrap: wrap; gap: var(--space-3);">
-                        <button class="category-filter active enhanced-btn" data-category="all" style="padding: var(--space-3) var(--space-5); border-radius: 25px; border: 1px solid var(--glass-border); background: var(--gradient-primary); color: white; font-size: var(--font-size-sm); cursor: pointer; transition: all 0.3s ease; font-weight: var(--font-weight-semibold); text-transform: uppercase; letter-spacing: 0.5px;">📑 All Articles</button>
-                        <button class="category-filter enhanced-btn" data-category="news" style="padding: var(--space-3) var(--space-5); border-radius: 25px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--color-text-secondary); font-size: var(--font-size-sm); cursor: pointer; transition: all 0.3s ease; font-weight: var(--font-weight-medium);">📰 AI News</button>
-                        <button class="category-filter enhanced-btn" data-category="tools" style="padding: var(--space-3) var(--space-5); border-radius: 25px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--color-text-secondary); font-size: var(--font-size-sm); cursor: pointer; transition: all 0.3s ease; font-weight: var(--font-weight-medium);">🛠️ Tool Reviews</button>
-                        <button class="category-filter enhanced-btn" data-category="tutorials" style="padding: var(--space-3) var(--space-5); border-radius: 25px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--color-text-secondary); font-size: var(--font-size-sm); cursor: pointer; transition: all 0.3s ease; font-weight: var(--font-weight-medium);">📚 Tutorials</button>
-                        <button class="category-filter enhanced-btn" data-category="research" style="padding: var(--space-3) var(--space-5); border-radius: 25px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--color-text-secondary); font-size: var(--font-size-sm); cursor: pointer; transition: all 0.3s ease; font-weight: var(--font-weight-medium);">🔬 Research</button>
-                        <button class="category-filter enhanced-btn" data-category="business" style="padding: var(--space-3) var(--space-5); border-radius: 25px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--color-text-secondary); font-size: var(--font-size-sm); cursor: pointer; transition: all 0.3s ease; font-weight: var(--font-weight-medium);">💼 Business</button>
-                        <button class="category-filter enhanced-btn" data-category="insights" style="padding: var(--space-3) var(--space-5); border-radius: 25px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--color-text-secondary); font-size: var(--font-size-sm); cursor: pointer; transition: all 0.3s ease; font-weight: var(--font-weight-medium);">💡 Insights</button>
-                    </div>
-                </div>
-
-                <!-- Sort Options -->
-                <div class="sort-options" style="display: flex; align-items: center; gap: var(--space-4); flex-wrap: wrap; background: rgba(255,255,255,0.02); padding: var(--space-4); border-radius: 12px; border: 1px solid var(--glass-border);">
-                    <div style="display: flex; align-items: center; gap: var(--space-2);">
-                        <span style="font-size: var(--font-size-lg);">🔄</span>
-                        <label for="sort-select" style="color: var(--color-text-primary); font-weight: var(--font-weight-medium);">Sort by:</label>
-                    </div>
-                    <select id="sort-select" style="padding: var(--space-3) var(--space-4); border-radius: 12px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: var(--color-text-primary); font-size: var(--font-size-sm); cursor: pointer; transition: all 0.3s ease; backdrop-filter: blur(10px);" onfocus="this.style.borderColor='var(--neon-blue)'" onblur="this.style.borderColor='var(--glass-border)'">
-                        <option value="newest">📅 Newest First</option>
-                        <option value="oldest">⏰ Oldest First</option>
-                        <option value="alphabetical">🔤 Alphabetical</option>
-                        <option value="category">📂 By Category</option>
-                        <option value="popular">🔥 Most Popular</option>
-                    </select>
-
-                    <button id="expand-all-btn" onclick="expandAllCategories()" class="enhanced-btn" style="padding: var(--space-3) var(--space-5); background: var(--gradient-secondary); color: white; border: none; border-radius: 25px; font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(16, 185, 129, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=''">
-                        📂 Expand All Categories
-                    </button>
-
-                    <div id="loading-indicator" class="loading-indicator" style="display: none; align-items: center; gap: var(--space-2); color: var(--color-text-secondary); font-size: var(--font-size-sm);">
-                        <div style="width: 16px; height: 16px; border: 2px solid var(--glass-border); border-top: 2px solid var(--neon-blue); border-radius: 50%; animation: spin 1s linear infinite;"></div>
-                        <span>Loading articles...</span>
-                    </div>
-
-                    <div class="results-info" style="margin-left: auto; color: var(--color-text-tertiary); font-size: var(--font-size-sm); background: var(--glass-bg); padding: var(--space-2) var(--space-4); border-radius: 20px; border: 1px solid var(--glass-border);">
-                        <span style="font-weight: var(--font-weight-semibold);">Showing <span id="visible-articles" style="color: var(--neon-blue);">0</span> of <span id="total-article-count" style="color: var(--neon-green);">0</span> articles</span>
-                    </div>
-                </div>
-                </div>
-            </section>
-            </section>
-
-            <!-- Articles by Category -->
-            <section class="articles-by-category" id="articles-container">
-                <!-- Content will be populated dynamically by JavaScript -->
-            </section>
-
-            <!-- Empty State for Search Results -->
-            <div class="empty-search-state" id="empty-search-state" style="display: none; text-align: center; padding: var(--space-16) var(--space-8);">
-                <div style="font-size: var(--font-size-4xl); margin-bottom: var(--space-6);">🔍</div>
-                <h3 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-4); color: var(--color-text-primary);">No articles found</h3>
-                <p style="color: var(--color-text-secondary); margin-bottom: var(--space-8); max-width: 500px; margin-left: auto; margin-right: auto;">
-                    We couldn't find any articles matching your search criteria. Try adjusting your filters or search terms.
-                </p>
-                <button onclick="clearAllFilters()" style="padding: var(--space-3) var(--space-6); background: var(--gradient-primary); color: white; border: none; border-radius: 12px; font-weight: var(--font-weight-semibold); cursor: pointer;">
-                    Clear All Filters
-                </button>
+            <!-- Loading Indicator -->
+            <div id="loading-indicator" style="display: flex; align-items: center; justify-content: center; gap: var(--space-3); color: var(--color-text-secondary); font-size: var(--font-size-lg); margin: var(--space-8) 0;">
+                <div style="width: 20px; height: 20px; border: 2px solid var(--glass-border); border-top: 2px solid var(--neon-blue); border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                <span>Loading articles...</span>
             </div>
 
-            <!-- Newsletter CTA -->
-            <section class="newsletter-cta" id="newsletter" style="background: var(--gradient-surface); border-radius: 20px; padding: var(--space-12); text-align: center; margin: var(--space-16) 0;">
-                <h2 style="font-size: var(--font-size-2xl); background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: var(--space-4);">
-                    <span aria-hidden="true">📬</span>
-                    Never Miss an AI Breakthrough
-                </h2>
-                <p style="color: var(--color-text-secondary); font-size: var(--font-size-lg); max-width: 600px; margin: 0 auto var(--space-8);">
-                    Join 10,000+ AI enthusiasts getting weekly insights, tool reviews, and breaking news delivered to their inbox.
-                </p>
-                <a href="/#newsletter" style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-4) var(--space-8); background: var(--gradient-primary); color: white; text-decoration: none; border-radius: 12px; font-weight: var(--font-weight-semibold);">
-                    <span>Subscribe for Free</span>
-                    <span>→</span>
-                </a>
+            <!-- Articles Container -->
+            <section id="articles-container">
+                <!-- Articles will be populated by JavaScript -->
             </section>
 
         </div>
@@ -562,286 +225,154 @@
         </div>
     </footer>
 
+    <!-- Supabase -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
     <!-- JavaScript -->
     <script src="assets/js/tools-database.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Articles data - comprehensive sample set
-            const articles = [
-                // AI News
-                {
-                    id: 1,
-                    title: "OpenAI Announces GPT-5: Revolutionary Breakthrough in AI Reasoning",
-                    category: "news",
-                    date: "2025-01-16",
-                    excerpt: "The latest advancement in AI technology promises to revolutionize how we interact with artificial intelligence, featuring unprecedented reasoning capabilities and multimodal understanding.",
-                    tags: ["OpenAI", "GPT-5", "AI Research"],
-                    author: "AI Buffet Team",
-                    views: "12.4k",
-                    readTime: "5 min",
-                    url: "posts/openai-gpt5-revolutionary-breakthrough.html"
-                },
-                {
-                    id: 2,
-                    title: "Claude 4 vs GPT-5: The Ultimate AI Showdown",
-                    category: "news",
-                    date: "2025-01-15",
-                    excerpt: "Anthropic's Claude 4 goes head-to-head with OpenAI's latest model. We break down performance, safety, and capabilities in this comprehensive comparison.",
-                    tags: ["Claude", "GPT-5", "AI Comparison"],
-                    author: "Sarah Chen",
-                    views: "8.7k",
-                    readTime: "8 min",
-                    url: "posts/claude-4-vs-gpt5-ultimate-showdown.html"
-                },
-                {
-                    id: 3,
-                    title: "Google's Gemini Ultra 2.0: New AI Features That Matter",
-                    category: "news",
-                    date: "2025-01-14",
-                    excerpt: "Google unveils major updates to Gemini with enhanced multimodal capabilities, better coding assistance, and revolutionary real-time collaboration features.",
-                    tags: ["Google", "Gemini", "Multimodal AI"],
-                    author: "Marcus Rodriguez",
-                    views: "6.2k",
-                    readTime: "6 min",
-                    url: "posts/google-gemini-ultra-2-new-features.html"
-                },
-                // Tool Reviews
-                {
-                    id: 4,
-                    title: "ChatGPT Plus vs Pro: Which Subscription is Worth It?",
-                    category: "tools",
-                    date: "2025-01-13",
-                    excerpt: "Deep dive into OpenAI's subscription tiers. We test speed, accuracy, and advanced features to help you choose the right plan for your needs.",
-                    tags: ["ChatGPT", "Subscription", "Review"],
-                    author: "Tech Review Team",
-                    views: "15.3k",
-                    readTime: "10 min",
-                    url: "posts/chatgpt-plus-vs-pro-subscription-guide.html"
-                },
-                {
-                    id: 5,
-                    title: "Midjourney V7: The Future of AI Art Generation",
-                    category: "tools",
-                    date: "2025-01-12",
-                    excerpt: "Midjourney's latest version delivers stunning photorealism and creative control. Here's everything you need to know about the new features and pricing.",
-                    tags: ["Midjourney", "AI Art", "Design"],
-                    author: "Creative AI Lab",
-                    views: "9.8k",
-                    readTime: "7 min",
-                    url: "posts/midjourney-v7-future-ai-art-generation.html"
-                },
-                {
-                    id: 6,
-                    title: "Cursor vs GitHub Copilot: Best AI Coding Assistant 2025",
-                    category: "tools",
-                    date: "2025-01-11",
-                    excerpt: "We tested both AI coding assistants across multiple programming languages. See which one delivers better code suggestions, debugging help, and productivity gains.",
-                    tags: ["Cursor", "GitHub Copilot", "Coding"],
-                    author: "Dev Tools Team",
-                    views: "11.7k",
-                    readTime: "12 min",
-                    url: "posts/cursor-vs-github-copilot-best-coding-assistant.html"
-                },
-                // Tutorials
-                {
-                    id: 7,
-                    title: "How to Build Custom GPTs: Complete Beginner's Guide",
-                    category: "tutorials",
-                    date: "2025-01-10",
-                    excerpt: "Step-by-step tutorial on creating custom GPTs without coding. Learn prompt engineering, fine-tuning, and deployment strategies that actually work.",
-                    tags: ["GPT Builder", "Tutorial", "No-Code"],
-                    author: "AI Education Team",
-                    views: "7.9k",
-                    readTime: "15 min",
-                    url: "posts/build-custom-gpts-beginner-guide.html"
-                },
-                {
-                    id: 8,
-                    title: "Prompt Engineering Mastery: Advanced Techniques",
-                    category: "tutorials",
-                    date: "2025-01-09",
-                    excerpt: "Master advanced prompting techniques including chain-of-thought, few-shot learning, and prompt chaining. Includes 50+ proven templates.",
-                    tags: ["Prompt Engineering", "Advanced", "Templates"],
-                    author: "Prompt Masters",
-                    views: "13.2k",
-                    readTime: "18 min",
-                    url: "posts/prompt-engineering-mastery-advanced-techniques.html"
-                },
-                // Research
-                {
-                    id: 9,
-                    title: "The State of AI Safety in 2025: Progress and Challenges",
-                    category: "research",
-                    date: "2025-01-08",
-                    excerpt: "Comprehensive analysis of AI safety research, alignment progress, and remaining challenges. Features insights from leading researchers and labs.",
-                    tags: ["AI Safety", "Research", "Alignment"],
-                    author: "AI Safety Institute",
-                    views: "5.4k",
-                    readTime: "20 min",
-                    url: "posts/ai-safety-2025-progress-challenges.html"
-                },
-                {
-                    id: 10,
-                    title: "Emergence in Large Language Models: New Discoveries",
-                    category: "research",
-                    date: "2025-01-07",
-                    excerpt: "Latest research on emergent capabilities in LLMs. How scale, training, and architecture choices lead to unexpected abilities and implications.",
-                    tags: ["LLM Research", "Emergence", "Scale"],
-                    author: "Research Labs Consortium",
-                    views: "4.1k",
-                    readTime: "16 min",
-                    url: "posts/llm-emergence-new-discoveries.html"
-                },
-                // Business
-                {
-                    id: 11,
-                    title: "AI ROI Calculator: Measure Your Business Impact",
-                    category: "business",
-                    date: "2025-01-06",
-                    excerpt: "Practical framework for calculating AI implementation ROI. Includes metrics, benchmarks, and case studies from successful AI adoption.",
-                    tags: ["ROI", "Business", "Implementation"],
-                    author: "Business AI Consultants",
-                    views: "8.6k",
-                    readTime: "11 min",
-                    url: "posts/ai-roi-calculator-business-impact.html"
-                },
-                {
-                    id: 12,
-                    title: "Enterprise AI Strategy: Lessons from Fortune 500",
-                    category: "business",
-                    date: "2025-01-05",
-                    excerpt: "How top companies successfully integrate AI across operations. Strategic insights, common pitfalls, and actionable frameworks for enterprise adoption.",
-                    tags: ["Enterprise", "Strategy", "Fortune 500"],
-                    author: "Enterprise AI Team",
-                    views: "6.8k",
-                    readTime: "14 min",
-                    url: "posts/enterprise-ai-strategy-fortune-500-lessons.html"
-                },
-                // Insights
-                {
-                    id: 13,
-                    title: "AI Market Predictions 2025: What's Coming Next",
-                    category: "insights",
-                    date: "2025-01-04",
-                    excerpt: "Expert predictions on AI market trends, emerging technologies, and investment opportunities. Based on analysis of 200+ AI companies and research labs.",
-                    tags: ["Predictions", "Market Analysis", "Trends"],
-                    author: "AI Market Intelligence",
-                    views: "10.5k",
-                    readTime: "13 min",
-                    url: "posts/ai-market-predictions-2025.html"
-                },
-                {
-                    id: 14,
-                    title: "The Economics of AI: Cost, Value, and Future Pricing",
-                    category: "insights",
-                    date: "2025-01-03",
-                    excerpt: "Deep analysis of AI economics including compute costs, pricing strategies, and market dynamics. How economics will shape AI accessibility and innovation.",
-                    tags: ["Economics", "Pricing", "Market Dynamics"],
-                    author: "AI Economics Lab",
-                    views: "7.3k",
-                    readTime: "17 min",
-                    url: "posts/economics-of-ai-cost-value-pricing.html"
-                }
-            ];
+            // Supabase Configuration
+            const SUPABASE_URL = 'https://npetaroffoyjohjiwssf.supabase.co';
+            const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wZXRhcm9mZm95am9oaml3c3NmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcwMDk5OTgsImV4cCI6MjA3MjU4NTk5OH0.oYJ4ETV_zIDx_7KWJlEtcrIrRqy72HYEFzAs37pPzB8';
 
-            // Generate additional articles to simulate 700+ database
-            function generateAdditionalArticles() {
-                const additionalArticles = [];
-                const baseTitles = [
-                    "Advanced AI Prompt Engineering Techniques",
-                    "Machine Learning Model Optimization Guide",
-                    "Neural Network Architecture Innovations",
-                    "AI Ethics and Responsible Development",
-                    "Computer Vision Breakthroughs",
-                    "Natural Language Processing Advances",
-                    "Robotics and AI Integration",
-                    "AI in Healthcare Applications",
-                    "Financial AI and Algorithmic Trading",
-                    "AI-Powered Automation Solutions",
-                    "Deep Learning Framework Comparison",
-                    "AI Security and Privacy Concerns",
-                    "Quantum AI Computing Future",
-                    "AI Art and Creative Applications",
-                    "Business Intelligence with AI",
-                    "AI Developer Tools Review",
-                    "Machine Learning Data Pipeline",
-                    "AI Model Training Best Practices",
-                    "Conversational AI Development",
-                    "AI Infrastructure and Scaling"
-                ];
+            const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-                const categories = ['news', 'tools', 'tutorials', 'research', 'business', 'insights'];
-                const authors = ['AI Research Team', 'Tech Innovators', 'ML Experts', 'AI Pioneers', 'Data Scientists', 'AI Consultants'];
-
-                for (let i = 0; i < 700; i++) {
-                    const category = categories[i % categories.length];
-                    const baseTitle = baseTitles[i % baseTitles.length];
-                    const variation = Math.floor(i / baseTitles.length) + 1;
-
-                    // Generate proper URL slug from title
-                    const articleTitle = `${baseTitle} ${variation > 1 ? `(Part ${variation})` : ''}`;
-                    const urlSlug = articleTitle
-                        .toLowerCase()
-                        .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
-                        .replace(/\s+/g, '-') // Replace spaces with hyphens
-                        .replace(/-+/g, '-') // Replace multiple hyphens with single
-                        .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
-
-                    additionalArticles.push({
-                        id: 15 + i,
-                        title: articleTitle,
-                        category: category,
-                        date: new Date(2025, 0, 16 - (i % 30)).toISOString().split('T')[0],
-                        excerpt: `Comprehensive analysis and insights into ${baseTitle.toLowerCase()}. This article covers advanced concepts, practical applications, and real-world implementations with detailed examples and case studies.`,
-                        tags: [`AI-${i}`, `Tech-${category}`, `2025-${Math.floor(i/10)}`],
-                        author: authors[i % authors.length],
-                        views: `${(Math.random() * 50 + 1).toFixed(1)}k`,
-                        readTime: `${Math.floor(Math.random() * 15) + 5} min`,
-                        url: `posts/${urlSlug}.html`
-                    });
-                }
-                return additionalArticles;
-            }
-
-            // Track which categories are expanded and pagination
-            const expandedCategories = new Set();
-            const INITIAL_ARTICLES_PER_CATEGORY = 6; // Show more initially for better UX
-            const LOAD_MORE_INCREMENT = 12; // Load 12 more articles when "Load More" is clicked
-            const categoryLoadStates = {}; // Track how many articles are loaded per category
-
-            // Combine original articles with generated ones
-            const allArticles = [...articles, ...generateAdditionalArticles()];
-            let filteredArticles = [...allArticles];
-
-            // DOM elements
-            const searchInput = document.getElementById('article-search');
-            const categoryFilters = document.querySelectorAll('.category-filter');
-            const sortSelect = document.getElementById('sort-select');
+            let allArticles = [];
+            const loadingIndicator = document.getElementById('loading-indicator');
             const articlesContainer = document.getElementById('articles-container');
-            const visibleCount = document.getElementById('visible-articles');
-            const totalCount = document.getElementById('total-article-count');
-            const emptyState = document.getElementById('empty-search-state');
 
-            // Update statistics
-            function updateStats() {
-                document.getElementById('total-articles').textContent = allArticles.length;
-                document.getElementById('categories-count').textContent = [...new Set(allArticles.map(a => a.category))].length;
-                totalCount.textContent = allArticles.length;
-                visibleCount.textContent = filteredArticles.length;
+            console.log('🚀 Starting All Articles page...');
+
+            // Fetch articles from Supabase
+            async function fetchArticles() {
+                try {
+                    console.log('📡 Fetching articles from Supabase...');
+
+                    const { data, error } = await supabase
+                        .from('articles')
+                        .select(`
+                            id,
+                            title,
+                            slug,
+                            description,
+                            content_snippet,
+                            link,
+                            source,
+                            author,
+                            pub_date,
+                            featured,
+                            is_top_story,
+                            trending_score,
+                            breaking_news,
+                            word_count
+                        `)
+                        .order('pub_date', { ascending: false })
+                        .limit(100);
+
+                    if (error) {
+                        console.error('❌ Error fetching articles:', error);
+                        throw error;
+                    }
+
+                    console.log(`✅ Fetched ${data.length} articles`);
+                    return data || [];
+
+                } catch (error) {
+                    console.error('❌ Critical error:', error);
+                    return [];
+                }
             }
 
-            // Initialize page
-            function init() {
-                updateStats();
-                renderArticles();
-                setupEventListeners();
+            // Render article card
+            function renderArticleCard(article) {
+                const title = article.title || 'Untitled Article';
+                const excerpt = article.description || article.content_snippet || 'No description available';
+                const author = article.author || 'AI Buffet Team';
+                const source = article.source || 'Unknown';
+                const date = article.pub_date ? new Date(article.pub_date).toLocaleDateString() : 'Unknown date';
+                const readTime = Math.max(1, Math.ceil((article.word_count || 300) / 200));
+                const link = article.link || '#';
+
+                // Determine category based on title/content
+                let category = 'news';
+                const text = (title + ' ' + excerpt).toLowerCase();
+                if (text.includes('tutorial') || text.includes('guide') || text.includes('how to')) {
+                    category = 'tutorials';
+                } else if (text.includes('tool') || text.includes('review') || text.includes('vs ')) {
+                    category = 'tools';
+                } else if (text.includes('research') || text.includes('study') || text.includes('analysis')) {
+                    category = 'research';
+                } else if (text.includes('business') || text.includes('enterprise') || text.includes('roi')) {
+                    category = 'business';
+                } else if (text.includes('insight') || text.includes('prediction') || text.includes('future')) {
+                    category = 'insights';
+                }
+
+                return `
+                    <article class="article-card" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); transition: all 0.3s ease; cursor: pointer; margin-bottom: var(--space-6);" onclick="window.open('${link}', '_blank')" onmouseenter="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(34, 211, 238, 0.2)'; this.style.borderColor='var(--neon-blue)'" onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow=''; this.style.borderColor='var(--glass-border)'">
+                        <div class="article-header" style="margin-bottom: var(--space-4);">
+                            <div class="article-meta" style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-3); font-size: var(--font-size-sm); color: var(--color-text-tertiary);">
+                                <span class="category-badge" style="background: var(--gradient-primary); color: white; padding: var(--space-1) var(--space-2); border-radius: 6px; text-transform: capitalize;">${category}</span>
+                                <span>${date}</span>
+                                <span>${readTime}m read</span>
+                            </div>
+                            <h3 class="article-title" style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary); line-height: var(--line-height-tight);">
+                                ${title}
+                            </h3>
+                            <p class="article-excerpt" style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: var(--line-height-relaxed);">
+                                ${excerpt.length > 150 ? excerpt.substring(0, 150) + '...' : excerpt}
+                            </p>
+                        </div>
+                        <div class="article-footer" style="display: flex; justify-content: space-between; align-items: center; font-size: var(--font-size-sm); color: var(--color-text-tertiary);">
+                            <span class="article-author">${author}</span>
+                            <span class="article-source">${source}</span>
+                        </div>
+                    </article>
+                `;
             }
 
-            // Render articles by category
+            // Render all articles
             function renderArticles() {
-                // Clear existing content
-                const categoryMappings = {
+                console.log(`🎨 Rendering ${allArticles.length} articles...`);
+
+                if (allArticles.length === 0) {
+                    articlesContainer.innerHTML = `
+                        <div style="text-align: center; padding: var(--space-16); color: var(--color-text-secondary);">
+                            <div style="font-size: 4rem; margin-bottom: var(--space-4);">📰</div>
+                            <h3 style="font-size: var(--font-size-xl); margin-bottom: var(--space-2);">No articles found</h3>
+                            <p>Check back soon for fresh AI content!</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                // Group articles by category
+                const articlesByCategory = {};
+                allArticles.forEach(article => {
+                    const text = (article.title + ' ' + (article.description || article.content_snippet || '')).toLowerCase();
+                    let category = 'news';
+
+                    if (text.includes('tutorial') || text.includes('guide') || text.includes('how to')) {
+                        category = 'tutorials';
+                    } else if (text.includes('tool') || text.includes('review') || text.includes('vs ')) {
+                        category = 'tools';
+                    } else if (text.includes('research') || text.includes('study') || text.includes('analysis')) {
+                        category = 'research';
+                    } else if (text.includes('business') || text.includes('enterprise') || text.includes('roi')) {
+                        category = 'business';
+                    } else if (text.includes('insight') || text.includes('prediction') || text.includes('future')) {
+                        category = 'insights';
+                    }
+
+                    if (!articlesByCategory[category]) {
+                        articlesByCategory[category] = [];
+                    }
+                    articlesByCategory[category].push(article);
+                });
+
+                const categoryNames = {
                     'news': 'AI News & Updates',
                     'tools': 'AI Tool Reviews',
                     'tutorials': 'Tutorials & Guides',
@@ -859,501 +390,109 @@
                     'insights': '💡'
                 };
 
-                const categoryColors = {
-                    'news': '--neon-blue',
-                    'tools': '--neon-purple',
-                    'tutorials': '--neon-green',
-                    'research': '--neon-orange',
-                    'business': '--neon-pink',
-                    'insights': '--neon-cyan'
+                const categoryPages = {
+                    'news': 'categories/news.html',
+                    'tools': 'categories/tools.html',
+                    'tutorials': 'categories/tutorials.html',
+                    'research': 'categories/research.html',
+                    'business': 'categories/business.html',
+                    'insights': 'categories/insights.html'
                 };
 
-                // Group articles by category
-                const articlesByCategory = {};
-                filteredArticles.forEach(article => {
-                    if (!articlesByCategory[article.category]) {
-                        articlesByCategory[article.category] = [];
-                    }
-                    articlesByCategory[article.category].push(article);
-                });
+                const ARTICLES_PER_CATEGORY = 6;
 
-                // Build HTML
                 let html = '';
-                Object.keys(articlesByCategory).forEach(categoryKey => {
-                    const categoryArticles = articlesByCategory[categoryKey];
-                    const categoryName = categoryMappings[categoryKey] || categoryKey;
-                    const categoryIcon = categoryIcons[categoryKey] || '📄';
-                    const categoryColor = categoryColors[categoryKey] || '--neon-blue';
+                Object.keys(articlesByCategory).forEach(category => {
+                    const allCategoryArticles = articlesByCategory[category];
+                    const displayArticles = allCategoryArticles.slice(0, ARTICLES_PER_CATEGORY);
+                    const remainingCount = allCategoryArticles.length - ARTICLES_PER_CATEGORY;
+                    const hasMore = allCategoryArticles.length > ARTICLES_PER_CATEGORY;
 
-                    // Initialize load state for category if not exists
-                    if (!categoryLoadStates[categoryKey]) {
-                        categoryLoadStates[categoryKey] = INITIAL_ARTICLES_PER_CATEGORY;
-                    }
-
-                    const isExpanded = expandedCategories.has(categoryKey);
-                    const loadedCount = isExpanded ? categoryArticles.length : Math.min(categoryLoadStates[categoryKey], categoryArticles.length);
-                    const articlesToShow = categoryArticles.slice(0, loadedCount);
-                    const hasMoreArticles = categoryArticles.length > loadedCount;
-                    const remainingCount = categoryArticles.length - loadedCount;
+                    const categoryName = categoryNames[category] || category;
+                    const categoryIcon = categoryIcons[category] || '📄';
+                    const categoryPage = categoryPages[category] || `categories/${category}.html`;
 
                     html += `
-                        <div class="category-section" data-category="${categoryKey}">
-                            <h2 class="category-title" style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-8); color: var(${categoryColor}); display: flex; align-items: center; gap: var(--space-3);">
-                                <span class="category-icon">${categoryIcon}</span>
-                                ${categoryName}
-                                <span class="article-count" style="font-size: var(--font-size-sm); background: var(--glass-bg); padding: var(--space-1) var(--space-3); border-radius: 12px; color: var(--color-text-secondary);">${categoryArticles.length}</span>
-                                ${isExpanded ?
-                                    `<span class="category-status" style="font-size: var(--font-size-xs); color: var(--color-text-tertiary); margin-left: auto;">Showing all ${categoryArticles.length} articles</span>` :
-                                    hasMoreArticles ?
-                                        `<span class="category-status" style="font-size: var(--font-size-xs); color: var(--color-text-tertiary); margin-left: auto;">Showing ${loadedCount} of ${categoryArticles.length}</span>` :
-                                        `<span class="category-status" style="font-size: var(--font-size-xs); color: var(--color-text-tertiary); margin-left: auto;">All ${categoryArticles.length} articles</span>`
-                                }
-                            </h2>
-                            <div class="articles-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--space-6); margin-bottom: ${hasMoreArticles && !isExpanded ? 'var(--space-8)' : 'var(--space-12)'};">
-                                ${articlesToShow.map(article => createArticleCard(article)).join('')}
+                        <div class="category-section" style="margin-bottom: var(--space-12);">
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-8);">
+                                <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); color: var(--color-text-primary); display: flex; align-items: center; gap: var(--space-3); margin: 0;">
+                                    <span>${categoryIcon}</span>
+                                    ${categoryName}
+                                    <span style="font-size: var(--font-size-sm); background: var(--glass-bg); padding: var(--space-1) var(--space-3); border-radius: 12px; color: var(--color-text-secondary);">${allCategoryArticles.length}</span>
+                                </h2>
+                                ${hasMore ? `
+                                    <a href="${categoryPage}" style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-4); background: var(--gradient-primary); color: white; text-decoration: none; border-radius: 20px; font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(34, 211, 238, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=''">
+                                        <span>View All ${allCategoryArticles.length}</span>
+                                        <span>→</span>
+                                    </a>
+                                ` : ''}
                             </div>
-                            ${hasMoreArticles && !isExpanded ? `
-                                <div class="category-actions" style="text-align: center; margin-bottom: var(--space-12);">
-                                    <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
-                                        <button class="load-more-btn" onclick="loadMoreInCategory('${categoryKey}')" style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-6); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--color-text-primary); border-radius: 25px; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.1)'; this.style.borderColor='var(--neon-blue)'; this.style.color='var(--neon-blue)'" onmouseout="this.style.background='var(--glass-bg)'; this.style.borderColor='var(--glass-border)'; this.style.color='var(--color-text-primary)'">
-                                            <span>Load ${Math.min(LOAD_MORE_INCREMENT, remainingCount)} More</span>
-                                            <span>↓</span>
-                                        </button>
-                                        <button class="show-all-btn" onclick="showAllInCategory('${categoryKey}')" style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-6); background: var(--gradient-primary); color: white; border: none; border-radius: 25px; font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(34, 211, 238, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=''">
-                                            <span>📚</span>
-                                            <span>View All ${categoryArticles.length}</span>
-                                        </button>
-                                    </div>
-                                    <p style="color: var(--color-text-tertiary); font-size: var(--font-size-xs); margin-top: var(--space-3); margin-bottom: 0;">
-                                        ${remainingCount} more article${remainingCount !== 1 ? 's' : ''} available in this category
+                            <div class="articles-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--space-6);">
+                                ${displayArticles.map(article => renderArticleCard(article)).join('')}
+                            </div>
+                            ${hasMore ? `
+                                <div style="text-align: center; margin-top: var(--space-8);">
+                                    <p style="color: var(--color-text-tertiary); font-size: var(--font-size-sm); margin-bottom: var(--space-4);">
+                                        Showing ${ARTICLES_PER_CATEGORY} of ${allCategoryArticles.length} articles • ${remainingCount} more available
                                     </p>
-                                </div>
-                            ` : isExpanded ? `
-                                <div class="category-actions" style="text-align: center; margin-bottom: var(--space-12);">
-                                    <button class="show-less-btn" onclick="showLessInCategory('${categoryKey}')" style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-6); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--color-text-primary); border-radius: 25px; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.1)'; this.style.borderColor='var(--neon-blue)'" onmouseout="this.style.background='var(--glass-bg)'; this.style.borderColor='var(--glass-border)'">
-                                        <span>Show Less</span>
-                                        <span>↑</span>
-                                    </button>
+                                    <a href="${categoryPage}" style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-6); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--color-text-primary); text-decoration: none; border-radius: 25px; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.1)'; this.style.borderColor='var(--neon-blue)'; this.style.color='var(--neon-blue)'" onmouseout="this.style.background='var(--glass-bg)'; this.style.borderColor='var(--glass-border)'; this.style.color='var(--color-text-primary)'">
+                                        <span>Explore All ${categoryName}</span>
+                                        <span>📚</span>
+                                    </a>
                                 </div>
                             ` : ''}
                         </div>
                     `;
                 });
 
-                // Show empty state if no articles
-                if (filteredArticles.length === 0) {
-                    html = '';
-                    emptyState.style.display = 'block';
-                } else {
-                    emptyState.style.display = 'none';
-                }
-
                 articlesContainer.innerHTML = html;
-                setupCardHoverEffects();
+
+                // Update stats
+                document.getElementById('total-articles').textContent = allArticles.length;
+                document.getElementById('categories-count').textContent = Object.keys(articlesByCategory).length;
+
+                console.log('✅ Articles rendered successfully');
             }
 
-            // Create article card HTML
-            function createArticleCard(article) {
-                const gradients = [
-                    'linear-gradient(135deg, rgba(34, 211, 238, 0.1), rgba(139, 92, 246, 0.1))',
-                    'linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1))',
-                    'linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(34, 211, 238, 0.1))',
-                    'linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(239, 68, 68, 0.1))'
-                ];
-                const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
+            // Initialize everything
+            async function init() {
+                console.log('🚀 Initializing page...');
 
-                const tagsHtml = article.tags.map(tag =>
-                    `<span class="tag" style="background: rgba(34, 211, 238, 0.1); color: var(--neon-blue); padding: var(--space-1) var(--space-2); border-radius: 4px; font-size: var(--font-size-xs);">${tag}</span>`
-                ).join('');
+                try {
+                    // Fetch articles
+                    const articles = await fetchArticles();
+                    allArticles = articles;
 
-                return `
-                    <article class="article-card" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); transition: all 0.3s ease; position: relative; overflow: hidden; cursor: pointer;" onclick="openArticle(${article.id})">`
-                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: ${randomGradient}; opacity: 0.3; pointer-events: none;"></div>
-                        <div style="position: relative; z-index: 2;">
-                            <div class="article-meta" style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-4); font-size: var(--font-size-sm); color: var(--color-text-tertiary);">
-                                <span class="article-category" style="background: var(--gradient-primary); color: white; padding: var(--space-1) var(--space-2); border-radius: 6px; text-transform: capitalize;">${article.category}</span>
-                                <span class="article-date">${formatDate(article.date)}</span>
-                                <span class="reading-time">${article.readTime} read</span>
-                            </div>
-                            <h3 class="article-title" style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-4); color: var(--color-text-primary); line-height: var(--line-height-tight);">
-                                <a href="#" onclick="openArticle(${article.id}); return false;" style="color: inherit; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--neon-blue)'" onmouseout="this.style.color='var(--color-text-primary)'">${article.title}</a>
-                            </h3>
-                            <p class="article-excerpt" style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: var(--line-height-relaxed);">
-                                ${article.excerpt}
-                            </p>
-                            <div class="article-tags" style="display: flex; gap: var(--space-2); margin-bottom: var(--space-4); flex-wrap: wrap;">
-                                ${tagsHtml}
-                            </div>
-                            <div class="article-footer" style="display: flex; justify-content: space-between; align-items: center; font-size: var(--font-size-sm); color: var(--color-text-tertiary);">
-                                <span class="article-author">${article.author}</span>
-                                <span class="article-views">${article.views} views</span>
-                            </div>
-                        </div>
-                    </article>
-                `;
-            }
+                    console.log(`📊 Loaded ${allArticles.length} articles`);
 
-            // Format date
-            function formatDate(dateString) {
-                const date = new Date(dateString);
-                return date.toLocaleDateString('en-US', {
-                    month: 'short',
-                    day: 'numeric',
-                    year: 'numeric'
-                });
-            }
-
-            // Setup event listeners
-            function setupEventListeners() {
-                // Search functionality
-                searchInput.addEventListener('input', function() {
-                    filterArticles();
-                });
-
-                // Category filters
-                categoryFilters.forEach(filter => {
-                    filter.addEventListener('click', function() {
-                        categoryFilters.forEach(f => f.classList.remove('active'));
-                        this.classList.add('active');
-                        filterArticles();
-                    });
-                });
-
-                // Sort functionality
-                sortSelect.addEventListener('change', function() {
-                    sortArticles(this.value);
-                });
-            }
-
-            // Filter articles
-            function filterArticles() {
-                const searchTerm = searchInput.value.toLowerCase();
-                const activeCategory = document.querySelector('.category-filter.active').dataset.category;
-
-                filteredArticles = allArticles.filter(article => {
-                    const matchesSearch = !searchTerm ||
-                        article.title.toLowerCase().includes(searchTerm) ||
-                        article.excerpt.toLowerCase().includes(searchTerm) ||
-                        article.tags.some(tag => tag.toLowerCase().includes(searchTerm)) ||
-                        article.author.toLowerCase().includes(searchTerm);
-
-                    const matchesCategory = activeCategory === 'all' || article.category === activeCategory;
-
-                    return matchesSearch && matchesCategory;
-                });
-
-                // Reset load states when filtering
-                Object.keys(categoryLoadStates).forEach(key => {
-                    categoryLoadStates[key] = INITIAL_ARTICLES_PER_CATEGORY;
-                });
-
-                visibleCount.textContent = filteredArticles.length;
-                renderArticles();
-            }
-
-            // Sort articles
-            function sortArticles(sortBy) {
-                switch(sortBy) {
-                    case 'newest':
-                        filteredArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
-                        break;
-                    case 'oldest':
-                        filteredArticles.sort((a, b) => new Date(a.date) - new Date(b.date));
-                        break;
-                    case 'alphabetical':
-                        filteredArticles.sort((a, b) => a.title.localeCompare(b.title));
-                        break;
-                    case 'category':
-                        filteredArticles.sort((a, b) => a.category.localeCompare(b.category));
-                        break;
-                    case 'popular':
-                        filteredArticles.sort((a, b) => {
-                            const aViews = parseFloat(a.views.replace('k', '')) * (a.views.includes('k') ? 1000 : 1);
-                            const bViews = parseFloat(b.views.replace('k', '')) * (b.views.includes('k') ? 1000 : 1);
-                            return bViews - aViews;
-                        });
-                        break;
-                }
-                renderArticles();
-            }
-
-            // Setup card hover effects
-            function setupCardHoverEffects() {
-                const articleCards = document.querySelectorAll('.article-card');
-                articleCards.forEach(card => {
-                    card.addEventListener('mouseenter', function() {
-                        this.style.transform = 'translateY(-5px)';
-                        this.style.boxShadow = '0 20px 40px rgba(34, 211, 238, 0.2)';
-                        this.style.borderColor = 'var(--neon-blue)';
-                    });
-
-                    card.addEventListener('mouseleave', function() {
-                        this.style.transform = 'translateY(0)';
-                        this.style.boxShadow = '';
-                        this.style.borderColor = 'var(--glass-border)';
-                    });
-                });
-            }
-
-            // Category expansion functions
-            window.loadMoreInCategory = function(categoryKey) {
-                const currentLoad = categoryLoadStates[categoryKey] || INITIAL_ARTICLES_PER_CATEGORY;
-                categoryLoadStates[categoryKey] = currentLoad + LOAD_MORE_INCREMENT;
-                renderArticles();
-
-                // Smooth scroll to the newly revealed content
-                setTimeout(() => {
-                    const categorySection = document.querySelector(`[data-category="${categoryKey}"]`);
-                    const newlyVisibleCard = categorySection.querySelectorAll('.article-card')[currentLoad];
-                    if (newlyVisibleCard) {
-                        newlyVisibleCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                }, 100);
-            };
-
-            window.showAllInCategory = function(categoryKey) {
-                expandedCategories.add(categoryKey);
-                renderArticles();
-                // Smooth scroll to the newly revealed content
-                setTimeout(() => {
-                    const categorySection = document.querySelector(`[data-category="${categoryKey}"]`);
-                    const lastVisibleCard = categorySection.querySelectorAll('.article-card')[INITIAL_ARTICLES_PER_CATEGORY];
-                    if (lastVisibleCard) {
-                        lastVisibleCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                }, 100);
-            };
-
-            window.showLessInCategory = function(categoryKey) {
-                expandedCategories.delete(categoryKey);
-                categoryLoadStates[categoryKey] = INITIAL_ARTICLES_PER_CATEGORY; // Reset to initial load
-                renderArticles();
-                // Scroll back to the top of the category
-                setTimeout(() => {
-                    const categorySection = document.querySelector(`[data-category="${categoryKey}"]`);
-                    if (categorySection) {
-                        categorySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                }, 100);
-            };
-
-            // Expand all categories
-            window.expandAllCategories = function() {
-                const loadingIndicator = document.getElementById('loading-indicator');
-                const expandBtn = document.getElementById('expand-all-btn');
-
-                // Show loading state
-                loadingIndicator.style.display = 'flex';
-                expandBtn.style.opacity = '0.6';
-                expandBtn.style.pointerEvents = 'none';
-
-                // Use setTimeout to allow UI to update before heavy operation
-                setTimeout(() => {
-                    const allCategories = [...new Set(allArticles.map(a => a.category))];
-                    allCategories.forEach(category => {
-                        expandedCategories.add(category);
-                    });
-                    renderArticles();
-
-                    // Update button text
-                    expandBtn.innerHTML = '📁 Collapse All Categories';
-                    expandBtn.onclick = collapseAllCategories;
-                    expandBtn.style.opacity = '1';
-                    expandBtn.style.pointerEvents = 'auto';
+                    // Hide loading indicator
                     loadingIndicator.style.display = 'none';
 
-                    // Show info about articles loaded
-                    const totalArticles = allArticles.length;
-                    console.log(`✅ Loaded ${totalArticles} articles across ${allCategories.length} categories`);
-                }, 50);
-            };
+                    // Render articles
+                    renderArticles();
 
-            // Collapse all categories
-            window.collapseAllCategories = function() {
-                expandedCategories.clear();
-                // Reset all load states
-                Object.keys(categoryLoadStates).forEach(key => {
-                    categoryLoadStates[key] = INITIAL_ARTICLES_PER_CATEGORY;
-                });
-                renderArticles();
-
-                // Update button text
-                const expandBtn = document.getElementById('expand-all-btn');
-                expandBtn.innerHTML = '📂 Expand All Categories';
-                expandBtn.onclick = expandAllCategories;
-
-                // Scroll to top
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            };
-
-            // Clear all filters
-            window.clearAllFilters = function() {
-                searchInput.value = '';
-                categoryFilters.forEach(f => f.classList.remove('active'));
-                categoryFilters[0].classList.add('active');
-                sortSelect.value = 'newest';
-                filteredArticles = [...allArticles];
-                visibleCount.textContent = filteredArticles.length;
-                expandedCategories.clear(); // Reset expansions when clearing filters
-                // Reset all load states
-                Object.keys(categoryLoadStates).forEach(key => {
-                    categoryLoadStates[key] = INITIAL_ARTICLES_PER_CATEGORY;
-                });
-                renderArticles();
-            };
-
-            // Filter button hover effects
-            categoryFilters.forEach(filter => {
-                filter.addEventListener('mouseenter', function() {
-                    if (!this.classList.contains('active')) {
-                        this.style.background = 'rgba(255, 255, 255, 0.1)';
-                        this.style.borderColor = 'var(--neon-blue)';
-                        this.style.color = 'var(--color-text-primary)';
-                    }
-                });
-
-                filter.addEventListener('mouseleave', function() {
-                    if (!this.classList.contains('active')) {
-                        this.style.background = 'var(--glass-bg)';
-                        this.style.borderColor = 'var(--glass-border)';
-                        this.style.color = 'var(--color-text-secondary)';
-                    }
-                });
-            });
-
-            // Open article function
-            window.openArticle = function(articleId) {
-                // Find the article by ID
-                const article = allArticles.find(a => a.id === articleId);
-                if (!article) {
-                    alert('Article not found!');
-                    return;
-                }
-
-                // Create a simple article viewer modal or redirect to a dynamic page
-                // For now, let's create a modal popup with the article content
-                showArticleModal(article);
-            };
-
-            // Show article in a modal
-            function showArticleModal(article) {
-                // If it's a tool article, show tool details
-                const isToolArticle = article.toolData;
-                const tool = article.toolData;
-
-                // Create modal HTML
-                const modalHTML = `
-                    <div id="article-modal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px);" onclick="closeArticleModal()">
-                        <div style="background: var(--color-bg); border: 1px solid var(--glass-border); border-radius: 20px; max-width: 800px; max-height: 90vh; overflow-y: auto; padding: var(--space-8); margin: var(--space-4); position: relative;" onclick="event.stopPropagation()">
-                            <button onclick="closeArticleModal()" style="position: absolute; top: var(--space-4); right: var(--space-4); background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--color-text-primary); font-size: var(--font-size-lg);">×</button>
-
-                            <div style="margin-bottom: var(--space-6);">
-                                <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-4); font-size: var(--font-size-sm); color: var(--color-text-tertiary);">
-                                    <span style="background: var(--gradient-primary); color: white; padding: var(--space-1) var(--space-3); border-radius: 12px; text-transform: capitalize;">${article.category}</span>
-                                    <span>${formatDate(article.date)}</span>
-                                    <span>${article.readTime} read</span>
-                                    <span>${article.views} views</span>
-                                    ${isToolArticle ? `<span style="background: var(--gradient-secondary); color: white; padding: var(--space-1) var(--space-3); border-radius: 12px;">⭐ ${tool.rating}</span>` : ''}
-                                </div>
-
-                                <h1 style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-4); color: var(--color-text-primary); line-height: var(--line-height-tight);">${article.title}</h1>
-
-                                <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-6); color: var(--color-text-secondary);">
-                                    <span>By ${article.author}</span>
-                                    ${isToolArticle ? `<span>• ${tool.company}</span>` : ''}
-                                </div>
-
-                                <div style="margin-bottom: var(--space-6);">
-                                    ${article.tags.map(tag => `<span style="background: rgba(34, 211, 238, 0.1); color: var(--neon-blue); padding: var(--space-1) var(--space-3); border-radius: 12px; font-size: var(--font-size-sm); margin-right: var(--space-2);">${tag}</span>`).join('')}
-                                </div>
-                            </div>
-
-                            <div style="color: var(--color-text-secondary); line-height: var(--line-height-relaxed); font-size: var(--font-size-base);">
-                                <p style="margin-bottom: var(--space-6); font-size: var(--font-size-lg); color: var(--color-text-primary);">${article.excerpt}</p>
-
-                                ${isToolArticle ? `
-                                    <div style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); margin: var(--space-6) 0;">
-                                        <h3 style="color: var(--color-text-primary); margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-2);">
-                                            🛠️ Tool Details
-                                        </h3>
-                                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4);">
-                                            <div>
-                                                <strong style="color: var(--color-text-primary);">Pricing:</strong><br>
-                                                <span>${tool.pricing.type} - ${tool.pricing.cost}</span>
-                                            </div>
-                                            <div>
-                                                <strong style="color: var(--color-text-primary);">Users:</strong><br>
-                                                <span>${tool.users}</span>
-                                            </div>
-                                            <div>
-                                                <strong style="color: var(--color-text-primary);">Rating:</strong><br>
-                                                <span>⭐ ${tool.rating}/5</span>
-                                            </div>
-                                            <div>
-                                                <strong style="color: var(--color-text-primary);">Growth:</strong><br>
-                                                <span style="color: var(--neon-green);">+${tool.growth}%</span>
-                                            </div>
-                                        </div>
-                                        <div style="margin-top: var(--space-4);">
-                                            <strong style="color: var(--color-text-primary);">Key Features:</strong><br>
-                                            <div style="margin-top: var(--space-2);">
-                                                ${tool.features.map(feature => `<span style="background: rgba(16, 185, 129, 0.1); color: var(--neon-green); padding: var(--space-1) var(--space-2); border-radius: 8px; font-size: var(--font-size-xs); margin-right: var(--space-2); margin-bottom: var(--space-2); display: inline-block;">${feature}</span>`).join('')}
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div style="background: var(--gradient-surface); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-align: center; margin: var(--space-8) 0;">
-                                        <h3 style="color: var(--color-text-primary); margin-bottom: var(--space-4);">🚀 Try ${tool.name}</h3>
-                                        <p style="margin-bottom: var(--space-6);">Experience this AI tool yourself and see how it can transform your workflow.</p>
-                                        <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
-                                            <a href="${tool.url}" target="_blank" rel="noopener" style="padding: var(--space-3) var(--space-6); background: var(--gradient-primary); color: white; border: none; border-radius: 25px; font-weight: var(--font-weight-semibold); text-decoration: none; display: inline-flex; align-items: center; gap: var(--space-2);">
-                                                <span>Visit ${tool.name}</span>
-                                                <span>→</span>
-                                            </a>
-                                            <button onclick="closeArticleModal()" style="padding: var(--space-3) var(--space-6); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--color-text-primary); border-radius: 25px; font-weight: var(--font-weight-medium); cursor: pointer;">Back to Articles</button>
-                                        </div>
-                                    </div>
-                                ` : `
-                                    <div style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-align: center; margin: var(--space-8) 0;">
-                                        <h3 style="color: var(--color-text-primary); margin-bottom: var(--space-4);">📰 Full Article Coming Soon</h3>
-                                        <p style="margin-bottom: var(--space-6);">This article is part of our upcoming content library. The full article with detailed analysis, examples, and actionable insights will be available soon.</p>
-                                        <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
-                                            <button onclick="closeArticleModal()" style="padding: var(--space-3) var(--space-6); background: var(--gradient-primary); color: white; border: none; border-radius: 25px; font-weight: var(--font-weight-semibold); cursor: pointer;">Back to Articles</button>
-                                            <a href="/#newsletter" style="padding: var(--space-3) var(--space-6); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--color-text-primary); border-radius: 25px; font-weight: var(--font-weight-medium); text-decoration: none;">Get Notified</a>
-                                        </div>
-                                    </div>
-                                `}
-                            </div>
+                    console.log('✅ Page initialized successfully');
+                } catch (error) {
+                    console.error('❌ Failed to initialize page:', error);
+                    loadingIndicator.innerHTML = `
+                        <div style="text-align: center; color: var(--color-text-secondary);">
+                            <span style="font-size: 2rem; margin-bottom: var(--space-2); display: block;">⚠️</span>
+                            <span>Failed to load articles. Please refresh the page.</span>
                         </div>
-                    </div>
-                `;
-
-                // Add modal to page
-                document.body.insertAdjacentHTML('beforeend', modalHTML);
-
-                // Prevent scrolling
-                document.body.style.overflow = 'hidden';
+                    `;
+                }
             }
 
-            // Close article modal
-            window.closeArticleModal = function() {
-                const modal = document.getElementById('article-modal');
-                if (modal) {
-                    modal.remove();
-                }
-                document.body.style.overflow = 'auto';
-            };
-
-            // Close modal with Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    closeArticleModal();
-                }
-            });
-
-            // Initialize the page
+            // Start the page
             init();
         });
     </script>
+
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </body>
 </html>

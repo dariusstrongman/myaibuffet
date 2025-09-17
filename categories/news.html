@@ -961,13 +961,13 @@
     <script src="../assets/js/main.js" defer></script>
     <script defer>
         // Supabase Configuration
-        // TODO: Replace these with your actual Supabase credentials
+        // TODO: Move to backend service for production security
         const SUPABASE_URL = 'https://npetaroffoyjohjiwssf.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wZXRhcm9mZm95am9oaml3c3NmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcwMDk5OTgsImV4cCI6MjA3MjU4NTk5OH0.oYJ4ETV_zIDx_7KWJlEtcrIrRqy72HYEFzAs37pPzB8';
-        
+
         console.log('Using Supabase URL:', SUPABASE_URL);
         console.log('API Key starts with:', SUPABASE_ANON_KEY.substring(0, 20) + '...');
-        
+
         const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
         
         // Global state
@@ -978,7 +978,61 @@
         let currentTimeRange = 'all';
         let articlesLoaded = 0;
         const articlesPerPage = 12;
-        
+
+        // Mock data function for development/security
+        function getMockArticles() {
+            return [
+                {
+                    id: 1,
+                    title: "OpenAI Releases GPT-4 Turbo with Enhanced Coding Capabilities",
+                    slug: "openai-gpt4-turbo-coding",
+                    description: "The latest iteration of GPT-4 shows significant improvements in code generation, debugging, and understanding complex programming tasks.",
+                    content_snippet: "OpenAI's newest model demonstrates remarkable advances in software development assistance...",
+                    link: "#",
+                    source: "AI Technology News",
+                    author: "Sarah Chen",
+                    pub_date: new Date().toISOString(),
+                    featured: "TRUE",
+                    is_top_story: "TRUE",
+                    trending_score: 95,
+                    breaking_news: "FALSE",
+                    word_count: 1200
+                },
+                {
+                    id: 2,
+                    title: "Claude 3.5 Haiku: Anthropic's Fastest AI Model Yet",
+                    slug: "claude-3-5-haiku-launch",
+                    description: "Anthropic unveils Claude 3.5 Haiku, delivering state-of-the-art performance with remarkable speed and efficiency.",
+                    content_snippet: "The new Haiku model combines speed with intelligence, perfect for real-time applications...",
+                    link: "#",
+                    source: "AI Research Weekly",
+                    author: "Dr. Michael Rodriguez",
+                    pub_date: new Date(Date.now() - 86400000).toISOString(),
+                    featured: "TRUE",
+                    is_top_story: "FALSE",
+                    trending_score: 88,
+                    breaking_news: "FALSE",
+                    word_count: 950
+                },
+                {
+                    id: 3,
+                    title: "Google's Gemini 2.0 Shows Major Improvements in Multimodal Tasks",
+                    slug: "google-gemini-2-multimodal",
+                    description: "Google's latest AI model demonstrates exceptional performance across text, image, and video understanding tasks.",
+                    content_snippet: "Gemini 2.0 represents a significant leap in multimodal AI capabilities...",
+                    link: "#",
+                    source: "TechCrunch AI",
+                    author: "Jessica Park",
+                    pub_date: new Date(Date.now() - 172800000).toISOString(),
+                    featured: "FALSE",
+                    is_top_story: "TRUE",
+                    trending_score: 82,
+                    breaking_news: "TRUE",
+                    word_count: 1050
+                }
+            ];
+        }
+
         // Data fetching functions
         async function fetchNewsArticles(options = {}) {
             try {

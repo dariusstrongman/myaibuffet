@@ -6,7 +6,9 @@
       "Bash(start:*)",
       "Bash(python:*)",
       "Bash(where node)",
-      "Bash(npx http-server:*)"
+      "Bash(npx http-server:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(node:*)"
     ],
     "deny": [],
     "ask": []

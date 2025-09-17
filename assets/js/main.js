@@ -92,10 +92,10 @@ function initializeElements() {
     
     // Newsletter
     Elements.newsletterForm = document.querySelector('.newsletter__form');
-    
+
     // Lazy loading
     Elements.lazyImages = document.querySelectorAll('img[data-src]');
-    
+
     // Interactive elements
     Elements.allButtons = document.querySelectorAll('button, .btn');
     Elements.allLinks = document.querySelectorAll('a');
@@ -784,16 +784,7 @@ function debounce(func, wait) {
     };
 }
 
-function throttle(func, limit) {
-    let inThrottle;
-    return function executedFunction(...args) {
-        if (!inThrottle) {
-            func.apply(this, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
-}
+// Removed unused throttle function - kept debounce which is actively used
 
 function escapeHtml(text) {
     if (typeof text !== 'string') return '';
@@ -1027,7 +1018,7 @@ function enhanceCtaButtons() {
     Elements.ctaButtons.forEach(button => {
         const originalHtml = button.innerHTML;
         
-        button.addEventListener('click', function(event) {
+        button.addEventListener('click', function() {
             // Don't add loading state to external links
             if (this.tagName === 'A' && this.target === '_blank') {
                 return;
@@ -1189,9 +1180,13 @@ window.addEventListener('unhandledrejection', function(event) {
  * Performance Monitoring
  */
 window.addEventListener('load', function() {
-    if ('performance' in window) {
-        const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
-        console.log(`Site loaded in ${loadTime}ms`);
+    if ('performance' in window && performance.getEntriesByType) {
+        // Use Navigation Timing API Level 2 for better browser support
+        const navigation = performance.getEntriesByType('navigation')[0];
+        if (navigation) {
+            const loadTime = navigation.loadEventEnd - navigation.fetchStart;
+            console.log(`Site loaded in ${loadTime.toFixed(0)}ms`);
+        }
     }
 });
 
@@ -1425,13 +1420,11 @@ function initializeQuizInteraction() {
     
     quizOptions.forEach(option => {
         option.addEventListener('click', function() {
-            const isCorrect = this.dataset.correct === 'true';
-            
-            // Disable all options
+            // Disable all options and show correct answers
             quizOptions.forEach(opt => {
                 opt.disabled = true;
                 opt.style.pointerEvents = 'none';
-                
+
                 if (opt.dataset.correct === 'true') {
                     opt.classList.add('correct');
                 } else {
