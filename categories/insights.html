@@ -128,10 +128,8 @@
                         return text.includes('insight') || text.includes('prediction') || text.includes('future') || text.includes('trend');
                     });
 
-                    console.log(`✅ Found ${categoryArticles.length} insight articles`);
                     return categoryArticles;
                 } catch (error) {
-                    console.error('❌ Error:', error);
                     return [];
                 }
             }
@@ -194,7 +192,7 @@
                     loadingIndicator.style.display = 'none';
                     renderArticles();
                 } catch (error) {
-                    console.error('❌ Failed to initialize:', error);
+                    // Failed to initialize
                     loadingIndicator.innerHTML = `
                         <div style="text-align: center; color: var(--color-text-secondary);">
                             <span style="font-size: 2rem; margin-bottom: var(--space-2); display: block;">⚠️</span>

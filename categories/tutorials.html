@@ -176,7 +176,6 @@
             // Fetch and filter articles for this category
             async function fetchCategoryArticles() {
                 try {
-                    console.log(`📡 Fetching ${CATEGORY} articles...`);
 
                     const { data, error } = await supabase
                         .from('articles')
@@ -199,7 +198,6 @@
                         .order('pub_date', { ascending: false });
 
                     if (error) {
-                        console.error('❌ Error fetching articles:', error);
                         throw error;
                     }
 
@@ -209,11 +207,9 @@
                         return text.includes('tutorial') || text.includes('guide') || text.includes('how to') || text.includes('step by step');
                     });
 
-                    console.log(`✅ Found ${categoryArticles.length} ${CATEGORY} articles`);
                     return categoryArticles;
 
                 } catch (error) {
-                    console.error('❌ Critical error:', error);
                     return [];
                 }
             }
@@ -253,7 +249,6 @@
 
             // Render articles
             function renderArticles() {
-                console.log(`🎨 Rendering ${allArticles.length} ${CATEGORY} articles...`);
 
                 if (allArticles.length === 0) {
                     articlesContainer.innerHTML = `
@@ -285,9 +280,8 @@
                     loadingIndicator.style.display = 'none';
                     renderArticles();
 
-                    console.log(`✅ ${CATEGORY} page initialized with ${allArticles.length} articles`);
                 } catch (error) {
-                    console.error(`❌ Failed to initialize ${CATEGORY} page:`, error);
+                    // Failed to initialize page
                     loadingIndicator.innerHTML = `
                         <div style="text-align: center; color: var(--color-text-secondary);">
                             <span style="font-size: 2rem; margin-bottom: var(--space-2); display: block;">⚠️</span>

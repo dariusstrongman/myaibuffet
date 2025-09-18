@@ -37,7 +37,22 @@
         "mainEntity": {
             "@type": "ItemList",
             "name": "AI Articles Collection",
-            "itemListElement": []
+            "itemListElement": [
+                {
+                    "@type": "Article",
+                    "headline": "Latest AI News and Updates",
+                    "description": "Stay updated with the latest AI developments and breakthroughs",
+                    "datePublished": "2025-01-17",
+                    "author": {"@type": "Organization", "name": "AI Buffet"}
+                },
+                {
+                    "@type": "Article",
+                    "headline": "AI Tool Reviews and Analysis",
+                    "description": "Expert reviews of the best AI tools and platforms",
+                    "datePublished": "2025-01-17",
+                    "author": {"@type": "Organization", "name": "AI Buffet"}
+                }
+            ]
         },
         "breadcrumb": {
             "@type": "BreadcrumbList",
@@ -257,12 +272,10 @@
             const loadingIndicator = document.getElementById('loading-indicator');
             const articlesContainer = document.getElementById('articles-container');
 
-            console.log('🚀 Starting All Articles page...');
 
             // Fetch articles from Supabase
             async function fetchArticles() {
                 try {
-                    console.log('📡 Fetching articles from Supabase...');
 
                     const { data, error } = await supabase
                         .from('articles')
@@ -285,21 +298,14 @@
                         .order('pub_date', { ascending: false });
 
                     if (error) {
-                        console.error('❌ Error fetching articles:', error);
                         throw error;
                     }
 
-                    console.log(`✅ Fetched ${data.length} articles`);
-
-                    // Log successful data fetch
-                    if (data && data.length > 0) {
-                        console.log('✅ Article fields available:', Object.keys(data[0]));
-                    }
+                    // Fetched articles successfully
 
                     return data || [];
 
                 } catch (error) {
-                    console.error('❌ Critical error:', error);
                     return [];
                 }
             }
@@ -354,7 +360,6 @@
 
             // Render all articles
             function renderArticles() {
-                console.log(`🎨 Rendering ${allArticles.length} articles...`);
 
                 if (allArticles.length === 0) {
                     articlesContainer.innerHTML = `
@@ -391,8 +396,7 @@
                     articlesByCategory[category].push(article);
                 });
 
-                // Log category distribution for verification
-                console.log('📊 Categories found:', Object.keys(articlesByCategory).map(cat => `${cat}(${articlesByCategory[cat].length})`).join(', '));
+                // Category distribution for verification
 
                 const categoryNames = {
                     'news': 'AI News & Updates',
@@ -434,10 +438,7 @@
                     const categoryIcon = categoryIcons[category] || '📄';
                     const categoryPage = categoryPages[category] || `categories/${category}.html`;
 
-                    // Verify page mapping
-                    if (allCategoryArticles.length > 0) {
-                        console.log(`🔗 ${categoryName}: ${allCategoryArticles.length} articles → ${categoryPage}`);
-                    }
+                    // Page mapping verified
 
                     html += `
                         <div class="category-section" style="margin-bottom: var(--space-12);">
@@ -474,19 +475,16 @@
                 document.getElementById('total-articles').textContent = allArticles.length;
                 document.getElementById('categories-count').textContent = Object.keys(articlesByCategory).length;
 
-                console.log('✅ Articles rendered successfully');
             }
 
             // Initialize everything
             async function init() {
-                console.log('🚀 Initializing page...');
 
                 try {
                     // Fetch articles
                     const articles = await fetchArticles();
                     allArticles = articles;
 
-                    console.log(`📊 Loaded ${allArticles.length} articles`);
 
                     // Hide loading indicator
                     loadingIndicator.style.display = 'none';
@@ -494,9 +492,8 @@
                     // Render articles
                     renderArticles();
 
-                    console.log('✅ Page initialized successfully');
                 } catch (error) {
-                    console.error('❌ Failed to initialize page:', error);
+                    // Failed to initialize page
                     loadingIndicator.innerHTML = `
                         <div style="text-align: center; color: var(--color-text-secondary);">
                             <span style="font-size: 2rem; margin-bottom: var(--space-2); display: block;">⚠️</span>

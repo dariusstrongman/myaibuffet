@@ -63,8 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeBrowserCompatibility();
     loadRealArticles();
     
-    // Log successful initialization
-    console.log('AI Buffet initialized successfully');
 });
 
 /**
@@ -102,9 +100,6 @@ function initializeElements() {
     Elements.ctaButtons = document.querySelectorAll('.btn-cta, .btn-primary');
     Elements.filterButtons = document.querySelectorAll('.filter-btn');
     
-    // Validate critical elements
-    if (!Elements.header) console.warn('Header element not found');
-    if (!Elements.searchInput) console.warn('Search input not found');
 }
 
 /**
@@ -389,7 +384,6 @@ function loadImage(img) {
     
     newImg.onerror = function() {
         img.classList.add('lazy-error');
-        console.warn('Failed to load image:', src);
     };
     
     img.classList.add('lazy-loading');
@@ -662,7 +656,6 @@ async function loadRealArticles() {
         }
         
         const articles = await response.json();
-        console.log('Articles loaded:', articles.length);
         
         AppState.articles = articles;
         
@@ -688,7 +681,6 @@ async function loadRealArticles() {
         updateLatestArticles(articles.slice(0, 8));
         
     } catch (error) {
-        console.error('Error loading articles:', error);
         showNotification('Unable to load articles. Please refresh the page.', 'error');
     }
 }
@@ -828,7 +820,6 @@ function formatDate(dateString) {
             });
         }
     } catch (error) {
-        console.warn('Invalid date format:', dateString);
         return 'Unknown date';
     }
 }
@@ -973,7 +964,6 @@ function initializeInteractiveElements() {
     // Add proper ARIA attributes
     enhanceAccessibility();
     
-    console.log('Interactive elements initialized');
 }
 
 /**
@@ -1118,7 +1108,6 @@ function enhanceAccessibility() {
     // Ensure all interactive elements have proper ARIA attributes
     document.querySelectorAll('button, [role="button"]').forEach(element => {
         if (!element.hasAttribute('aria-label') && !element.textContent.trim()) {
-            console.warn('Interactive element missing accessible label:', element);
         }
     });
 }
@@ -1139,7 +1128,6 @@ function initializeBrowserCompatibility() {
     
     // Intersection Observer polyfill fallback
     if (!window.IntersectionObserver) {
-        console.warn('IntersectionObserver not supported, using fallback');
         loadAllImages();
     }
     
@@ -1162,18 +1150,15 @@ function initializeBrowserCompatibility() {
     if (isChrome) document.documentElement.classList.add('is-chrome');
     if (isFirefox) document.documentElement.classList.add('is-firefox');
     
-    console.log('Browser compatibility features initialized');
 }
 
 /**
  * Error Handling
  */
 window.addEventListener('error', function(event) {
-    console.error('Global error:', event.error);
 });
 
 window.addEventListener('unhandledrejection', function(event) {
-    console.error('Unhandled promise rejection:', event.reason);
 });
 
 /**
@@ -1185,7 +1170,6 @@ window.addEventListener('load', function() {
         const navigation = performance.getEntriesByType('navigation')[0];
         if (navigation) {
             const loadTime = navigation.loadEventEnd - navigation.fetchStart;
-            console.log(`Site loaded in ${loadTime.toFixed(0)}ms`);
         }
     }
 });
@@ -1237,20 +1221,10 @@ function validateInteractiveElements() {
             if (!link.hasAttribute('rel') || !link.rel.includes('noopener')) {
                 // Auto-fix missing rel attributes
                 link.setAttribute('rel', 'noopener');
-                console.log(`✓ Fixed missing rel="noopener" on link: ${link.textContent.trim()}`);
             }
         }
     });
     
-    // Log validation results
-    console.log('🔍 Interactive Elements Validation:', validationResults);
-    
-    if (validationResults.issues.length === 0) {
-        console.log('✅ All interactive elements validated successfully!');
-    } else {
-        console.warn('⚠️ Found', validationResults.issues.length, 'issues with interactive elements');
-        validationResults.issues.forEach(issue => console.warn('  -', issue));
-    }
     
     return validationResults;
 }
@@ -1295,8 +1269,6 @@ function testCriticalFlows() {
     const passedTests = Object.values(tests).filter(Boolean).length;
     const totalTests = Object.keys(tests).length;
     
-    console.log(`🧪 Critical Flow Tests: ${passedTests}/${totalTests} passed`);
-    console.log('Test Results:', tests);
     
     return tests;
 }

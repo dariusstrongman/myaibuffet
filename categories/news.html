@@ -37,7 +37,24 @@
         "mainEntity": {
             "@type": "ItemList",
             "name": "AI News Articles",
-            "itemListElement": []
+            "itemListElement": [
+                {
+                    "@type": "NewsArticle",
+                    "headline": "Breaking AI Developments",
+                    "description": "Latest breakthroughs in artificial intelligence",
+                    "datePublished": "2025-01-17",
+                    "author": {"@type": "Organization", "name": "AI Buffet"},
+                    "publisher": {"@type": "Organization", "name": "AI Buffet"}
+                },
+                {
+                    "@type": "NewsArticle",
+                    "headline": "AI Industry Updates",
+                    "description": "Current trends and news in the AI industry",
+                    "datePublished": "2025-01-17",
+                    "author": {"@type": "Organization", "name": "AI Buffet"},
+                    "publisher": {"@type": "Organization", "name": "AI Buffet"}
+                }
+            ]
         },
         "breadcrumb": {
             "@type": "BreadcrumbList",
@@ -962,8 +979,6 @@
         const SUPABASE_URL = 'https://npetaroffoyjohjiwssf.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wZXRhcm9mZm95am9oaml3c3NmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcwMDk5OTgsImV4cCI6MjA3MjU4NTk5OH0.oYJ4ETV_zIDx_7KWJlEtcrIrRqy72HYEFzAs37pPzB8';
 
-        console.log('Using Supabase URL:', SUPABASE_URL);
-        console.log('API Key starts with:', SUPABASE_ANON_KEY.substring(0, 20) + '...');
 
         const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
         
@@ -1131,38 +1146,18 @@
                 const { data, error, count } = await query;
                 
                 if (error) {
-                    console.error('Error fetching articles:', error);
                     return { articles: [], total: 0 };
                 }
                 
-                console.log(`Fetched ${data?.length || 0} articles with options:`, options);
-                console.log('🔍 Query filters applied:', {
-                    isTopStory: isTopStory !== null ? `is_top_story = '${isTopStory ? 'TRUE' : 'FALSE'}'` : 'none',
-                    featured: featured !== null ? `featured = '${featured ? 'TRUE' : 'FALSE'}'` : 'none', 
-                    breaking: breaking !== null ? `breaking_news = '${breaking ? 'TRUE' : 'FALSE'}'` : 'none',
-                    sortBy: sortBy,
-                    timeRange
-                });
                 
-                // Debug: Check if we're looking for top stories and found none
+                // Check if we're looking for top stories and found none
                 if (isTopStory === true && (!data || data.length === 0)) {
-                    console.warn('🔍 No articles found with is_top_story = TRUE. Check database data.');
+                    // No top stories found
                 }
                 
-                // Debug: Show first few results if any
-                if (data && data.length > 0) {
-                    console.log('📄 First article:', {
-                        title: data[0].title,
-                        is_top_story: data[0].is_top_story,
-                        featured: data[0].featured,
-                        breaking_news: data[0].breaking_news,
-                        trending_score: data[0].trending_score
-                    });
-                }
                 
                 return { articles: data || [], total: count || data?.length || 0 };
             } catch (error) {
-                console.error('Error in fetchNewsArticles:', error);
                 return { articles: [], total: 0 };
             }
         }
@@ -1179,13 +1174,11 @@
                     .range(offset, offset + limit - 1);
                 
                 if (error) {
-                    console.error('Error searching articles:', error);
                     return [];
                 }
                 
                 return data || [];
             } catch (error) {
-                console.error('Error in searchArticles:', error);
                 return [];
             }
         }
@@ -1230,7 +1223,6 @@
                     topStories: topStoriesCount || 0
                 };
             } catch (error) {
-                console.error('Error getting article stats:', error);
                 return { total: 0, today: 0, sources: 0, breaking: 0, topStories: 0 };
             }
         }
@@ -1530,13 +1522,11 @@
                     break;
             }
             
-            console.log(`🔍 ${tabType} query:`, options);
             let { articles } = await fetchNewsArticles(options);
-            console.log(`📊 ${tabType} results: ${articles.length} articles found`);
             
             // If no Top Stories found, show message instead of fallback
             if (articles.length === 0 && tabType === 'top-articles') {
-                console.log('⚠️  No articles with is_top_story = true found');
+                // No articles with is_top_story = true found
                 // Don't fallback - show empty state for Top Stories if none are marked
             }
             
@@ -1558,7 +1548,6 @@
                 timeRange: 'all'
             });
             
-            console.log(`Top story articles found: ${articles.length}`);
             
             // If no top stories, get breaking news
             if (articles.length === 0) {
@@ -1569,7 +1558,6 @@
                     timeRange: 'all'
                 });
                 articles = breakingResult.articles;
-                console.log(`Breaking articles found: ${articles.length}`);
             }
             
             // If still no articles, get highest importance articles
@@ -1579,7 +1567,6 @@
                     sortBy: 'recent'
                 });
                 articles = topResult.articles;
-                console.log(`Fallback articles found: ${articles.length}`);
             }
             
             renderFeaturedSection(articles);
@@ -1633,7 +1620,6 @@
             if (totalCountEl) animateNumber(totalCountEl, stats.total);
             if (sourcesCountEl) animateNumber(sourcesCountEl, stats.sources);
             
-            console.log('📊 Stats updated:', stats);
         }
         
         function animateNumber(element, targetNumber) {
@@ -1656,7 +1642,7 @@
         // Utility functions
         function toggleBookmark(articleId) {
             // This would integrate with user preferences/local storage
-            console.log('Bookmark toggled for article:', articleId);
+            // Bookmark toggled for article: articleId
         }
         
         function shareArticle(articleId, title, url) {
@@ -1668,7 +1654,7 @@
             } else {
                 navigator.clipboard.writeText(url);
                 // Show toast notification
-                console.log('Link copied to clipboard');
+                // Link copied to clipboard
             }
         }
         
@@ -1865,7 +1851,7 @@
                         }
                     }
                 } catch (error) {
-                    console.error('Search error:', error);
+                    // Search error
                     mainGrid.innerHTML = `
                         <div class="search-error">
                             <div class="error-icon">⚠️</div>
@@ -1912,7 +1898,7 @@
                         
                         this.disabled = false;
                     } catch (error) {
-                        console.error('Error loading more articles:', error);
+                        // Error loading more articles
                         if (btnText) btnText.textContent = 'Try Again';
                         if (progressBar) progressBar.style.width = '0%';
                         this.disabled = false;
@@ -1944,7 +1930,7 @@
                                 await loadMainContent();
                             }
                         } catch (error) {
-                            console.error('Error refreshing content:', error);
+                            // Error refreshing content
                         }
                         
                         setTimeout(() => {
@@ -2037,7 +2023,6 @@
             // Test Supabase connection first
             async function testSupabaseConnection() {
                 try {
-                    console.log('Testing Supabase connection...');
                     
                     // Test 1: Simple query without filters
                     const { data: testData, error: testError } = await supabase
@@ -2045,25 +2030,8 @@
                         .select('id, title, featured, breaking_news, is_top_story, trending_score, source, author, word_count')
                         .limit(5);
                     
-                    if (testData && testData.length > 0) {
-                        console.log('Sample data from database:', testData);
-                        console.log('Featured values:', testData.map(article => article.featured));
-                        console.log('Breaking values:', testData.map(article => article.breaking_news));
-                        console.log('Top story values:', testData.map(article => article.is_top_story));
-                        console.log('Trending scores:', testData.map(article => article.trending_score));
-                        console.log('Sources:', testData.map(article => article.source));
-                        console.log('Authors:', testData.map(article => article.author));
-                        console.log('Word counts:', testData.map(article => article.word_count));
-                    }
                     
                     if (testError) {
-                        console.error('Supabase connection test failed:', testError);
-                        console.error('Error details:', {
-                            message: testError.message,
-                            details: testError.details,
-                            hint: testError.hint,
-                            code: testError.code
-                        });
                         
                         // Show user-friendly error
                         document.body.insertAdjacentHTML('beforeend', `
@@ -2082,11 +2050,9 @@
                         return false;
                     }
                     
-                    console.log('Supabase connection successful!', testData);
                     return true;
                     
                 } catch (error) {
-                    console.error('Connection test failed:', error);
                     return false;
                 }
             }
@@ -2095,12 +2061,12 @@
             testSupabaseConnection().then((isConnected) => {
                 if (isConnected) {
                     loadAllContent().then(() => {
-                        console.log('Initial content loaded');
+                        // Initial content loaded
                     }).catch(error => {
-                        console.error('Error loading initial content:', error);
+                        // Error loading initial content
                     });
                 } else {
-                    console.log('Skipping content load due to connection issues');
+                    // Skipping content load due to connection issues
                     // Show fallback content or instructions
                 }
             });

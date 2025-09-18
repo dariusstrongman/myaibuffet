@@ -6,20 +6,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Only initialize if we're on the tools page
     const toolsGrid = document.getElementById('dynamic-tools-grid');
     if (!toolsGrid) {
-        console.log('❌ Not on tools page, skipping initialization');
         return;
     }
     
-    console.log('🚀 Initializing Simple Dynamic Tools System...');
     
     // Check database availability
     if (!window.AI_TOOLS_DATABASE || !Array.isArray(window.AI_TOOLS_DATABASE)) {
-        console.error('❌ AI_TOOLS_DATABASE not found');
         showError('Failed to load tools database');
         return;
     }
     
-    console.log(`✅ Database found with ${window.AI_TOOLS_DATABASE.length} tools`);
     
     // Initialize the tools
     initializeTools();
@@ -44,10 +40,8 @@ function initializeTools() {
         // Hide loading, show tools
         hideLoading();
         
-        console.log(`✅ Successfully loaded ${currentTools.length} tools`);
         
     } catch (error) {
-        console.error('❌ Failed to initialize tools:', error);
         showError('Failed to load AI tools. Please refresh the page.');
     }
 }
@@ -71,7 +65,6 @@ function setupEventListeners() {
         searchInput.addEventListener('input', debounce(handleSearch, 300));
     }
     
-    console.log('✅ Event listeners set up');
 }
 
 function handleCategoryFilter(event) {
@@ -180,7 +173,6 @@ function renderTools() {
     
     toolsGrid.innerHTML = toolsHTML;
     
-    console.log(`⚡ Rendered ${toolsToShow.length} tools`);
 }
 
 function generateToolCard(tool, rank) {
@@ -319,7 +311,6 @@ function hideEmptyState() {
 }
 
 function showError(message) {
-    console.error('❌', message);
     const toolsGrid = document.getElementById('dynamic-tools-grid');
     if (toolsGrid) {
         toolsGrid.innerHTML = `
