@@ -13,7 +13,12 @@
       "Bash(find:*)",
       "Bash(grep:*)",
       "Bash(curl:*)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(for:*)",
+      "Bash(do [ -f \"$img\" ])",
+      "Bash(convert:*)",
+      "Bash(done)",
+      "Bash(sed:*)"
     ],
     "deny": [],
     "ask": []

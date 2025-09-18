@@ -574,6 +574,54 @@
                 </ul>
 
                 <div class="nav-actions">
+                    <!-- Global Search -->
+                    <div class="search-container">
+                        <div class="search-wrapper">
+                            <input
+                                type="search"
+                                id="global-search"
+                                placeholder="Search articles..."
+                                aria-label="Search articles"
+                                autocomplete="off"
+                                style="
+                                    background: rgba(255,255,255,0.1);
+                                    border: 1px solid rgba(255,255,255,0.2);
+                                    border-radius: var(--radius-lg);
+                                    color: var(--color-text-primary);
+                                    font-size: var(--font-size-sm);
+                                    padding: var(--space-2) var(--space-3) var(--space-2) var(--space-8);
+                                    width: 200px;
+                                    transition: all var(--transition-base);
+                                    backdrop-filter: blur(10px);
+                                "
+                            >
+                            <span style="
+                                position: absolute;
+                                left: var(--space-2);
+                                top: 50%;
+                                transform: translateY(-50%);
+                                color: var(--color-text-tertiary);
+                                pointer-events: none;
+                            ">🔍</span>
+                        </div>
+                        <div id="search-results" style="
+                            position: absolute;
+                            top: 100%;
+                            left: 0;
+                            right: 0;
+                            background: rgba(15,20,25,0.95);
+                            border: 1px solid rgba(255,255,255,0.1);
+                            border-radius: var(--radius-lg);
+                            margin-top: var(--space-1);
+                            backdrop-filter: blur(20px);
+                            box-shadow: var(--shadow-lg);
+                            z-index: 1000;
+                            display: none;
+                            max-height: 400px;
+                            overflow-y: auto;
+                        "></div>
+                    </div>
+
                     <!-- Mobile menu button -->
                     <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
                         <span class="hamburger"></span>

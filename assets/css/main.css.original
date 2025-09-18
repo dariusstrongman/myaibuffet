@@ -5688,24 +5688,3 @@ select:focus-visible {
         widows: 3;
     }
 }
-
-/* Image lazy loading styles - Added for optimization */
-img[data-src] {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-img.lazy-loading {
-    opacity: 0.5;
-    filter: blur(2px);
-}
-
-img.lazy-loaded {
-    opacity: 1;
-    filter: none;
-}
-
-img.lazy-error {
-    opacity: 0.3;
-    background: var(--color-surface);
-}
