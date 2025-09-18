@@ -2156,5 +2156,98 @@ function initializeFactCardInteractions() {
     });
 }
 
-// Initialize AI Facts when DOM is ready (disabled to prevent conflicts with index.html inline script)
-// document.addEventListener('DOMContentLoaded', initializeAIFacts);
+/**
+ * Lazy Loading Utility for Images
+ * Automatically applies lazy loading to images when they enter viewport
+ */
+function initLazyLoading() {
+    // Check if Intersection Observer is supported
+    if ('IntersectionObserver' in window) {
+        const lazyImages = document.querySelectorAll('img[data-src], img[loading="lazy"]');
+
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+
+                    // If image has data-src, load it
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                    }
+
+                    // Add fade-in effect
+                    img.style.opacity = '0';
+                    img.style.transition = 'opacity 0.3s ease-in-out';
+
+                    img.onload = () => {
+                        img.style.opacity = '1';
+                    };
+
+                    // Stop observing this image
+                    observer.unobserve(img);
+                }
+            });
+        }, {
+            rootMargin: '50px 0px', // Start loading 50px before image enters viewport
+            threshold: 0.01
+        });
+
+        lazyImages.forEach(img => imageObserver.observe(img));
+    } else {
+        // Fallback for browsers without Intersection Observer
+        const lazyImages = document.querySelectorAll('img[data-src]');
+        lazyImages.forEach(img => {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+        });
+    }
+}
+
+/**
+ * Performance Utilities
+ */
+const PerformanceUtils = {
+    // Optimize images for better loading
+    optimizeImages() {
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            // Add loading="lazy" if not present and not critical
+            if (!img.hasAttribute('loading') && !img.closest('.hero')) {
+                img.setAttribute('loading', 'lazy');
+            }
+
+            // Add decoding="async" for better performance
+            if (!img.hasAttribute('decoding')) {
+                img.setAttribute('decoding', 'async');
+            }
+        });
+    },
+
+    // Preload critical resources
+    preloadCriticalResources() {
+        const criticalImages = document.querySelectorAll('.hero img, .logo img');
+        criticalImages.forEach(img => {
+            if (img.src) {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'image';
+                link.href = img.src;
+                document.head.appendChild(link);
+            }
+        });
+    }
+};
+
+// Initialize all functionality when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize performance optimizations
+    PerformanceUtils.optimizeImages();
+    PerformanceUtils.preloadCriticalResources();
+    initLazyLoading();
+
+    // Initialize existing functionality
+    // initializeAIFacts(); // Disabled to prevent conflicts with index.html inline script
+
+    console.log('🚀 AI Buffet - Performance optimizations loaded');
+});
