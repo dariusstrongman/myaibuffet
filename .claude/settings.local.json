@@ -18,7 +18,8 @@
       "Bash(do [ -f \"$img\" ])",
       "Bash(convert:*)",
       "Bash(done)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []
