@@ -11,7 +11,6 @@ const AppState = {
     articles: [],
     stories: [],
     searchTerm: '',
-    theme: localStorage.getItem('theme') || 'dark',
     isScrolling: false,
     lastScrollTop: 0,
     isOnline: navigator.onLine,
@@ -24,8 +23,6 @@ const AppState = {
  * DOM Element Cache
  */
 const Elements = {
-    // Theme
-    themeToggle: null,
     
     // Navigation
     header: null,
@@ -57,7 +54,6 @@ const Elements = {
  */
 document.addEventListener('DOMContentLoaded', function() {
     initializeElements();
-    initializeTheme();
     initializeTabSwitching();
     initializeSmoothScrolling();
     initializeLazyLoading();
@@ -83,7 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
  */
 function initializeElements() {
     // Theme
-    Elements.themeToggle = document.getElementById('theme-toggle');
     
     // Navigation
     Elements.header = document.querySelector('.header');
@@ -117,100 +112,6 @@ function initializeElements() {
     
 }
 
-/**
- * Theme Management
- */
-function initializeTheme() {
-    // Apply saved theme
-    document.documentElement.setAttribute('data-theme', AppState.theme);
-    
-    // Create theme toggle button if it doesn't exist
-    if (!Elements.themeToggle) {
-        createThemeToggle();
-    }
-    
-    // Add theme toggle event listener
-    if (Elements.themeToggle) {
-        Elements.themeToggle.addEventListener('click', toggleTheme);
-    }
-    
-    // Update theme toggle state
-    updateThemeToggle();
-}
-
-function createThemeToggle() {
-    const themeToggle = document.createElement('button');
-    themeToggle.id = 'theme-toggle';
-    themeToggle.className = 'theme-toggle';
-    themeToggle.setAttribute('aria-label', 'Toggle theme');
-    themeToggle.innerHTML = AppState.theme === 'dark' ? '☀️' : '🌙';
-    
-    // Add styles for theme toggle
-    const style = document.createElement('style');
-    style.textContent = `
-        .theme-toggle {
-            background: var(--color-surface);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-lg);
-            color: var(--color-text-primary);
-            cursor: pointer;
-            font-size: 1.2em;
-            padding: var(--space-2);
-            transition: all var(--transition-fast);
-            width: 2.5rem;
-            height: 2.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .theme-toggle:hover {
-            border-color: var(--color-primary);
-            transform: scale(1.05);
-        }
-        
-        .theme-toggle:focus-visible {
-            outline: 2px solid var(--color-primary);
-            outline-offset: 2px;
-        }
-        
-        @media (max-width: 768px) {
-            .theme-toggle {
-                order: 2;
-            }
-        }
-    `;
-    
-    if (!document.querySelector('#theme-toggle-styles')) {
-        style.id = 'theme-toggle-styles';
-        document.head.appendChild(style);
-    }
-    
-    // Insert theme toggle in navigation
-    const searchContainer = document.querySelector('.search-container');
-    if (searchContainer) {
-        searchContainer.parentNode.insertBefore(themeToggle, searchContainer);
-        Elements.themeToggle = themeToggle;
-    }
-}
-
-function toggleTheme() {
-    AppState.theme = AppState.theme === 'dark' ? 'light' : 'dark';
-    localStorage.setItem('theme', AppState.theme);
-    document.documentElement.setAttribute('data-theme', AppState.theme);
-    updateThemeToggle();
-    
-    // Announce theme change to screen readers
-    announceToScreenReader(`Switched to ${AppState.theme} theme`);
-}
-
-function updateThemeToggle() {
-    if (Elements.themeToggle) {
-        Elements.themeToggle.innerHTML = AppState.theme === 'dark' ? '☀️' : '🌙';
-        Elements.themeToggle.setAttribute('aria-label', 
-            `Switch to ${AppState.theme === 'dark' ? 'light' : 'dark'} theme`);
-    }
-}
 
 /**
  * Tab Switching Logic
@@ -998,12 +899,6 @@ function handleGlobalKeydown(event) {
         return;
     }
     
-    // Theme toggle (Ctrl/Cmd + Shift + T)
-    if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'T') {
-        event.preventDefault();
-        toggleTheme();
-        return;
-    }
     
     // Clear search (Escape when search is focused)
     if (event.key === 'Escape' && document.activeElement === Elements.searchInput) {
@@ -1952,10 +1847,6 @@ function testCriticalFlows() {
         tests.tabSwitching = true;
     }
     
-    // Test theme toggle
-    if (Elements.themeToggle) {
-        tests.themeToggle = true;
-    }
     
     // Test mobile menu
     if (Elements.mobileMenuToggle) {
@@ -1987,7 +1878,6 @@ if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         AppState,
         switchTab,
-        toggleTheme,
         escapeHtml,
         isValidEmail,
         formatDate,
