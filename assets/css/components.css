@@ -1,6 +1,57 @@
 /* AI Buffet - Reusable Components */
 
 /* ==========================================================================
+   Breadcrumb Navigation Component
+   ========================================================================== */
+
+.breadcrumbs {
+    background: rgba(15, 20, 25, 0.5);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: var(--space-3) 0;
+    font-size: var(--font-size-sm);
+}
+
+.breadcrumb-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-item:not(:last-child)::after {
+    content: "→";
+    margin-left: var(--space-2);
+    color: var(--color-text-tertiary);
+    font-size: 0.9em;
+}
+
+.breadcrumb-link {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--space-1);
+}
+
+.breadcrumb-link:hover {
+    color: var(--neon-blue);
+    background: rgba(34, 211, 238, 0.1);
+}
+
+.breadcrumb-item:last-child .breadcrumb-link {
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-medium);
+}
+
+/* ==========================================================================
    Article Card Component
    ========================================================================== */
 

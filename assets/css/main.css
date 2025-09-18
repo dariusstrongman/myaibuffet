@@ -4669,7 +4669,8 @@ p {
 }
 
 .mission-card,
-.vision-card {
+.vision-card,
+.values-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
@@ -4684,7 +4685,8 @@ p {
 }
 
 .mission-card h2,
-.vision-card h2 {
+.vision-card h2,
+.values-card h2 {
     font-size: var(--font-size-2xl);
     font-family: var(--font-family-display);
     margin-bottom: var(--space-4);
@@ -4692,7 +4694,8 @@ p {
 }
 
 .mission-card p,
-.vision-card p {
+.vision-card p,
+.values-card p {
     font-size: var(--font-size-lg);
     line-height: var(--line-height-relaxed);
     color: var(--color-text-secondary);
@@ -5127,6 +5130,7 @@ p {
     
     .mission-card,
     .vision-card,
+    .values-card,
     .service-card {
         padding: var(--space-4);
     }

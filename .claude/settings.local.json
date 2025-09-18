@@ -9,7 +9,8 @@
       "Bash(npx http-server:*)",
       "mcp__ide__getDiagnostics",
       "Bash(node:*)",
-      "Bash(awk:*)"
+      "Bash(awk:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

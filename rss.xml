@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+    <title>AI Buffet - Latest AI News & Insights</title>
+    <link>https://myaibuffet.com</link>
+    <description>Breaking AI news, tool reviews, and expert insights. Daily updates on artificial intelligence developments, ChatGPT, Claude, and emerging AI technologies.</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Jan 2025 12:00:00 GMT</lastBuildDate>
+    <managingEditor>hello@myaibuffet.com (AI Buffet Team)</managingEditor>
+    <webMaster>hello@myaibuffet.com (AI Buffet Team)</webMaster>
+    <category>Technology</category>
+    <category>Artificial Intelligence</category>
+    <atom:link href="https://myaibuffet.com/rss.xml" rel="self" type="application/rss+xml" />
+
+    <!-- Sample items - these would be dynamically generated based on your daily articles -->
+    <item>
+        <title>OpenAI Releases GPT-4 Turbo with Enhanced Capabilities</title>
+        <link>https://myaibuffet.com/categories/news.html#latest-gpt4-turbo</link>
+        <description>Latest GPT-4 Turbo shows significant improvements in reasoning, coding, and multimodal understanding. Breaking down the key features and implications for AI development.</description>
+        <pubDate>Wed, 17 Jan 2025 08:00:00 GMT</pubDate>
+        <guid>https://myaibuffet.com/categories/news.html#latest-gpt4-turbo</guid>
+        <category>AI News</category>
+    </item>
+
+    <item>
+        <title>Claude 3.5 Haiku: Anthropic's Speed Breakthrough</title>
+        <link>https://myaibuffet.com/categories/news.html#claude-haiku-launch</link>
+        <description>Anthropic's new Claude 3.5 Haiku delivers enterprise-grade AI performance with unprecedented speed. Analysis of benchmarks and real-world applications.</description>
+        <pubDate>Tue, 16 Jan 2025 14:30:00 GMT</pubDate>
+        <guid>https://myaibuffet.com/categories/news.html#claude-haiku-launch</guid>
+        <category>AI Tools</category>
+    </item>
+
+    <item>
+        <title>AI Market Hits $2.1 Trillion: 2025 Growth Analysis</title>
+        <link>https://myaibuffet.com/categories/news.html#ai-market-2025</link>
+        <description>Global AI market valuation reaches new heights as enterprise adoption accelerates. Key drivers, major players, and predictions for continued growth.</description>
+        <pubDate>Mon, 15 Jan 2025 10:15:00 GMT</pubDate>
+        <guid>https://myaibuffet.com/categories/news.html#ai-market-2025</guid>
+        <category>Business</category>
+    </item>
+</channel>
+</rss>
