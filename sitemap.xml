@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Homepage -->
+    <url>
+        <loc>https://myaibuffet.com/</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Main Category Pages with Dynamic Content -->
+    <url>
+        <loc>https://myaibuffet.com/categories/news.html</loc>
+        <lastmod>2025-01-17</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+        <!-- High priority - contains daily updating AI news articles -->
+    </url>
+
+    <url>
+        <loc>https://myaibuffet.com/categories/tools.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- About Page -->
+    <url>
+        <loc>https://myaibuffet.com/about.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- FAQ Page -->
+    <url>
+        <loc>https://myaibuffet.com/faq.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Additional Category Pages -->
+    <url>
+        <loc>https://myaibuffet.com/categories/tutorials.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://myaibuffet.com/categories/business.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://myaibuffet.com/categories/research.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://myaibuffet.com/categories/insights.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Archive and Support Pages -->
+    <url>
+        <loc>https://myaibuffet.com/all-articles.html</loc>
+        <lastmod>2025-01-17</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+        <!-- Contains aggregated view of all dynamic articles -->
+    </url>
+
+    <!-- News Articles RSS Feed -->
+    <url>
+        <loc>https://myaibuffet.com/rss.xml</loc>
+        <lastmod>2025-01-17</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- Existing Guides -->
+    <url>
+        <loc>https://myaibuffet.com/guides/best-ai-tools-2025.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+</urlset>

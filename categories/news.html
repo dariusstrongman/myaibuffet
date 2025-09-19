@@ -1,0 +1,2142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News 2025 — Latest Artificial Intelligence Breakthroughs & Updates</title>
+    <meta name="description" content="Breaking AI news 2025: ChatGPT updates, new AI tools, industry breakthroughs. Expert analysis of the latest artificial intelligence developments and trends.">
+    <meta name="keywords" content="AI news 2025, artificial intelligence news, ChatGPT news, AI breakthroughs, machine learning news, AI updates, latest AI developments">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="author" content="AI Buffet">
+    <meta name="google-site-verification" content="Eed235Tz69iOMTpmaDDzNOCfhjU1R2mDutTMT08uHG4">
+    <link rel="canonical" href="https://myaibuffet.com/categories/news.html">
+    <link rel="icon" type="image/png" href="../img/Logo.png">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="AI News 2025 — Latest Artificial Intelligence Breakthroughs">
+    <meta property="og:description" content="Breaking AI news 2025: ChatGPT updates, new AI tools, breakthroughs. Expert analysis of artificial intelligence developments.">
+    <meta property="og:image" content="https://myaibuffet.com/assets/img/ai-news-category.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://myaibuffet.com/categories/news">
+    <meta property="og:site_name" content="AI Buffet">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Breaking AI News 2025">
+    <meta name="twitter:description" content="Latest AI breakthroughs, ChatGPT updates, and industry developments. Expert analysis included.">
+    <meta name="twitter:image" content="https://myaibuffet.com/assets/img/ai-news-category.jpg">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "AI News & Updates",
+        "description": "Latest AI news, breakthroughs, and industry developments curated by My AI Buffet",
+        "url": "https://myaibuffet.com/categories/news",
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "AI News Articles",
+            "itemListElement": [
+                {
+                    "@type": "NewsArticle",
+                    "headline": "Breaking AI Developments",
+                    "description": "Latest breakthroughs in artificial intelligence",
+                    "datePublished": "2025-01-17",
+                    "author": {"@type": "Organization", "name": "AI Buffet"},
+                    "publisher": {"@type": "Organization", "name": "AI Buffet"}
+                },
+                {
+                    "@type": "NewsArticle",
+                    "headline": "AI Industry Updates",
+                    "description": "Current trends and news in the AI industry",
+                    "datePublished": "2025-01-17",
+                    "author": {"@type": "Organization", "name": "AI Buffet"},
+                    "publisher": {"@type": "Organization", "name": "AI Buffet"}
+                }
+            ]
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://myaibuffet.com"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "AI News",
+                    "item": "https://myaibuffet.com/categories/news"
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://npetaroffoyjohjiwssf.supabase.co">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R0N7018SBX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-R0N7018SBX');
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Serif+Display:wght@400&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    
+    <!-- Critical CSS -->
+    <style>
+        /* Prevent FOUC - Keep minimal critical styles only */
+        body { 
+            font-family: Inter, system-ui, sans-serif; 
+            background: var(--color-bg, #0B1020); 
+            color: var(--color-text-primary, #E5E7EB);
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        /* Loading and error states */
+        .search-loading, .no-search-results, .search-error, .no-articles {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1rem;
+            text-align: center;
+            grid-column: 1 / -1;
+        }
+        
+        .loading-spinner {
+            width: 3rem;
+            height: 3rem;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid var(--color-primary, #4F46E5);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+        
+        .loading-text, .no-results-text, .error-text, .no-articles-text {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .no-results-suggestion {
+            color: var(--color-text-secondary, #9CA3AF);
+            font-size: 0.875rem;
+        }
+        
+        .retry-btn, .refresh-btn {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--color-primary, #4F46E5);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        
+        .retry-btn:hover, .refresh-btn:hover {
+            background: var(--color-primary-dark, #3730A3);
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <a href="../" class="logo" aria-label="AI Buffet homepage">
+                    <span class="logo-icon" aria-hidden="true">🍽️</span>
+                    AI Buffet
+                </a>
+                
+                <ul class="nav-links" role="menubar">
+                    <li role="none"><a href="../" class="nav-link" role="menuitem">Home</a></li>
+                    <li role="none"><a href="news.html" class="nav-link" role="menuitem" aria-current="page">News</a></li>
+                    <li role="none"><a href="tools.html" class="nav-link" role="menuitem">Tools</a></li>
+                    <li role="none"><a href="../faq.html" class="nav-link" role="menuitem">FAQ</a></li>
+                    <li role="none"><a href="../about.html" class="nav-link" role="menuitem">About</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <!-- Mobile menu button -->
+                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main id="main" role="main">
+        <div class="container">
+            <!-- Premium News Hero -->
+            <section class="news-hero premium-hero" aria-labelledby="hero-title">
+                <div class="hero-background">
+                    <div class="hero-particles"></div>
+                    <div class="hero-gradient"></div>
+                </div>
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-icon">⚡</span>
+                        <span class="badge-text">LIVE UPDATES</span>
+                        <div class="badge-pulse"></div>
+                    </div>
+                    <h1 id="hero-title" class="hero-title">
+                        <span class="title-highlight">AI News</span> 
+                        <span class="title-gradient">Intelligence</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Stay ahead with real-time AI breakthroughs, industry insights, and expert analysis. 
+                        <span class="subtitle-highlight">Curated by AI experts</span> for decision makers.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" id="live-articles-count">0+</span>
+                            <span class="stat-label">Articles Today</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="total-articles-count">0+</span>
+                            <span class="stat-label">Total Articles</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="sources-count">0+</span>
+                            <span class="stat-label">Premium Sources</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <button class="hero-cta primary" onclick="document.getElementById('featured-section').scrollIntoView({behavior: 'smooth'})">
+                            <span class="cta-text">Explore Breaking News</span>
+                            <span class="cta-icon">🚀</span>
+                        </button>
+                        <button class="hero-cta secondary" onclick="document.getElementById('newsletter').scrollIntoView({behavior: 'smooth'})">
+                            <span class="cta-text">Get Daily Digest</span>
+                            <span class="cta-icon">📧</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <div class="scroll-icon">↓</div>
+                    <span class="scroll-text">Scroll for latest news</span>
+                </div>
+            </section>
+
+            <!-- Premium Navigation Tabs -->
+            <section class="premium-tabs-section" aria-labelledby="articles-heading">
+                <h2 id="articles-heading" class="sr-only">Articles</h2>
+                
+                <div class="premium-tab-container">
+                    <div class="tab-nav-wrapper">
+                        <div class="tab-nav premium-tab-nav" role="tablist" aria-label="Article categories">
+                            <button 
+                                class="premium-tab-button active" 
+                                role="tab" 
+                                aria-selected="true" 
+                                aria-controls="top-articles-panel"
+                                id="top-articles-tab"
+                                data-tab="top-articles"
+                            >
+                                <div class="tab-content">
+                                    <span class="tab-icon" aria-hidden="true">🔥</span>
+                                    <span class="tab-text">Top Stories</span>
+                                    <div class="tab-indicator"></div>
+                                </div>
+                            </button>
+                            <button 
+                                class="premium-tab-button" 
+                                role="tab" 
+                                aria-selected="false" 
+                                aria-controls="latest-articles-panel"
+                                id="latest-articles-tab"
+                                data-tab="latest-articles"
+                            >
+                                <div class="tab-content">
+                                    <span class="tab-icon" aria-hidden="true">📰</span>
+                                    <span class="tab-text">Latest Updates</span>
+                                    <div class="tab-indicator"></div>
+                                </div>
+                            </button>
+                            <button 
+                                class="premium-tab-button" 
+                                role="tab" 
+                                aria-selected="false" 
+                                aria-controls="trending-articles-panel"
+                                id="trending-articles-tab"
+                                data-tab="trending-articles"
+                            >
+                                <div class="tab-content">
+                                    <span class="tab-icon" aria-hidden="true">📈</span>
+                                    <span class="tab-text">Trending</span>
+                                    <div class="tab-indicator"></div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-meta">
+                        <div class="update-indicator">
+                            <div class="pulse-dot"></div>
+                            <span class="update-text">Live updates</span>
+                        </div>
+                        <div class="articles-count">
+                            <span id="current-tab-count">8</span> articles
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Tab Panels -->
+                <div 
+                    class="premium-tab-panel active" 
+                    role="tabpanel" 
+                    aria-labelledby="top-articles-tab"
+                    id="top-articles-panel"
+                >
+                    <div class="premium-articles-grid" id="top-articles-grid" aria-live="polite">
+                        <!-- Enhanced Loading State -->
+                        <article class="premium-article-card loading" aria-label="Loading top articles">
+                            <div class="article-shimmer">
+                                <div class="shimmer-header"></div>
+                                <div class="shimmer-lines">
+                                    <div class="shimmer-line"></div>
+                                    <div class="shimmer-line short"></div>
+                                </div>
+                                <div class="shimmer-footer"></div>
+                            </div>
+                        </article>
+                        <article class="premium-article-card loading">
+                            <div class="article-shimmer">
+                                <div class="shimmer-header"></div>
+                                <div class="shimmer-lines">
+                                    <div class="shimmer-line"></div>
+                                    <div class="shimmer-line short"></div>
+                                </div>
+                                <div class="shimmer-footer"></div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div 
+                    class="premium-tab-panel" 
+                    role="tabpanel" 
+                    aria-labelledby="latest-articles-tab"
+                    id="latest-articles-panel"
+                >
+                    <div class="premium-articles-grid" id="latest-articles-grid" aria-live="polite">
+                        <!-- Enhanced Loading State -->
+                        <article class="premium-article-card loading">
+                            <div class="article-shimmer">
+                                <div class="shimmer-header"></div>
+                                <div class="shimmer-lines">
+                                    <div class="shimmer-line"></div>
+                                    <div class="shimmer-line short"></div>
+                                </div>
+                                <div class="shimmer-footer"></div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div 
+                    class="premium-tab-panel" 
+                    role="tabpanel" 
+                    aria-labelledby="trending-articles-tab"
+                    id="trending-articles-panel"
+                >
+                    <div class="premium-articles-grid" id="trending-articles-grid" aria-live="polite">
+                        <!-- Trending articles will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+
+            <div class="premium-main-content">
+                <div class="content-area">
+                    <!-- Premium Featured Section -->
+                    <section class="premium-featured-section" id="featured-section" aria-labelledby="featured-title">
+                        <div class="featured-header">
+                            <div class="featured-title-group">
+                                <h2 id="featured-title" class="featured-title">
+                                    <span class="title-icon">🔥</span>
+                                    <span class="title-text">Breaking Stories</span>
+                                </h2>
+                                <p class="featured-subtitle">Critical AI developments happening right now</p>
+                            </div>
+                            <div class="featured-controls">
+                                <button class="featured-refresh" id="refresh-featured">
+                                    <span class="refresh-icon">🔄</span>
+                                    <span class="refresh-text">Refresh</span>
+                                </button>
+                                <div class="live-indicator">
+                                    <div class="live-dot"></div>
+                                    <span class="live-text">LIVE</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="premium-featured-grid">
+                            <!-- Hero Featured Article -->
+                            <article class="featured-hero-card loading" data-category="breaking">
+                                <div class="hero-card-background">
+                                    <div class="background-overlay"></div>
+                                    <div class="background-pattern"></div>
+                                </div>
+                                <div class="hero-card-content">
+                                    <div class="hero-card-header">
+                                        <div class="breaking-badge">
+                                            <span class="badge-pulse"></span>
+                                            <span class="badge-text">BREAKING</span>
+                                        </div>
+                                        <div class="article-priority">
+                                            <span class="priority-icon">⚡</span>
+                                            <span class="priority-text">HIGH PRIORITY</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="hero-card-title">
+                                        <a href="#" target="_blank" rel="noopener">Loading breaking AI developments...</a>
+                                    </h3>
+                                    <p class="hero-card-excerpt">Please wait while we fetch the most critical AI news breaking right now...</p>
+                                    <div class="hero-card-meta">
+                                        <div class="meta-group">
+                                            <span class="meta-icon">📅</span>
+                                            <span class="meta-text">Loading...</span>
+                                        </div>
+                                        <div class="meta-group">
+                                            <span class="meta-icon">📰</span>
+                                            <span class="meta-text">Premium Source</span>
+                                        </div>
+                                        <div class="meta-group">
+                                            <span class="meta-icon">👁️</span>
+                                            <span class="meta-text">High Impact</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <!-- Secondary Featured Articles -->
+                            <div class="featured-secondary-grid">
+                                <article class="featured-secondary-card loading" data-category="research">
+                                    <div class="secondary-card-header">
+                                        <div class="category-badge research">
+                                            <span class="badge-icon">🔬</span>
+                                            <span class="badge-text">RESEARCH</span>
+                                        </div>
+                                        <div class="trending-indicator">
+                                            <span class="trending-icon">📈</span>
+                                        </div>
+                                    </div>
+                                    <h4 class="secondary-card-title">
+                                        <a href="#" target="_blank" rel="noopener">Loading research breakthrough...</a>
+                                    </h4>
+                                    <div class="secondary-card-meta">
+                                        <span class="meta-time">Loading...</span>
+                                        <span class="meta-divider">•</span>
+                                        <span class="meta-source">Research Journal</span>
+                                    </div>
+                                </article>
+                                
+                                <article class="featured-secondary-card loading" data-category="business">
+                                    <div class="secondary-card-header">
+                                        <div class="category-badge business">
+                                            <span class="badge-icon">💼</span>
+                                            <span class="badge-text">BUSINESS</span>
+                                        </div>
+                                        <div class="impact-score">
+                                            <span class="score-text">9.2</span>
+                                        </div>
+                                    </div>
+                                    <h4 class="secondary-card-title">
+                                        <a href="#" target="_blank" rel="noopener">Loading business development...</a>
+                                    </h4>
+                                    <div class="secondary-card-meta">
+                                        <span class="meta-time">Loading...</span>
+                                        <span class="meta-divider">•</span>
+                                        <span class="meta-source">Business News</span>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Premium Latest News Grid -->
+                    <section class="premium-latest-section" aria-labelledby="latest-title">
+                        <div class="latest-header">
+                            <div class="latest-title-group">
+                                <h2 id="latest-title" class="latest-title">
+                                    <span class="title-icon">📰</span>
+                                    <span class="title-text">Latest Intelligence</span>
+                                </h2>
+                                <p class="latest-subtitle">Comprehensive AI news analysis updated continuously</p>
+                            </div>
+                            <div class="latest-controls">
+                                <div class="view-toggle">
+                                    <button class="view-btn active" data-view="grid">
+                                        <span class="view-icon">⊞</span>
+                                        <span class="view-text">Grid</span>
+                                    </button>
+                                    <button class="view-btn" data-view="list">
+                                        <span class="view-icon">☰</span>
+                                        <span class="view-text">List</span>
+                                    </button>
+                                </div>
+                                <button class="latest-refresh" id="refresh-latest">
+                                    <span class="refresh-icon">🔄</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="premium-news-grid" id="premium-news-grid">
+                            <!-- Premium Article Cards -->
+                            <article class="premium-news-card loading" data-category="research">
+                                <div class="news-card-header">
+                                    <div class="category-indicator research">
+                                        <span class="indicator-icon">🔬</span>
+                                        <span class="indicator-text">RESEARCH</span>
+                                    </div>
+                                    <div class="article-priority high">
+                                        <span class="priority-dot"></span>
+                                    </div>
+                                </div>
+                                <div class="news-card-content">
+                                    <h3 class="news-card-title">
+                                        <a href="#" target="_blank" rel="noopener">Loading cutting-edge AI research...</a>
+                                    </h3>
+                                    <p class="news-card-excerpt">Analyzing the latest breakthroughs in artificial intelligence research and development...</p>
+                                    <div class="news-card-insights">
+                                        <div class="insight-tag">
+                                            <span class="tag-icon">💡</span>
+                                            <span class="tag-text">Key Insight</span>
+                                        </div>
+                                        <div class="impact-meter">
+                                            <span class="meter-label">Impact:</span>
+                                            <div class="meter-bar">
+                                                <div class="meter-fill" style="width: 85%"></div>
+                                            </div>
+                                            <span class="meter-value">8.5</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="news-card-footer">
+                                    <div class="footer-meta">
+                                        <span class="meta-time">Loading...</span>
+                                        <span class="meta-divider">•</span>
+                                        <span class="meta-source">Premium Research</span>
+                                        <span class="meta-divider">•</span>
+                                        <span class="meta-read-time">6 min read</span>
+                                    </div>
+                                    <div class="footer-actions">
+                                        <button class="action-btn bookmark">
+                                            <span class="action-icon">🔖</span>
+                                        </button>
+                                        <button class="action-btn share">
+                                            <span class="action-icon">📤</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="premium-news-card loading" data-category="business">
+                                <div class="news-card-header">
+                                    <div class="category-indicator business">
+                                        <span class="indicator-icon">💼</span>
+                                        <span class="indicator-text">BUSINESS</span>
+                                    </div>
+                                    <div class="trending-badge">
+                                        <span class="trending-icon">🔥</span>
+                                        <span class="trending-text">Trending</span>
+                                    </div>
+                                </div>
+                                <div class="news-card-content">
+                                    <h3 class="news-card-title">
+                                        <a href="#" target="_blank" rel="noopener">Loading enterprise AI developments...</a>
+                                    </h3>
+                                    <p class="news-card-excerpt">Corporate AI adoption strategies and market movements shaping the industry...</p>
+                                    <div class="news-card-insights">
+                                        <div class="insight-tag">
+                                            <span class="tag-icon">📊</span>
+                                            <span class="tag-text">Market Analysis</span>
+                                        </div>
+                                        <div class="stock-indicator">
+                                            <span class="stock-symbol">AI Sector</span>
+                                            <span class="stock-change positive">+5.2%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="news-card-footer">
+                                    <div class="footer-meta">
+                                        <span class="meta-time">Loading...</span>
+                                        <span class="meta-divider">•</span>
+                                        <span class="meta-source">Business Intelligence</span>
+                                        <span class="meta-divider">•</span>
+                                        <span class="meta-read-time">4 min read</span>
+                                    </div>
+                                    <div class="footer-actions">
+                                        <button class="action-btn bookmark">
+                                            <span class="action-icon">🔖</span>
+                                        </button>
+                                        <button class="action-btn share">
+                                            <span class="action-icon">📤</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="premium-news-card loading" data-category="regulation">
+                                <div class="news-card-header">
+                                    <div class="category-indicator regulation">
+                                        <span class="indicator-icon">⚖️</span>
+                                        <span class="indicator-text">REGULATION</span>
+                                    </div>
+                                    <div class="urgency-badge medium">
+                                        <span class="urgency-text">Medium Priority</span>
+                                    </div>
+                                </div>
+                                <div class="news-card-content">
+                                    <h3 class="news-card-title">
+                                        <a href="#" target="_blank" rel="noopener">Loading policy and governance updates...</a>
+                                    </h3>
+                                    <p class="news-card-excerpt">Global regulatory frameworks and policy changes affecting AI development and deployment...</p>
+                                    <div class="news-card-insights">
+                                        <div class="insight-tag">
+                                            <span class="tag-icon">🏛️</span>
+                                            <span class="tag-text">Policy Impact</span>
+                                        </div>
+                                        <div class="geographical-scope">
+                                            <span class="scope-label">Scope:</span>
+                                            <span class="scope-regions">Global</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="news-card-footer">
+                                    <div class="footer-meta">
+                                        <span class="meta-time">Loading...</span>
+                                        <span class="meta-divider">•</span>
+                                        <span class="meta-source">Policy Watch</span>
+                                        <span class="meta-divider">•</span>
+                                        <span class="meta-read-time">7 min read</span>
+                                    </div>
+                                    <div class="footer-actions">
+                                        <button class="action-btn bookmark">
+                                            <span class="action-icon">🔖</span>
+                                        </button>
+                                        <button class="action-btn share">
+                                            <span class="action-icon">📤</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Premium Load More Section -->
+                        <div class="premium-load-more">
+                            <div class="load-more-info">
+                                <span class="articles-loaded">Showing <span id="loaded-count">12</span> of <span id="total-articles">247</span> articles</span>
+                                <span class="load-more-hint">Scroll or click to load more premium content</span>
+                            </div>
+                            <button class="premium-load-btn" id="premium-load-more">
+                                <span class="load-btn-text">Load Next Batch</span>
+                                <span class="load-btn-icon">↓</span>
+                                <div class="load-btn-progress"></div>
+                            </button>
+                        </div>
+
+                        <!-- View All Articles Button -->
+                        <div style="text-align: center; margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--glass-border);">
+                            <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); font-size: var(--font-size-sm);">
+                                Want to browse all our content in one organized place?
+                            </p>
+                            <a href="../all-articles.html" style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-6); background: var(--gradient-primary); color: white; text-decoration: none; border-radius: 25px; font-size: var(--font-size-base); font-weight: var(--font-weight-semibold); transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(34, 211, 238, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(34, 211, 238, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(34, 211, 238, 0.3)'">
+                                <span>📚</span>
+                                <span>View All Articles</span>
+                                <span>→</span>
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- Premium CTA Section -->
+                    <section class="premium-cta-section">
+                        <div class="cta-background">
+                            <div class="cta-pattern"></div>
+                            <div class="cta-glow"></div>
+                        </div>
+                        <div class="cta-content">
+                            <div class="cta-header">
+                                <div class="cta-badge">
+                                    <span class="badge-icon">⚡</span>
+                                    <span class="badge-text">EXCLUSIVE ACCESS</span>
+                                </div>
+                                <h2 class="cta-title">
+                                    <span class="title-main">Master AI Intelligence</span>
+                                    <span class="title-sub">Before Your Competition Does</span>
+                                </h2>
+                                <p class="cta-description">
+                                    Join 50,000+ executives, researchers, and AI professionals who rely on our 
+                                    <span class="description-highlight">premium intelligence platform</span> 
+                                    for strategic AI insights and exclusive analysis.
+                                </p>
+                            </div>
+                            
+                            <div class="cta-features">
+                                <div class="feature-item">
+                                    <span class="feature-icon">📊</span>
+                                    <span class="feature-text">Real-time market intelligence</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">🎯</span>
+                                    <span class="feature-text">Personalized AI insights</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">🚀</span>
+                                    <span class="feature-text">Exclusive tools & templates</span>
+                                </div>
+                            </div>
+                            
+                            <div class="cta-actions">
+                                <a href="https://ai-buffet.com/tools" class="premium-cta-btn primary">
+                                    <span class="btn-text">Access Premium Tools</span>
+                                    <span class="btn-icon">→</span>
+                                    <div class="btn-shine"></div>
+                                </a>
+                                <button class="premium-cta-btn secondary" onclick="document.getElementById('newsletter').scrollIntoView({behavior: 'smooth'})">
+                                    <span class="btn-text">Start Free Intelligence</span>
+                                    <span class="btn-icon">📧</span>
+                                </button>
+                            </div>
+                            
+                            <div class="cta-social-proof">
+                                <div class="proof-item">
+                                    <span class="proof-number">50K+</span>
+                                    <span class="proof-text">Professionals</span>
+                                </div>
+                                <div class="proof-divider"></div>
+                                <div class="proof-item">
+                                    <span class="proof-number">500+</span>
+                                    <span class="proof-text">Companies</span>
+                                </div>
+                                <div class="proof-divider"></div>
+                                <div class="proof-item">
+                                    <span class="proof-number">24/7</span>
+                                    <span class="proof-text">Monitoring</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar" style="display: none;">
+                    <!-- Trending Topics -->
+                    <div class="sidebar-card">
+                        <h3>🔥 Trending Topics</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: var(--space-sm);">
+                                <a href="#" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s;">#GPT-5 Release</a>
+                            </li>
+                            <li style="margin-bottom: var(--space-sm);">
+                                <a href="#" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s;">#AI Regulation</a>
+                            </li>
+                            <li style="margin-bottom: var(--space-sm);">
+                                <a href="#" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s;">#AGI Progress</a>
+                            </li>
+                            <li style="margin-bottom: var(--space-sm);">
+                                <a href="#" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s;">#AI Safety</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter Signup -->
+                    <div class="sidebar-card newsletter">
+                        <h3>📧 AI News Digest</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: var(--space-md);">Get the week's top AI stories delivered every Monday.</p>
+                        <form class="newsletter-form" style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                            <input type="email" class="newsletter-input" placeholder="your@email.com" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Premium Newsletter Section -->
+            <section class="premium-newsletter" id="newsletter" aria-labelledby="newsletter-title">
+                <div class="newsletter-background">
+                    <div class="newsletter-particles"></div>
+                    <div class="newsletter-gradient"></div>
+                </div>
+                
+                <div class="newsletter-content">
+                    <div class="newsletter-header">
+                        <div class="newsletter-icon">
+                            <span class="icon-main">📧</span>
+                            <div class="icon-pulse"></div>
+                        </div>
+                        <h2 id="newsletter-title" class="newsletter-title">
+                            <span class="title-primary">AI Intelligence Digest</span>
+                            <span class="title-secondary">Delivered to Your Inbox</span>
+                        </h2>
+                        <p class="newsletter-description">
+                            Join the <span class="subscriber-count">50,000+</span> AI professionals who start their week with our 
+                            <span class="description-highlight">curated intelligence briefing</span>. 
+                            Get the most critical AI developments, market insights, and strategic analysis 
+                            delivered every Monday at 6 AM.
+                        </p>
+                    </div>
+                    
+                    <div class="newsletter-preview">
+                        <div class="preview-header">
+                            <span class="preview-label">📮 This Week's Digest Preview</span>
+                        </div>
+                        <div class="preview-items">
+                            <div class="preview-item">
+                                <span class="item-icon">🔥</span>
+                                <span class="item-text">5 Breaking AI developments</span>
+                            </div>
+                            <div class="preview-item">
+                                <span class="item-icon">📊</span>
+                                <span class="item-text">Market analysis & trends</span>
+                            </div>
+                            <div class="preview-item">
+                                <span class="item-icon">🎯</span>
+                                <span class="item-text">Strategic insights & implications</span>
+                            </div>
+                            <div class="preview-item">
+                                <span class="item-icon">🚀</span>
+                                <span class="item-text">Exclusive tools & resources</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="premium-newsletter-form" method="POST" action="/newsletter/subscribe" aria-label="Newsletter signup">
+                        <div class="form-header">
+                            <h3 class="form-title">Start Your Free Intelligence Briefing</h3>
+                            <p class="form-subtitle">Join in 10 seconds, unsubscribe anytime</p>
+                        </div>
+                        
+                        <div class="form-inputs">
+                            <div class="input-group">
+                                <div class="input-wrapper">
+                                    <span class="input-icon">📧</span>
+                                    <input 
+                                        type="email" 
+                                        name="email" 
+                                        class="premium-newsletter-input" 
+                                        placeholder="your.email@company.com" 
+                                        required
+                                        aria-label="Email address"
+                                    >
+                                    <div class="input-validation"></div>
+                                </div>
+                                <button type="submit" class="premium-newsletter-btn">
+                                    <span class="btn-text">Get Free Digest</span>
+                                    <span class="btn-icon">🚀</span>
+                                    <div class="btn-loading"></div>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-footer">
+                            <div class="privacy-info">
+                                <span class="privacy-icon">🔒</span>
+                                <span class="privacy-text">100% private. No spam. Premium insights only.</span>
+                            </div>
+                            <div class="form-features">
+                                <div class="feature">
+                                    <span class="feature-icon">⚡</span>
+                                    <span class="feature-text">Instant access</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">🎯</span>
+                                    <span class="feature-text">Highly curated</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">📱</span>
+                                    <span class="feature-text">Mobile optimized</span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div class="newsletter-testimonial">
+                        <div class="testimonial-content">
+                            <blockquote class="testimonial-quote">
+                                "The most valuable 5 minutes of my Monday. Essential for staying ahead in AI."
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <span class="author-name">Sarah Chen</span>
+                                    <span class="author-title">VP of AI Strategy, Fortune 500</span>
+                                </div>
+                                <div class="author-rating">
+                                    <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+   <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section footer__section--brand">
+                    <div class="footer__brand">
+                        <div class="footer__logo">
+                            <span class="logo-icon" aria-hidden="true">🍽️</span>
+                            AI Buffet
+                        </div>
+                        <p class="footer__tagline">
+                            Premium AI insights served fresh daily
+                        </p>
+                    </div>
+                    <div class="social-links" aria-label="Follow us on social media">
+                        <a href="https://www.linkedin.com/company/myaibuffet" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on LinkedIn">
+                            <span aria-hidden="true">💼</span>
+                        </a>
+                        <a href="https://x.com/myaibuffet" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on X (Twitter)">
+                            <span aria-hidden="true">🐦</span>
+                        </a>
+                        <a href="../rss.xml" class="social-link" aria-label="Subscribe to RSS feed">
+                            <span aria-hidden="true">📡</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer__section">
+                    <h3 class="footer__heading">Explore</h3>
+                    <ul class="footer__links">
+                        <li><a href="news.html" class="footer__link">AI News</a></li>
+                        <li><a href="tools.html" class="footer__link">Tool Reviews</a></li>
+                        <li><a href="https://ai-buffet.com/tools" class="footer__link">Free Templates</a></li>
+                        <li><a href="../all-articles.html" class="footer__link">All Categories</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__section">
+                    <h3 class="footer__heading">Resources</h3>
+                    <ul class="footer__links">
+                        <li><a href="../about.html" class="footer__link">About</a></li>
+                        <li><a href="mailto:hello@myaibuffet.com" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__section">
+                    <h3 class="footer__heading">Newsletter</h3>
+                    <p class="footer__newsletter-text">
+                        Get weekly AI insights delivered to your inbox
+                    </p>
+                    <a href="../#newsletter" class="btn btn-secondary btn-sm">
+                        Subscribe Now
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="footer__legal">
+                    <p>&copy; 2025 AI Buffet. All rights reserved.</p>
+                </div>
+                <div class="footer__credits">
+                    <p>Made with care for the AI community</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Supabase Client -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js" defer></script>
+    <script defer>
+        // Supabase Configuration
+        // TODO: Move to backend service for production security
+        const SUPABASE_URL = 'https://npetaroffoyjohjiwssf.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wZXRhcm9mZm95am9oaml3c3NmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcwMDk5OTgsImV4cCI6MjA3MjU4NTk5OH0.oYJ4ETV_zIDx_7KWJlEtcrIrRqy72HYEFzAs37pPzB8';
+
+
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        
+        // Global state
+        let allArticles = [];
+        let filteredArticles = [];
+        let currentFilter = 'all';
+        let currentSort = 'relevance';
+        let currentTimeRange = 'all';
+        let articlesLoaded = 0;
+        const articlesPerPage = 12;
+
+        // Mock data function for development/security
+        function getMockArticles() {
+            return [
+                {
+                    id: 1,
+                    title: "OpenAI Releases GPT-4 Turbo with Enhanced Coding Capabilities",
+                    slug: "openai-gpt4-turbo-coding",
+                    description: "The latest iteration of GPT-4 shows significant improvements in code generation, debugging, and understanding complex programming tasks.",
+                    content_snippet: "OpenAI's newest model demonstrates remarkable advances in software development assistance...",
+                    link: "#",
+                    source: "AI Technology News",
+                    author: "Sarah Chen",
+                    pub_date: new Date().toISOString(),
+                    featured: "TRUE",
+                    is_top_story: "TRUE",
+                    trending_score: 95,
+                    breaking_news: "FALSE",
+                    word_count: 1200
+                },
+                {
+                    id: 2,
+                    title: "Claude 3.5 Haiku: Anthropic's Fastest AI Model Yet",
+                    slug: "claude-3-5-haiku-launch",
+                    description: "Anthropic unveils Claude 3.5 Haiku, delivering state-of-the-art performance with remarkable speed and efficiency.",
+                    content_snippet: "The new Haiku model combines speed with intelligence, perfect for real-time applications...",
+                    link: "#",
+                    source: "AI Research Weekly",
+                    author: "Dr. Michael Rodriguez",
+                    pub_date: new Date(Date.now() - 86400000).toISOString(),
+                    featured: "TRUE",
+                    is_top_story: "FALSE",
+                    trending_score: 88,
+                    breaking_news: "FALSE",
+                    word_count: 950
+                },
+                {
+                    id: 3,
+                    title: "Google's Gemini 2.0 Shows Major Improvements in Multimodal Tasks",
+                    slug: "google-gemini-2-multimodal",
+                    description: "Google's latest AI model demonstrates exceptional performance across text, image, and video understanding tasks.",
+                    content_snippet: "Gemini 2.0 represents a significant leap in multimodal AI capabilities...",
+                    link: "#",
+                    source: "TechCrunch AI",
+                    author: "Jessica Park",
+                    pub_date: new Date(Date.now() - 172800000).toISOString(),
+                    featured: "FALSE",
+                    is_top_story: "TRUE",
+                    trending_score: 82,
+                    breaking_news: "TRUE",
+                    word_count: 1050
+                }
+            ];
+        }
+
+        // Data fetching functions
+        async function fetchNewsArticles(options = {}) {
+            try {
+                const {
+                    category = null,
+                    limit = 50,
+                    offset = 0,
+                    sortBy = 'trending_score',
+                    timeRange = 'today',
+                    featured = null,
+                    breaking = null,
+                    isTopStory = null
+                } = options;
+                
+                // Select only the fields we need for better performance
+                let query = supabase
+                    .from('articles')
+                    .select(`
+                        id,
+                        title,
+                        slug,
+                        description,
+                        content_snippet,
+                        link,
+                        source,
+                        author,
+                        pub_date,
+                        featured,
+                        is_top_story,
+                        trending_score,
+                        breaking_news,
+                        word_count
+                    `);
+                
+                // Apply filters
+                if (category && category !== 'all') {
+                    if (category === 'breaking') {
+                        query = query.eq('breaking_news', 'TRUE');
+                    }
+                    // Note: Remove category filtering since we don't have category field anymore
+                    // You may want to add a category field back or use source-based filtering
+                }
+                
+                if (featured !== null) {
+                    query = query.eq('featured', featured ? 'TRUE' : 'FALSE');
+                }
+                
+                if (breaking !== null) {
+                    query = query.eq('breaking_news', breaking ? 'TRUE' : 'FALSE');
+                }
+                
+                if (isTopStory !== null) {
+                    query = query.eq('is_top_story', isTopStory ? 'TRUE' : 'FALSE');
+                }
+                
+                // Time range filter
+                if (timeRange !== 'all') {
+                    const now = new Date();
+                    let startDate;
+                    
+                    switch (timeRange) {
+                        case 'today':
+                            startDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+                            break;
+                        case 'week':
+                            startDate = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+                            break;
+                        case 'month':
+                            startDate = new Date(now.getFullYear(), now.getMonth(), 1);
+                            break;
+                    }
+                    
+                    if (startDate) {
+                        query = query.gte('pub_date', startDate.toISOString());
+                    }
+                }
+                
+                // Sorting - matches exact SQL queries
+                switch (sortBy) {
+                    case 'recent':
+                        // ORDER BY pub_date DESC
+                        query = query.order('pub_date', { ascending: false });
+                        break;
+                    case 'trending':
+                        // ORDER BY trending_score DESC, pub_date DESC  
+                        query = query.order('trending_score', { ascending: false })
+                                     .order('pub_date', { ascending: false });
+                        break;
+                    case 'featured':
+                        query = query.order('featured', { ascending: false })
+                                     .order('pub_date', { ascending: false });
+                        break;
+                    default:
+                        query = query.order('pub_date', { ascending: false });
+                }
+                
+                query = query.range(offset, offset + limit - 1);
+                
+                const { data, error, count } = await query;
+                
+                if (error) {
+                    return { articles: [], total: 0 };
+                }
+                
+                
+                // Check if we're looking for top stories and found none
+                if (isTopStory === true && (!data || data.length === 0)) {
+                    // No top stories found
+                }
+                
+                
+                return { articles: data || [], total: count || data?.length || 0 };
+            } catch (error) {
+                return { articles: [], total: 0 };
+            }
+        }
+        
+        async function searchArticles(query, options = {}) {
+            try {
+                const { limit = 20, offset = 0 } = options;
+                
+                const { data, error } = await supabase
+                    .from('articles')
+                    .select('*')
+                    .or(`title.ilike.%${query}%, description.ilike.%${query}%, content_snippet.ilike.%${query}%`)
+                    .order('trending_score', { ascending: false })
+                    .range(offset, offset + limit - 1);
+                
+                if (error) {
+                    return [];
+                }
+                
+                return data || [];
+            } catch (error) {
+                return [];
+            }
+        }
+        
+        async function getArticleStats() {
+            try {
+                // Get total articles count
+                const { count: totalCount } = await supabase
+                    .from('articles')
+                    .select('*', { count: 'exact', head: true });
+                
+                // Get today's articles count
+                const { count: todayCount } = await supabase
+                    .from('articles')
+                    .select('*', { count: 'exact', head: true })
+                    .gte('pub_date', new Date(new Date().setHours(0,0,0,0)).toISOString());
+                
+                // Get unique sources
+                const { data: sourcesData } = await supabase
+                    .from('articles')
+                    .select('source');
+                
+                const uniqueSources = [...new Set(sourcesData?.map(s => s.source) || [])].length;
+                
+                // Get breaking news count
+                const { count: breakingCount } = await supabase
+                    .from('articles')
+                    .select('*', { count: 'exact', head: true })
+                    .eq('breaking_news', 'TRUE');
+                
+                // Get top stories count
+                const { count: topStoriesCount } = await supabase
+                    .from('articles')
+                    .select('*', { count: 'exact', head: true })
+                    .eq('is_top_story', 'TRUE');
+                
+                return {
+                    total: totalCount || 0,
+                    today: todayCount || 0,
+                    sources: uniqueSources,
+                    breaking: breakingCount || 0,
+                    topStories: topStoriesCount || 0
+                };
+            } catch (error) {
+                return { total: 0, today: 0, sources: 0, breaking: 0, topStories: 0 };
+            }
+        }
+        
+        // Article rendering functions
+        function renderArticleCard(article, type = 'standard') {
+            const formatDate = (dateString) => {
+                const date = new Date(dateString);
+                const now = new Date();
+                const diffMs = now - date;
+                const diffMins = Math.floor(diffMs / 60000);
+                const diffHours = Math.floor(diffMs / 3600000);
+                const diffDays = Math.floor(diffMs / 86400000);
+                
+                if (diffMins < 60) {
+                    return `${diffMins}m ago`;
+                } else if (diffHours < 24) {
+                    return `${diffHours}h ago`;
+                } else if (diffDays < 7) {
+                    return `${diffDays}d ago`;
+                } else {
+                    return date.toLocaleDateString();
+                }
+            };
+            
+            const getCategoryIcon = (category) => {
+                const icons = {
+                    'breaking': '⚡',
+                    'research': '🔬',
+                    'business': '💼',
+                    'regulation': '⚖️',
+                    'startups': '🚀',
+                    'product-launch': '🚀',
+                    'policy': '🏛️',
+                    'ai-safety': '🛡️',
+                    'ethics': '🤝'
+                };
+                return icons[category] || '📰';
+            };
+            
+            const getReadTime = (wordCount) => {
+                // Use actual word_count from database, fallback to reasonable estimate
+                const words = wordCount || 300;
+                const wordsPerMinute = 200;
+                const minutes = Math.max(1, Math.ceil(words / wordsPerMinute));
+                return `${minutes} min read`;
+            };
+            
+            const truncateText = (text, maxLength = 150) => {
+                if (!text || text.length <= maxLength) return text || '';
+                return text.substring(0, maxLength) + '...';
+            };
+            
+            if (type === 'hero') {
+                return `
+                    <article class="featured-hero-card" data-category="news">
+                        <div class="hero-card-background">
+                            <div class="background-overlay"></div>
+                            <div class="background-pattern"></div>
+                        </div>
+                        <div class="hero-card-content">
+                            <div class="hero-card-header">
+                                ${article.breaking_news === 'TRUE' ? `
+                                    <div class="breaking-badge">
+                                        <span class="badge-pulse"></span>
+                                        <span class="badge-text">BREAKING</span>
+                                    </div>
+                                ` : ''}
+                                <div class="article-priority">
+                                    <span class="priority-icon">🤖</span>
+                                    <span class="priority-text">${article.is_top_story === 'TRUE' ? 'TOP STORY' : 'FEATURED'}</span>
+                                </div>
+                            </div>
+                            <h3 class="hero-card-title">
+                                <a href="${article.link}" target="_blank" rel="noopener">${article.title}</a>
+                            </h3>
+                            <p class="hero-card-excerpt">${truncateText(article.description || article.content_snippet, 200)}</p>
+                            <div class="hero-card-meta">
+                                <div class="meta-group">
+                                    <span class="meta-icon">📅</span>
+                                    <span class="meta-text">${formatDate(article.pub_date)}</span>
+                                </div>
+                                <div class="meta-group">
+                                    <span class="meta-icon">📰</span>
+                                    <span class="meta-text">${article.source}</span>
+                                </div>
+                                <div class="meta-group">
+                                    <span class="meta-icon">⭐</span>
+                                    <span class="meta-text">Trending ${(parseFloat(article.trending_score) || 3).toFixed(1)}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            }
+            
+            if (type === 'secondary') {
+                return `
+                    <article class="featured-secondary-card" data-category="news">
+                        <div class="secondary-card-header">
+                            <div class="category-badge news">
+                                <span class="badge-icon">🤖</span>
+                                <span class="badge-text">AI NEWS</span>
+                            </div>
+                            ${(parseFloat(article.trending_score) || 0) >= 4 ? `
+                                <div class="trending-indicator">
+                                    <span class="trending-icon">📈</span>
+                                </div>
+                            ` : `
+                                <div class="impact-score">
+                                    <span class="score-text">${(parseFloat(article.trending_score) || 3).toFixed(1)}</span>
+                                </div>
+                            `}
+                        </div>
+                        <h4 class="secondary-card-title">
+                            <a href="${article.link}" target="_blank" rel="noopener">${article.title}</a>
+                        </h4>
+                        <div class="secondary-card-meta">
+                            <span class="meta-time">${formatDate(article.pub_date)}</span>
+                            <span class="meta-divider">•</span>
+                            <span class="meta-source">${article.source}</span>
+                        </div>
+                    </article>
+                `;
+            }
+            
+            // Standard card for grid
+            return `
+                <article class="premium-news-card" data-category="news">
+                    <div class="news-card-header">
+                        <div class="category-indicator news">
+                            <span class="indicator-icon">🤖</span>
+                            <span class="indicator-text">AI NEWS</span>
+                        </div>
+                        ${(parseFloat(article.trending_score) || 0) >= 4 ? `
+                            <div class="trending-badge">
+                                <span class="trending-icon">🔥</span>
+                                <span class="trending-text">Trending</span>
+                            </div>
+                        ` : `
+                            <div class="article-priority ${(parseFloat(article.trending_score) || 0) >= 4 ? 'high' : 'medium'}">
+                                <span class="priority-dot"></span>
+                            </div>
+                        `}
+                    </div>
+                    <div class="news-card-content">
+                        <h3 class="news-card-title">
+                            <a href="${article.link}" target="_blank" rel="noopener">${article.title}</a>
+                        </h3>
+                        <p class="news-card-excerpt">${truncateText(article.description || article.content_snippet)}</p>
+                        <div class="news-card-insights">
+                            <div class="insight-tag">
+                                <span class="tag-icon">💡</span>
+                                <span class="tag-text">AI Insight</span>
+                            </div>
+                            ${article.trending_score && parseFloat(article.trending_score) >= 4 ? `
+                                <div class="stock-indicator">
+                                    <span class="stock-symbol">AI Trending</span>
+                                    <span class="stock-change positive">${parseFloat(article.trending_score).toFixed(1)}/5</span>
+                                </div>
+                            ` : `
+                                <div class="impact-meter">
+                                    <span class="meter-label">Relevance:</span>
+                                    <div class="meter-bar">
+                                        <div class="meter-fill" style="width: ${(parseFloat(article.trending_score) || 3) * 20}%"></div>
+                                    </div>
+                                    <span class="meter-value">${(parseFloat(article.trending_score) || 3).toFixed(1)}</span>
+                                </div>
+                            `}
+                        </div>
+                    </div>
+                    <div class="news-card-footer">
+                        <div class="footer-meta">
+                            <span class="meta-time">${formatDate(article.pub_date)}</span>
+                            <span class="meta-divider">•</span>
+                            <span class="meta-source">${article.source}</span>
+                            <span class="meta-divider">•</span>
+                            <span class="meta-read-time">${getReadTime(article.word_count)}</span>
+                        </div>
+                        <div class="footer-actions">
+                            <button class="action-btn bookmark" onclick="toggleBookmark('${article.id}')">
+                                <span class="action-icon">🔖</span>
+                            </button>
+                            <button class="action-btn share" onclick="shareArticle('${article.id}', '${article.title}', '${article.link}')">
+                                <span class="action-icon">📤</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }
+        
+        function renderTabContent(articles, tabType) {
+            const grid = document.getElementById(`${tabType}-grid`);
+            if (!grid) return;
+            
+            if (articles.length === 0) {
+                grid.innerHTML = `
+                    <div class="no-articles">
+                        <div class="no-articles-icon">📰</div>
+                        <div class="no-articles-text">No articles found for this filter</div>
+                        <button class="refresh-btn" onclick="loadTabContent('${tabType}')">Try Again</button>
+                    </div>
+                `;
+                return;
+            }
+            
+            grid.innerHTML = articles.map(article => renderArticleCard(article)).join('');
+        }
+        
+        function renderFeaturedSection(articles) {
+            if (articles.length === 0) return;
+            
+            const heroCard = document.querySelector('.featured-hero-card');
+            const secondaryGrid = document.querySelector('.featured-secondary-grid');
+            
+            if (heroCard && articles[0]) {
+                heroCard.outerHTML = renderArticleCard(articles[0], 'hero');
+            }
+            
+            if (secondaryGrid && articles.length > 1) {
+                secondaryGrid.innerHTML = articles.slice(1, 3).map(article => 
+                    renderArticleCard(article, 'secondary')
+                ).join('');
+            }
+        }
+        
+        function renderMainGrid(articles, append = false) {
+            const grid = document.getElementById('premium-news-grid');
+            if (!grid) return;
+            
+            if (!append) {
+                grid.innerHTML = '';
+            }
+            
+            if (articles.length === 0 && !append) {
+                grid.innerHTML = `
+                    <div class="no-articles">
+                        <div class="no-articles-icon">📰</div>
+                        <div class="no-articles-text">No articles found</div>
+                        <button class="refresh-btn" onclick="loadAllContent()">Refresh</button>
+                    </div>
+                `;
+                return;
+            }
+            
+            const articlesHTML = articles.map(article => renderArticleCard(article)).join('');
+            grid.insertAdjacentHTML('beforeend', articlesHTML);
+        }
+        
+        // Content loading functions
+        async function loadTabContent(tabType) {
+            const grid = document.getElementById(`${tabType}-grid`);
+            if (!grid) return;
+            
+            // Show loading state
+            grid.innerHTML = `
+                <article class="premium-article-card loading">
+                    <div class="article-shimmer">
+                        <div class="shimmer-header"></div>
+                        <div class="shimmer-lines">
+                            <div class="shimmer-line"></div>
+                            <div class="shimmer-line short"></div>
+                        </div>
+                        <div class="shimmer-footer"></div>
+                    </div>
+                </article>
+            `.repeat(3);
+            
+            let options = {};
+            
+            switch (tabType) {
+                case 'top-articles':
+                    // ⭐ Top Stories → SELECT * FROM articles WHERE is_top_story = true ORDER BY pub_date DESC LIMIT 5;
+                    options = {
+                        isTopStory: true,
+                        sortBy: 'recent',
+                        limit: 5,
+                        timeRange: 'all'
+                    };
+                    break;
+                case 'latest-articles':
+                    // 📰 Latest Updates → SELECT * FROM articles ORDER BY pub_date DESC LIMIT 10;
+                    options = {
+                        sortBy: 'recent',
+                        limit: 10,
+                        timeRange: 'all'
+                    };
+                    break;
+                case 'trending-articles':
+                    // 📈 Trending → SELECT * FROM articles ORDER BY trending_score DESC, pub_date DESC LIMIT 5;
+                    options = {
+                        sortBy: 'trending',
+                        limit: 5,
+                        timeRange: 'all'
+                    };
+                    break;
+            }
+            
+            let { articles } = await fetchNewsArticles(options);
+            
+            // If no Top Stories found, show message instead of fallback
+            if (articles.length === 0 && tabType === 'top-articles') {
+                // No articles with is_top_story = true found
+                // Don't fallback - show empty state for Top Stories if none are marked
+            }
+            
+            renderTabContent(articles, tabType);
+            
+            // Update count
+            const countElement = document.getElementById('current-tab-count');
+            if (countElement) {
+                countElement.textContent = articles.length;
+            }
+        }
+        
+        async function loadFeaturedContent() {
+            // Get top story articles (is_top_story = true OR breaking_news = true)
+            let { articles } = await fetchNewsArticles({
+                isTopStory: true,
+                limit: 3,
+                sortBy: 'featured',
+                timeRange: 'all'
+            });
+            
+            
+            // If no top stories, get breaking news
+            if (articles.length === 0) {
+                const breakingResult = await fetchNewsArticles({
+                    breaking: true,
+                    limit: 3,
+                    sortBy: 'recent',
+                    timeRange: 'all'
+                });
+                articles = breakingResult.articles;
+            }
+            
+            // If still no articles, get highest importance articles
+            if (articles.length === 0) {
+                const topResult = await fetchNewsArticles({
+                    limit: 3,
+                    sortBy: 'recent'
+                });
+                articles = topResult.articles;
+            }
+            
+            renderFeaturedSection(articles);
+        }
+        
+        async function loadMainContent() {
+            const { articles, total } = await fetchNewsArticles({
+                limit: articlesPerPage,
+                offset: articlesLoaded,
+                sortBy: currentSort,
+                timeRange: currentTimeRange,
+                category: currentFilter
+            });
+            
+            allArticles = [...allArticles, ...articles];
+            filteredArticles = allArticles;
+            articlesLoaded += articles.length;
+            
+            renderMainGrid(articles, articlesLoaded > articlesPerPage);
+            
+            // Update counts
+            const loadedCountEl = document.getElementById('loaded-count');
+            const totalArticlesEl = document.getElementById('total-articles');
+            const filteredCountEl = document.getElementById('filtered-count');
+            
+            if (loadedCountEl) loadedCountEl.textContent = articlesLoaded;
+            if (totalArticlesEl) totalArticlesEl.textContent = total;
+            if (filteredCountEl) filteredCountEl.textContent = articles.length;
+        }
+        
+        async function loadAllContent() {
+            await Promise.all([
+                loadTabContent('top-articles'),
+                loadTabContent('latest-articles'),
+                loadTabContent('trending-articles'),
+                loadFeaturedContent(),
+                loadMainContent(),
+                updateStats()
+            ]);
+        }
+        
+        async function updateStats() {
+            const stats = await getArticleStats();
+            
+            const liveCountEl = document.getElementById('live-articles-count');
+            const totalCountEl = document.getElementById('total-articles-count');
+            const sourcesCountEl = document.getElementById('sources-count');
+            
+            // Animate the numbers
+            if (liveCountEl) animateNumber(liveCountEl, stats.today);
+            if (totalCountEl) animateNumber(totalCountEl, stats.total);
+            if (sourcesCountEl) animateNumber(sourcesCountEl, stats.sources);
+            
+        }
+        
+        function animateNumber(element, targetNumber) {
+            const duration = 1000;
+            const start = parseInt(element.textContent) || 0;
+            const increment = (targetNumber - start) / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if ((increment > 0 && current >= targetNumber) || (increment < 0 && current <= targetNumber)) {
+                    element.textContent = `${targetNumber}+`;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = `${Math.floor(current)}+`;
+                }
+            }, 16);
+        }
+        
+        // Utility functions
+        function toggleBookmark(articleId) {
+            // This would integrate with user preferences/local storage
+            // Bookmark toggled for article: articleId
+        }
+        
+        function shareArticle(articleId, title, url) {
+            if (navigator.share) {
+                navigator.share({
+                    title: title,
+                    url: url
+                });
+            } else {
+                navigator.clipboard.writeText(url);
+                // Show toast notification
+                // Link copied to clipboard
+            }
+        }
+        
+        // Premium News Page JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Premium Tab System
+            const premiumTabs = document.querySelectorAll('.premium-tab-button');
+            const tabPanels = document.querySelectorAll('.premium-tab-panel');
+            const currentTabCount = document.getElementById('current-tab-count');
+            
+            function initTabs() {
+                if (premiumTabs.length === 0) return;
+                
+                premiumTabs.forEach((tab, index) => {
+                    tab.addEventListener('click', function() {
+                        const targetTab = this.dataset.tab;
+                        
+                        // Update active tab
+                        premiumTabs.forEach(t => t.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // Update tab panels
+                        tabPanels.forEach(panel => {
+                            panel.classList.remove('active');
+                            if (panel.id === targetTab + '-panel') {
+                                panel.classList.add('active');
+                            }
+                        });
+                        
+                        // Load content for the active tab
+                        loadTabContent(targetTab);
+                        
+                        // Add loading animation
+                        showTabLoading(targetTab);
+                    });
+                });
+            }
+            
+            function updateArticleCount(tabType) {
+                if (!currentTabCount) return;
+                
+                const counts = {
+                    'top-articles': '5',     // LIMIT 5
+                    'latest-articles': '10', // LIMIT 10  
+                    'trending-articles': '5' // LIMIT 5
+                };
+                
+                currentTabCount.textContent = counts[tabType] || '10';
+            }
+            
+            function showTabLoading(tabType) {
+                const panel = document.getElementById(tabType + '-panel');
+                if (!panel) return;
+                
+                // Add subtle loading animation
+                panel.style.opacity = '0.7';
+                setTimeout(() => {
+                    panel.style.opacity = '1';
+                }, 300);
+            }
+            
+            // Premium Filter System
+            const filterPills = document.querySelectorAll('.filter-pill');
+            const filterStats = document.getElementById('filtered-count');
+            const sortSelect = document.getElementById('sort-select');
+            const timeSelect = document.getElementById('time-select');
+            
+            function initFilters() {
+                filterPills.forEach(pill => {
+                    pill.addEventListener('click', async function() {
+                        const filter = this.dataset.filter;
+                        currentFilter = filter;
+                        
+                        // Update active filter
+                        filterPills.forEach(p => p.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // Reset pagination
+                        articlesLoaded = 0;
+                        allArticles = [];
+                        
+                        // Reload content with new filter
+                        await loadMainContent();
+                        
+                        // Update filter count
+                        await updateFilterCounts();
+                    });
+                });
+                
+                if (sortSelect) {
+                    sortSelect.addEventListener('change', async function() {
+                        currentSort = this.value;
+                        articlesLoaded = 0;
+                        allArticles = [];
+                        await loadMainContent();
+                    });
+                }
+                
+                if (timeSelect) {
+                    timeSelect.addEventListener('change', async function() {
+                        currentTimeRange = this.value;
+                        articlesLoaded = 0;
+                        allArticles = [];
+                        await loadMainContent();
+                    });
+                }
+            }
+            
+            async function updateFilterCounts() {
+                const filters = ['all', 'breaking', 'research', 'business', 'regulation', 'startups'];
+                
+                for (const filter of filters) {
+                    const options = {
+                        category: filter,
+                        limit: 1,
+                        timeRange: currentTimeRange
+                    };
+                    
+                    const { total } = await fetchNewsArticles(options);
+                    
+                    const pillCount = document.querySelector(`[data-filter="${filter}"] .pill-count`);
+                    if (pillCount) {
+                        pillCount.textContent = total;
+                    }
+                }
+            }
+            
+            // Premium Search System
+            const premiumSearch = document.getElementById('premium-search');
+            const searchClear = document.getElementById('search-clear');
+            let searchTimeout;
+            
+            function initSearch() {
+                if (!premiumSearch) return;
+                
+                premiumSearch.addEventListener('input', function() {
+                    const query = this.value.trim();
+                    
+                    // Show/hide clear button
+                    if (searchClear) {
+                        searchClear.style.opacity = query ? '1' : '0';
+                    }
+                    
+                    // Debounced search
+                    clearTimeout(searchTimeout);
+                    searchTimeout = setTimeout(async () => {
+                        if (query.length > 2) {
+                            await performSearch(query);
+                        } else if (query.length === 0) {
+                            await clearSearch();
+                        }
+                    }, 300);
+                });
+                
+                if (searchClear) {
+                    searchClear.addEventListener('click', async function() {
+                        premiumSearch.value = '';
+                        await clearSearch();
+                        this.style.opacity = '0';
+                    });
+                }
+            }
+            
+            async function performSearch(query) {
+                // Show loading state
+                const mainGrid = document.getElementById('premium-news-grid');
+                if (mainGrid) {
+                    mainGrid.innerHTML = `
+                        <div class="search-loading">
+                            <div class="loading-spinner"></div>
+                            <div class="loading-text">Searching "${query}"...</div>
+                        </div>
+                    `;
+                }
+                
+                try {
+                    const searchResults = await searchArticles(query, { limit: 50 });
+                    
+                    if (searchResults.length === 0) {
+                        mainGrid.innerHTML = `
+                            <div class="no-search-results">
+                                <div class="no-results-icon">🔍</div>
+                                <div class="no-results-text">No results found for "${query}"</div>
+                                <div class="no-results-suggestion">Try different keywords or check spelling</div>
+                            </div>
+                        `;
+                    } else {
+                        renderMainGrid(searchResults, false);
+                        
+                        // Update result count
+                        const filteredCountEl = document.getElementById('filtered-count');
+                        if (filteredCountEl) {
+                            filteredCountEl.textContent = searchResults.length;
+                        }
+                    }
+                } catch (error) {
+                    // Search error
+                    mainGrid.innerHTML = `
+                        <div class="search-error">
+                            <div class="error-icon">⚠️</div>
+                            <div class="error-text">Search temporarily unavailable</div>
+                            <button class="retry-btn" onclick="performSearch('${query}')">Try Again</button>
+                        </div>
+                    `;
+                }
+            }
+            
+            async function clearSearch() {
+                // Reset to normal content
+                articlesLoaded = 0;
+                allArticles = [];
+                await loadMainContent();
+            }
+            
+            // Premium Load More System
+            const premiumLoadBtn = document.getElementById('premium-load-more');
+            const loadedCount = document.getElementById('loaded-count');
+            const totalArticles = document.getElementById('total-articles');
+            
+            function initLoadMore() {
+                if (!premiumLoadBtn) return;
+                
+                premiumLoadBtn.addEventListener('click', async function() {
+                    this.disabled = true;
+                    
+                    const progressBar = this.querySelector('.load-btn-progress');
+                    const btnText = this.querySelector('.load-btn-text');
+                    
+                    if (btnText) btnText.textContent = 'Loading...';
+                    
+                    // Animate progress bar
+                    if (progressBar) {
+                        progressBar.style.width = '100%';
+                    }
+                    
+                    try {
+                        await loadMainContent();
+                        
+                        if (btnText) btnText.textContent = 'Load Next Batch';
+                        if (progressBar) progressBar.style.width = '0%';
+                        
+                        this.disabled = false;
+                    } catch (error) {
+                        // Error loading more articles
+                        if (btnText) btnText.textContent = 'Try Again';
+                        if (progressBar) progressBar.style.width = '0%';
+                        this.disabled = false;
+                    }
+                });
+            }
+            
+            // Refresh Buttons
+            const refreshButtons = document.querySelectorAll('.featured-refresh, .latest-refresh');
+            
+            function initRefreshButtons() {
+                refreshButtons.forEach(btn => {
+                    btn.addEventListener('click', async function() {
+                        const icon = this.querySelector('.refresh-icon');
+                        
+                        if (icon) {
+                            icon.style.animation = 'spin 1s linear';
+                        }
+                        
+                        // Add visual feedback
+                        this.style.transform = 'translateY(-1px) scale(0.95)';
+                        
+                        try {
+                            if (this.classList.contains('featured-refresh')) {
+                                await loadFeaturedContent();
+                            } else if (this.classList.contains('latest-refresh')) {
+                                articlesLoaded = 0;
+                                allArticles = [];
+                                await loadMainContent();
+                            }
+                        } catch (error) {
+                            // Error refreshing content
+                        }
+                        
+                        setTimeout(() => {
+                            if (icon) icon.style.animation = '';
+                            this.style.transform = '';
+                        }, 1000);
+                    });
+                });
+            }
+            
+            // View Toggle System
+            const viewToggle = document.querySelectorAll('.view-btn');
+            const newsGrid = document.querySelector('.premium-news-grid');
+            
+            function initViewToggle() {
+                viewToggle.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const view = this.dataset.view;
+                        
+                        // Update active button
+                        viewToggle.forEach(b => b.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // Update grid layout
+                        if (newsGrid) {
+                            newsGrid.className = view === 'list' ? 
+                                'premium-news-grid list-view' : 
+                                'premium-news-grid';
+                        }
+                    });
+                });
+            }
+            
+            // Newsletter Form Enhancement
+            const newsletterForm = document.querySelector('.premium-newsletter-form');
+            const newsletterInput = document.querySelector('.premium-newsletter-input');
+            const newsletterBtn = document.querySelector('.premium-newsletter-btn');
+            
+            function initNewsletter() {
+                if (!newsletterForm) return;
+                
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    if (!newsletterInput.value || !newsletterInput.value.includes('@')) {
+                        newsletterInput.style.borderColor = '#EF4444';
+                        setTimeout(() => {
+                            newsletterInput.style.borderColor = '';
+                        }, 2000);
+                        return;
+                    }
+                    
+                    // Success animation
+                    if (newsletterBtn) {
+                        const originalText = newsletterBtn.querySelector('.btn-text').textContent;
+                        newsletterBtn.querySelector('.btn-text').textContent = 'Success!';
+                        newsletterBtn.style.background = 'linear-gradient(135deg, #10B981 0%, #22D3EE 100%)';
+                        
+                        setTimeout(() => {
+                            newsletterBtn.querySelector('.btn-text').textContent = originalText;
+                            newsletterBtn.style.background = '';
+                            newsletterInput.value = '';
+                        }, 3000);
+                    }
+                });
+            }
+            
+            // Dynamic Stats Update
+            function updateLiveStats() {
+                const liveCount = document.getElementById('live-articles-count');
+                const sourcesCount = document.getElementById('sources-count');
+                
+                if (liveCount) {
+                    setInterval(() => {
+                        const current = parseInt(liveCount.textContent) || 150;
+                        liveCount.textContent = current + Math.floor(Math.random() * 3);
+                    }, 30000); // Update every 30 seconds
+                }
+            }
+            
+            // Initialize all systems
+            initTabs();
+            initFilters();
+            initSearch();
+            initLoadMore();
+            initRefreshButtons();
+            initViewToggle();
+            initNewsletter();
+            
+            // Test Supabase connection first
+            async function testSupabaseConnection() {
+                try {
+                    
+                    // Test 1: Simple query without filters
+                    const { data: testData, error: testError } = await supabase
+                        .from('articles')
+                        .select('id, title, featured, breaking_news, is_top_story, trending_score, source, author, word_count')
+                        .limit(5);
+                    
+                    
+                    if (testError) {
+                        
+                        // Show user-friendly error
+                        document.body.insertAdjacentHTML('beforeend', `
+                            <div style="position: fixed; top: 20px; right: 20px; background: #DC2626; color: white; padding: 1rem; border-radius: 8px; z-index: 9999; max-width: 400px;">
+                                <h4>Database Connection Error</h4>
+                                <p><strong>Error:</strong> ${testError.message}</p>
+                                <p><strong>Possible fixes:</strong></p>
+                                <ul style="margin: 8px 0; padding-left: 20px;">
+                                    <li>Check if RLS is enabled on the articles table</li>
+                                    <li>Verify the Supabase URL and API key</li>
+                                    <li>Ensure anon key has read permissions</li>
+                                </ul>
+                                <button onclick="this.parentElement.remove()" style="background: rgba(255,255,255,0.2); border: none; color: white; padding: 4px 8px; border-radius: 4px; cursor: pointer;">Close</button>
+                            </div>
+                        `);
+                        return false;
+                    }
+                    
+                    return true;
+                    
+                } catch (error) {
+                    return false;
+                }
+            }
+            
+            // Test connection first, then load content
+            testSupabaseConnection().then((isConnected) => {
+                if (isConnected) {
+                    loadAllContent().then(() => {
+                        // Initial content loaded
+                    }).catch(error => {
+                        // Error loading initial content
+                    });
+                } else {
+                    // Skipping content load due to connection issues
+                    // Show fallback content or instructions
+                }
+            });
+            
+            // Keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                // Ctrl+K for search
+                if (e.ctrlKey && e.key === 'k') {
+                    e.preventDefault();
+                    if (premiumSearch) {
+                        premiumSearch.focus();
+                    }
+                }
+                
+                // Tab navigation with arrow keys
+                if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                    const activeTab = document.querySelector('.premium-tab-button.active');
+                    if (activeTab && document.activeElement === activeTab) {
+                        e.preventDefault();
+                        const tabs = Array.from(premiumTabs);
+                        const currentIndex = tabs.indexOf(activeTab);
+                        const nextIndex = e.key === 'ArrowRight' ? 
+                            (currentIndex + 1) % tabs.length : 
+                            (currentIndex - 1 + tabs.length) % tabs.length;
+                        
+                        tabs[nextIndex].click();
+                        tabs[nextIndex].focus();
+                    }
+                }
+            });
+            
+            // Smooth scroll for CTA buttons
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+        
+        // CSS Animation for spin
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes spin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+            
+            .list-view {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .list-view .premium-news-card {
+                display: flex;
+                gap: var(--space-4);
+                align-items: flex-start;
+            }
+            
+            .list-view .news-card-content {
+                flex: 1;
+                margin-bottom: 0;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
