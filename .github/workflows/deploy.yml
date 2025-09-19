@@ -4,40 +4,17 @@ on:
   push:
     branches: [ main ]
 
-permissions:
-  contents: write
-  pages: write
-
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-
-    - name: Replace API Keys
-      run: |
-        # Debug: Check if secret is available
-        echo "Secret length: ${#{{ secrets.SUPABASE_KEY }}}"
-        echo "Secret starts with: $(echo "${{ secrets.SUPABASE_KEY }}" | head -c 10)"
-
-        # Replace SUPABASE_KEY placeholder with actual secret
-        find . -name "*.html" -type f -exec sed -i "s/SUPABASE_KEY_PLACEHOLDER/${{ secrets.SUPABASE_KEY }}/g" {} \;
-
-        # Debug: Check if replacement worked
-        echo "Checking replacement in news.html:"
-        grep -n "SUPABASE_ANON_KEY" categories/news.html | head -1
-
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./
-        force_orphan: true
         cname: www.myaibuffet.com
