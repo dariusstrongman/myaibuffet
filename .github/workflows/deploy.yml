@@ -1,0 +1,33 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Replace API Keys
+      run: |
+        # Replace SUPABASE_KEY placeholder with actual secret
+        find . -name "*.html" -type f -exec sed -i "s/SUPABASE_KEY_PLACEHOLDER/${{ secrets.SUPABASE_KEY }}/g" {} \;
+        # Replace SUPABASE_URL placeholder if you want to secure it too
+        find . -name "*.html" -type f -exec sed -i "s/SUPABASE_URL_PLACEHOLDER/${{ secrets.SUPABASE_URL }}/g" {} \;
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./
