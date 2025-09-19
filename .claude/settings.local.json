@@ -19,7 +19,8 @@
       "Bash(convert:*)",
       "Bash(done)",
       "Bash(sed:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "WebFetch(domain:www.myaibuffet.com)"
     ],
     "deny": [],
     "ask": []
