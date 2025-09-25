@@ -20,7 +20,8 @@
       "Bash(done)",
       "Bash(sed:*)",
       "Bash(cat:*)",
-      "WebFetch(domain:www.myaibuffet.com)"
+      "WebFetch(domain:www.myaibuffet.com)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []
