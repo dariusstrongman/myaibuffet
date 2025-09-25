@@ -177,6 +177,7 @@
                     <li role="none"><a href="../" class="nav-link" role="menuitem">Home</a></li>
                     <li role="none"><a href="news.html" class="nav-link" role="menuitem" aria-current="page">News</a></li>
                     <li role="none"><a href="tools.html" class="nav-link" role="menuitem">Tools</a></li>
+                    <li role="none"><a href="../guides/ai-use-cases.html" class="nav-link" role="menuitem">Ideas</a></li>
                     <li role="none"><a href="../faq.html" class="nav-link" role="menuitem">FAQ</a></li>
                     <li role="none"><a href="../about.html" class="nav-link" role="menuitem">About</a></li>
                 </ul>
@@ -1646,16 +1647,80 @@
         }
         
         function shareArticle(articleId, title, url) {
-            if (navigator.share) {
-                navigator.share({
-                    title: title,
-                    url: url
-                });
-            } else {
-                navigator.clipboard.writeText(url);
-                // Show toast notification
-                // Link copied to clipboard
-            }
+            // Create social share dropdown
+            const shareContainer = document.createElement('div');
+            shareContainer.className = 'share-dropdown';
+            shareContainer.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: #0f172a;
+                border: 2px solid rgba(34, 211, 238, 0.3);
+                border-radius: 16px;
+                padding: 20px;
+                z-index: 1000;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(20px);
+                animation: fadeIn 0.3s ease;
+            `;
+
+            const encodedTitle = encodeURIComponent(`🚀 ${title} | AI Buffet`);
+            const encodedUrl = encodeURIComponent(url);
+
+            shareContainer.innerHTML = `
+                <div style="text-align: center; margin-bottom: 16px;">
+                    <h3 style="color: #22d3ee; margin: 0 0 8px 0;">Share Article</h3>
+                    <p style="color: #94a3b8; margin: 0; font-size: 14px;">Spread the AI knowledge</p>
+                </div>
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}&hashtags=AI,ArtificialIntelligence,TechNews"
+                       target="_blank" rel="noopener"
+                       style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: #1d4ed8; color: white; text-decoration: none; border-radius: 12px; font-weight: 500;">
+                        <span>𝕏</span> Twitter
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}"
+                       target="_blank" rel="noopener"
+                       style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: #0a66c2; color: white; text-decoration: none; border-radius: 12px; font-weight: 500;">
+                        💼 LinkedIn
+                    </a>
+                    <button onclick="navigator.clipboard.writeText('${url}'); showToast('Link copied!'); this.closest('.share-dropdown').remove();"
+                            style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: #22d3ee; color: #0f172a; border: none; border-radius: 12px; font-weight: 500; cursor: pointer;">
+                        🔗 Copy Link
+                    </button>
+                </div>
+                <button onclick="this.closest('.share-dropdown').remove();"
+                        style="position: absolute; top: 8px; right: 12px; background: none; border: none; color: #64748b; font-size: 20px; cursor: pointer;">×</button>
+            `;
+
+            document.body.appendChild(shareContainer);
+
+            // Remove on backdrop click
+            setTimeout(() => {
+                const backdrop = document.createElement('div');
+                backdrop.style.cssText = `
+                    position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 999;
+                    background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(4px);
+                `;
+                backdrop.onclick = () => {
+                    shareContainer.remove();
+                    backdrop.remove();
+                };
+                document.body.appendChild(backdrop);
+            }, 10);
+        }
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.textContent = message;
+            toast.style.cssText = `
+                position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+                background: #22d3ee; color: #0f172a; padding: 12px 24px;
+                border-radius: 25px; font-weight: 500; z-index: 2000;
+                animation: slideUp 0.3s ease, fadeOut 0.3s ease 2s;
+            `;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
         }
         
         // Premium News Page JavaScript
