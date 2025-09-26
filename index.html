@@ -586,8 +586,214 @@
             box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
         }
 
+        /* AI Head Animation Styles */
+        .ai-head-container {
+            position: fixed;
+            top: 20vh;
+            right: 5vw;
+            z-index: 10;
+            pointer-events: none;
+            will-change: transform;
+        }
+
+        .ai-head {
+            width: 120px;
+            height: 120px;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+            transition: all 0.3s ease-out;
+        }
+
+        .ai-head-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #020617 100%);
+            border-radius: 50%;
+            box-shadow:
+                0 0 30px rgba(34, 211, 238, 0.4),
+                inset 0 0 20px rgba(79, 70, 229, 0.2),
+                0 0 60px rgba(139, 92, 246, 0.3);
+            border: 2px solid rgba(34, 211, 238, 0.3);
+            animation: aiPulse 2s ease-in-out infinite alternate;
+            will-change: transform;
+        }
+
+        @keyframes aiPulse {
+            0% {
+                box-shadow:
+                    0 0 30px rgba(34, 211, 238, 0.4),
+                    inset 0 0 20px rgba(79, 70, 229, 0.2),
+                    0 0 60px rgba(139, 92, 246, 0.3);
+            }
+            100% {
+                box-shadow:
+                    0 0 40px rgba(34, 211, 238, 0.6),
+                    inset 0 0 30px rgba(79, 70, 229, 0.4),
+                    0 0 80px rgba(139, 92, 246, 0.5);
+            }
+        }
+
+        .ai-face {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+        }
+
+        .ai-eye {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #22d3ee;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(34, 211, 238, 0.8);
+            animation: aiEyeBlink 3s ease-in-out infinite;
+        }
+
+        .ai-eye-left {
+            top: 25px;
+            left: 20px;
+        }
+
+        .ai-eye-right {
+            top: 25px;
+            right: 20px;
+        }
+
+        @keyframes aiEyeBlink {
+            0%, 90%, 100% {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+            95% {
+                transform: scaleY(0.1);
+                opacity: 0.8;
+            }
+        }
+
+        .ai-mouth {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
+            border-radius: 10px;
+            animation: aiMouthTalk 1.5s ease-in-out infinite;
+        }
+
+        @keyframes aiMouthTalk {
+            0%, 100% {
+                width: 20px;
+                opacity: 0.6;
+            }
+            50% {
+                width: 12px;
+                opacity: 1;
+            }
+        }
+
+        .ai-circuit {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(34, 211, 238, 0.3);
+            animation: aiCircuitSpin 8s linear infinite;
+        }
+
+        .ai-circuit-1 {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            animation-duration: 12s;
+        }
+
+        .ai-circuit-2 {
+            width: 130%;
+            height: 130%;
+            top: -15%;
+            left: -15%;
+            animation-duration: 15s;
+            animation-direction: reverse;
+        }
+
+        .ai-circuit-3 {
+            width: 80%;
+            height: 80%;
+            top: 10%;
+            left: 10%;
+            animation-duration: 10s;
+        }
+
+        @keyframes aiCircuitSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .ai-glow {
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            width: 140%;
+            height: 140%;
+            background: radial-gradient(circle, rgba(34, 211, 238, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: aiGlowPulse 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes aiGlowPulse {
+            0% {
+                transform: scale(0.9);
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(1.1);
+                opacity: 0.7;
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
+            .ai-head-container {
+                top: 15vh;
+                right: 3vw;
+            }
+
+            .ai-head {
+                width: 80px;
+                height: 80px;
+            }
+
+            .ai-face {
+                width: 60px;
+                height: 60px;
+            }
+
+            .ai-eye {
+                width: 8px;
+                height: 8px;
+            }
+
+            .ai-eye-left {
+                top: 18px;
+                left: 15px;
+            }
+
+            .ai-eye-right {
+                top: 18px;
+                right: 15px;
+            }
+
+            .ai-mouth {
+                bottom: 15px;
+                width: 15px;
+            }
+
             .hero-cta-group {
                 flex-direction: column;
                 align-items: center;
@@ -693,12 +899,29 @@
         <!-- Enhanced Hero Section -->
         <section class="hero-enhanced" aria-labelledby="hero-headline">
             <div class="container">
+                <!-- Animated AI Head -->
+                <div class="ai-head-container" id="aiHead">
+                    <div class="ai-head">
+                        <div class="ai-head-inner">
+                            <div class="ai-face">
+                                <div class="ai-eye ai-eye-left"></div>
+                                <div class="ai-eye ai-eye-right"></div>
+                                <div class="ai-mouth"></div>
+                            </div>
+                            <div class="ai-circuit ai-circuit-1"></div>
+                            <div class="ai-circuit ai-circuit-2"></div>
+                            <div class="ai-circuit ai-circuit-3"></div>
+                            <div class="ai-glow"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="hero-content-enhanced">
                     <h1 id="hero-headline" class="hero-title-enhanced">
                         The Ultimate AI Intelligence Hub
                     </h1>
                     <p class="hero-subtitle-enhanced">
-                        Experience the future of artificial intelligence with premium insights, cutting-edge tools, 
+                        Experience the future of artificial intelligence with premium insights, cutting-edge tools,
                         and real-time market intelligence. Where professionals discover tomorrow's AI breakthroughs today.
                     </p>
                     <div class="hero-cta-group">
@@ -734,6 +957,81 @@
                         <span class="stat-number-enhanced" id="market-cap">$2.1T</span>
                         <span class="stat-label-enhanced">AI Market Value</span>
                     </div>
+                </div>
+            </section>
+
+            <!-- Breaking News Section -->
+            <section class="section" id="breaking-news" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; margin: var(--space-12) 0; padding: var(--space-8);">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-6);">
+                    <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin: 0;">
+                        🔥 Breaking AI News
+                    </h2>
+                    <div style="display: flex; align-items: center; gap: var(--space-2); background: rgba(34, 211, 238, 0.1); border: 1px solid var(--neon-cyan); padding: var(--space-1) var(--space-3); border-radius: 20px; color: var(--neon-cyan); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">
+                        <div style="width: 6px; height: 6px; background: var(--neon-cyan); border-radius: 50%; animation: pulse 2s infinite;"></div>
+                        <span>Updated every 8 hours</span>
+                    </div>
+                </div>
+
+                <div id="breaking-news-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--space-6);">
+                    <!-- Featured Breaking News -->
+                    <div style="background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(185, 28, 28, 0.1)); border: 1px solid rgba(220, 38, 38, 0.3); border-radius: 12px; padding: var(--space-6); cursor: pointer; transition: all 0.3s ease;" onclick="window.location.href='articles/openai-gpt5-release-multimodal.html'">
+                        <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-3);">
+                            <span style="background: linear-gradient(135deg, #DC2626, #B91C1C); color: white; padding: var(--space-1) var(--space-2); border-radius: 8px; font-size: var(--font-size-xs); font-weight: var(--font-weight-bold);">🔥 BREAKING</span>
+                            <span style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">TechCrunch</span>
+                        </div>
+                        <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); line-height: var(--line-height-tight); margin-bottom: var(--space-3); color: var(--color-text-primary);">
+                            OpenAI Releases GPT-5: Revolutionary Multimodal Capabilities
+                        </h3>
+                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); line-height: var(--line-height-relaxed); margin-bottom: var(--space-4);">
+                            OpenAI unveils GPT-5 with unprecedented multimodal abilities, combining text, image, and audio processing. Early tests show 40% improvement over GPT-4.
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; color: var(--color-text-secondary); font-size: var(--font-size-sm);">
+                            <span>2 hours ago</span>
+                            <span style="color: var(--neon-cyan);">Read more →</span>
+                        </div>
+                    </div>
+
+                    <!-- RSS Articles from Supabase -->
+                    <div id="rss-news-1" style="background: rgba(79, 70, 229, 0.05); border: 1px solid var(--glass-border); border-radius: 12px; padding: var(--space-6); cursor: pointer; transition: all 0.3s ease;" onclick="window.location.href='categories/news.html'">
+                        <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-3);">
+                            <span style="background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(139, 92, 246, 0.2)); color: var(--neon-purple); padding: var(--space-1) var(--space-3); border-radius: 20px; font-size: var(--font-size-xs);">AI Research</span>
+                            <span style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">VentureBeat</span>
+                        </div>
+                        <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); line-height: var(--line-height-tight); margin-bottom: var(--space-3); color: var(--color-text-primary);">
+                            Google's Gemini 2.0 Shows Major Multimodal Improvements
+                        </h3>
+                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); line-height: var(--line-height-relaxed); margin-bottom: var(--space-4);">
+                            Latest Gemini model demonstrates exceptional performance across text, image, and video understanding tasks with 60% better accuracy.
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; color: var(--color-text-secondary); font-size: var(--font-size-sm);">
+                            <span>4 hours ago</span>
+                            <span style="color: var(--neon-cyan);">Read more →</span>
+                        </div>
+                    </div>
+
+                    <div id="rss-news-2" style="background: rgba(79, 70, 229, 0.05); border: 1px solid var(--glass-border); border-radius: 12px; padding: var(--space-6); cursor: pointer; transition: all 0.3s ease;" onclick="window.location.href='categories/news.html'">
+                        <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-3);">
+                            <span style="background: linear-gradient(135deg, rgba(34, 211, 238, 0.2), rgba(6, 182, 212, 0.2)); color: var(--neon-cyan); padding: var(--space-1) var(--space-3); border-radius: 20px; font-size: var(--font-size-xs);">Enterprise AI</span>
+                            <span style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">Forbes</span>
+                        </div>
+                        <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); line-height: var(--line-height-tight); margin-bottom: var(--space-3); color: var(--color-text-primary);">
+                            Microsoft Copilot Gets Major Enterprise Features
+                        </h3>
+                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); line-height: var(--line-height-relaxed); margin-bottom: var(--space-4);">
+                            New enterprise-grade features include advanced security, compliance tools, and integration with 200+ business applications.
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; color: var(--color-text-secondary); font-size: var(--font-size-sm);">
+                            <span>6 hours ago</span>
+                            <span style="color: var(--neon-cyan);">Read more →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: var(--space-8);">
+                    <a href="categories/news.html" style="display: inline-flex; align-items: center; gap: var(--space-2); background: var(--gradient-primary); color: white; padding: var(--space-3) var(--space-6); border-radius: 8px; text-decoration: none; font-weight: var(--font-weight-medium); transition: all 0.3s ease;">
+                        <span>View All Breaking News</span>
+                        <span>📰</span>
+                    </a>
                 </div>
             </section>
 
@@ -1237,6 +1535,74 @@
 
             // Start after a small delay to ensure DOM is ready
             setTimeout(startFactRotation, 2000);
+        });
+
+        // AI Head Scroll Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const aiHead = document.getElementById('aiHead');
+            const aiHeadInner = aiHead.querySelector('.ai-head-inner');
+            let lastScrollY = window.scrollY;
+            let ticking = false;
+
+            function updateAIHead() {
+                const scrollY = window.scrollY;
+                const scrollProgress = Math.min(scrollY / (document.body.scrollHeight - window.innerHeight), 1);
+
+                // Calculate rotation based on scroll position
+                const rotationY = scrollProgress * 360 * 2; // 2 full rotations through page
+                const rotationX = Math.sin(scrollProgress * Math.PI * 4) * 15; // Oscillating tilt
+                const scale = 1 + (Math.sin(scrollProgress * Math.PI * 6) * 0.1); // Pulsing scale
+
+                // Apply transforms
+                aiHeadInner.style.transform = `
+                    rotateY(${rotationY}deg)
+                    rotateX(${rotationX}deg)
+                    scale(${scale})
+                `;
+
+                // Change glow intensity based on scroll speed
+                const scrollSpeed = Math.abs(scrollY - lastScrollY);
+                const glowElement = aiHead.querySelector('.ai-glow');
+                if (glowElement) {
+                    const intensity = Math.min(scrollSpeed / 10, 1);
+                    glowElement.style.opacity = 0.3 + (intensity * 0.7);
+                }
+
+                // Update circuits rotation speed based on scroll
+                const circuits = aiHead.querySelectorAll('.ai-circuit');
+                circuits.forEach((circuit, index) => {
+                    const baseSpeed = [12, 15, 10][index];
+                    const scrollSpeedMultiplier = 1 + (scrollSpeed / 50);
+                    circuit.style.animationDuration = `${baseSpeed / scrollSpeedMultiplier}s`;
+                });
+
+                lastScrollY = scrollY;
+                ticking = false;
+            }
+
+            function requestTick() {
+                if (!ticking) {
+                    requestAnimationFrame(updateAIHead);
+                    ticking = true;
+                }
+            }
+
+            // Throttled scroll handler
+            window.addEventListener('scroll', requestTick, { passive: true });
+
+            // Initialize
+            updateAIHead();
+
+            // Add hover effect for interactivity
+            aiHead.addEventListener('mouseenter', function() {
+                aiHeadInner.style.animationPlayState = 'paused';
+                aiHeadInner.style.transform += ' scale(1.1)';
+            });
+
+            aiHead.addEventListener('mouseleave', function() {
+                aiHeadInner.style.animationPlayState = 'running';
+                aiHeadInner.style.transform = aiHeadInner.style.transform.replace(' scale(1.1)', '');
+            });
         });
     </script>
 </body>

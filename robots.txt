@@ -1,50 +1,42 @@
-# AI Buffet - Robots.txt for Better SEO
 User-agent: *
 Allow: /
 
-# Allow important assets
-Allow: /assets/css/
-Allow: /assets/js/
-Allow: /assets/img/
-Allow: *.css
-Allow: *.js
-Allow: *.png
-Allow: *.jpg
-Allow: *.jpeg
-Allow: *.gif
-Allow: *.svg
-Allow: *.webp
-
-# Block unnecessary crawling
-Disallow: /temp/
-Disallow: /tmp/
-Disallow: /.git/
-Disallow: /node_modules/
-Disallow: /src/
-Disallow: *.json$
-Disallow: *.md$
-
-# Important SEO directives
+# Sitemap location
 Sitemap: https://myaibuffet.com/sitemap.xml
 
-# Crawl-delay for respectful crawling
+# Crawl-delay for politeness
 Crawl-delay: 1
 
-# Specific bot instructions for better AI/Tech coverage
+# Allow all major search engine bots
 User-agent: Googlebot
-Crawl-delay: 1
 Allow: /
 
 User-agent: Bingbot
-Crawl-delay: 2
 Allow: /
 
-# Social media bots for better social sharing
-User-agent: facebookexternalhit
+User-agent: Slurp
 Allow: /
 
-User-agent: Twitterbot
+User-agent: DuckDuckBot
 Allow: /
 
-User-agent: LinkedInBot
+User-agent: Baiduspider
 Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Block admin and test pages
+Disallow: /test-integration.html
+Disallow: /generate-sitemap.html
+Disallow: /*?utm_*
+
+# Allow RSS feed
+Allow: /rss.xml
+
+# Encourage frequent crawling of news
+User-agent: *
+Crawl-delay: 1
+Allow: /categories/news.html
+Allow: /articles/
+Allow: /posts/

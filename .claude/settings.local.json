@@ -21,7 +21,8 @@
       "Bash(sed:*)",
       "Bash(cat:*)",
       "WebFetch(domain:www.myaibuffet.com)",
-      "WebSearch"
+      "WebSearch",
+      "WebFetch(domain:127.0.0.1)"
     ],
     "deny": [],
     "ask": []
