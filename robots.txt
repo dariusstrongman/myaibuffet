@@ -34,6 +34,12 @@ Disallow: /*?utm_*
 # Allow RSS feed
 Allow: /rss.xml
 
+# Allow verification files
+Allow: /BingSiteAuth.xml
+Allow: /realBingSiteAuth.xml
+Allow: /google*.html
+Allow: /googlebc*.html
+
 # Encourage frequent crawling of news
 User-agent: *
 Crawl-delay: 1
