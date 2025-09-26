@@ -1300,7 +1300,7 @@
                                 </div>
                             </div>
                             <h3 class="hero-card-title">
-                                <a href="${article.link}" target="_blank" rel="noopener">${article.title}</a>
+                                <a href="../article-template.html?id=${article.slug || article.id}" rel="noopener">${article.title}</a>
                             </h3>
                             <p class="hero-card-excerpt">${truncateText(article.description || article.content_snippet, 200)}</p>
                             <div class="hero-card-meta">
@@ -1341,7 +1341,7 @@
                             `}
                         </div>
                         <h4 class="secondary-card-title">
-                            <a href="${article.link}" target="_blank" rel="noopener">${article.title}</a>
+                            <a href="../article-template.html?id=${article.slug || article.id}" rel="noopener">${article.title}</a>
                         </h4>
                         <div class="secondary-card-meta">
                             <span class="meta-time">${formatDate(article.pub_date)}</span>
@@ -1373,7 +1373,7 @@
                     </div>
                     <div class="news-card-content">
                         <h3 class="news-card-title">
-                            <a href="${article.link}" target="_blank" rel="noopener">${article.title}</a>
+                            <a href="../article-template.html?id=${article.slug || article.id}" rel="noopener">${article.title}</a>
                         </h3>
                         <p class="news-card-excerpt">${truncateText(article.description || article.content_snippet)}</p>
                         <div class="news-card-insights">
