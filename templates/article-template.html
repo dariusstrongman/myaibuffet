@@ -441,6 +441,14 @@
         </div>
     </header>
 
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress" style="position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: var(--gradient-primary); z-index: 1000; transition: width 0.3s ease;"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" onclick="scrollToTop()" style="position: fixed; bottom: 30px; right: 30px; background: var(--gradient-primary); color: white; border: none; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 1000; box-shadow: var(--shadow-lg);">
+        ↑
+    </button>
+
     <main id="main" role="main">
         <div class="container">
             <div class="article-container">
@@ -467,6 +475,8 @@
                         <span>•</span>
                         <span class="article-time" id="article-time">Loading...</span>
                         <span>•</span>
+                        <span class="reading-time" id="reading-time" style="background: rgba(34, 211, 238, 0.1); color: var(--neon-cyan); padding: var(--space-1) var(--space-3); border-radius: 12px;">⏱️ 3 min read</span>
+                        <span>•</span>
                         <div class="trending-badge" id="trending-badge" style="display: none;">
                             <span>🔥</span>
                             <span id="trending-score">0</span>
@@ -476,6 +486,22 @@
 
                 <div class="article-content" id="article-content">
                     <p>Loading article content...</p>
+                </div>
+
+                <!-- Social Sharing -->
+                <div class="article-sharing" style="margin: var(--space-8) 0; padding: var(--space-6); background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-xl); text-align: center;">
+                    <h3 style="margin-bottom: var(--space-4); color: var(--color-text-primary); font-size: var(--font-size-lg);">Share This Article</h3>
+                    <div class="share-buttons" style="display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap;">
+                        <button onclick="shareToTwitter()" class="share-btn share-btn--twitter" style="background: #1DA1F2; color: white; border: none; padding: var(--space-3) var(--space-4); border-radius: var(--radius-lg); font-weight: var(--font-weight-medium); cursor: pointer; transition: var(--transition-base);">
+                            🐦 Twitter
+                        </button>
+                        <button onclick="shareToLinkedIn()" class="share-btn share-btn--linkedin" style="background: #0077B5; color: white; border: none; padding: var(--space-3) var(--space-4); border-radius: var(--radius-lg); font-weight: var(--font-weight-medium); cursor: pointer; transition: var(--transition-base);">
+                            💼 LinkedIn
+                        </button>
+                        <button onclick="copyToClipboard()" class="share-btn share-btn--copy" style="background: var(--gradient-primary); color: white; border: none; padding: var(--space-3) var(--space-4); border-radius: var(--radius-lg); font-weight: var(--font-weight-medium); cursor: pointer; transition: var(--transition-base);">
+                            📋 Copy Link
+                        </button>
+                    </div>
                 </div>
 
                 <div class="article-actions">
@@ -636,6 +662,66 @@
             }
         }
 
+        // Calculate reading time
+        function calculateReadingTime(content) {
+            const wordsPerMinute = 200;
+            const words = content.split(' ').length;
+            return Math.max(1, Math.ceil(words / wordsPerMinute));
+        }
+
+        // Social sharing functions
+        function shareToTwitter() {
+            const title = document.getElementById('article-title').textContent;
+            const url = window.location.href;
+            const text = `Check out this AI article: ${title}`;
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+        }
+
+        function shareToLinkedIn() {
+            const url = window.location.href;
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank');
+        }
+
+        function copyToClipboard() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                const btn = document.querySelector('.share-btn--copy');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '✅ Copied!';
+                btn.style.background = 'var(--gradient-secondary)';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = 'var(--gradient-primary)';
+                }, 2000);
+            });
+        }
+
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Reading progress tracking
+        function updateReadingProgress() {
+            const article = document.getElementById('article');
+            if (!article || article.style.display === 'none') return;
+
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrolled = (scrollTop / docHeight) * 100;
+
+            document.querySelector('.reading-progress').style.width = Math.min(scrolled, 100) + '%';
+
+            // Show/hide back to top button
+            const backToTop = document.getElementById('back-to-top');
+            if (scrollTop > 300) {
+                backToTop.style.opacity = '1';
+                backToTop.style.visibility = 'visible';
+            } else {
+                backToTop.style.opacity = '0';
+                backToTop.style.visibility = 'hidden';
+            }
+        }
+
         // Display article content
         function displayArticle(article) {
             document.getElementById('loading').style.display = 'none';
@@ -651,6 +737,9 @@
 
             // Handle content - use content_snippet or description
             const content = article.content_snippet || article.description || 'No content available.';
+            const readingTime = calculateReadingTime(content);
+            document.getElementById('reading-time').innerHTML = `⏱️ ${readingTime} min read`;
+
             document.getElementById('article-content').innerHTML = `
                 <p>${content}</p>
                 ${article.description && article.content_snippet ? `<p><em>Summary: ${article.description}</em></p>` : ''}
@@ -662,6 +751,10 @@
                 badge.style.display = 'flex';
                 document.getElementById('trending-score').textContent = article.trending_score;
             }
+
+            // Initialize reading progress tracking
+            window.addEventListener('scroll', updateReadingProgress);
+            updateReadingProgress();
         }
 
         // Load related articles
