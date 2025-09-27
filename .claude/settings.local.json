@@ -22,7 +22,15 @@
       "Bash(cat:*)",
       "WebFetch(domain:www.myaibuffet.com)",
       "WebSearch",
-      "WebFetch(domain:127.0.0.1)"
+      "WebFetch(domain:127.0.0.1)",
+      "Bash(rm:*)",
+      "Bash(cp:*)",
+      "Bash(mv:*)",
+      "Bash(git restore:*)",
+      "Bash(tree:*)",
+      "Bash(do echo:*)",
+      "Bash(mkdir:*)",
+      "Bash(python3:*)"
     ],
     "deny": [],
     "ask": []

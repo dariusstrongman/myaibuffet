@@ -10,7 +10,7 @@
     <meta name="author" content="AI Buffet">
     <meta name="google-site-verification" content="Eed235Tz69iOMTpmaDDzNOCfhjU1R2mDutTMT08uHG4">
     <meta name="msvalidate.01" content="BD8E321C606421B5608D15B9B3A43370" />
-    <link rel="canonical" href="https://myaibuffet.com/categories/news.html">
+    <link rel="canonical" href="https://myaibuffet.com/pages/news.html">
     <link rel="icon" type="image/png" href="../img/Logo.png">
     
     <!-- Open Graph -->
@@ -95,6 +95,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Serif+Display:wght@400&display=swap" rel="stylesheet">
     
     <!-- Styles -->
+    <link rel="preload" href="../assets/css/main.css" as="style">
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/components.css">
     
@@ -178,11 +179,11 @@
                     <li role="none"><a href="../" class="nav-link" role="menuitem">Home</a></li>
                     <li role="none"><a href="news.html" class="nav-link" role="menuitem" aria-current="page">News</a></li>
                     <li role="none"><a href="tools.html" class="nav-link" role="menuitem">Tools</a></li>
-                    <li role="none"><a href="../prompts.html" class="nav-link" role="menuitem">Prompts</a></li>
-                    <li role="none"><a href="../battle.html" class="nav-link" role="menuitem">Battle</a></li>
+                    <li role="none"><a href="prompts.html" class="nav-link" role="menuitem">Prompts</a></li>
+                    <li role="none"><a href="battle.html" class="nav-link" role="menuitem">Battle</a></li>
                     <li role="none"><a href="../guides/ai-use-cases.html" class="nav-link" role="menuitem">Ideas</a></li>
-                    <li role="none"><a href="../faq.html" class="nav-link" role="menuitem">FAQ</a></li>
-                    <li role="none"><a href="../about.html" class="nav-link" role="menuitem">About</a></li>
+                    <li role="none"><a href="faq.html" class="nav-link" role="menuitem">FAQ</a></li>
+                    <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
                 </ul>
 
                 <div class="nav-actions">
@@ -675,7 +676,7 @@
                             <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); font-size: var(--font-size-sm);">
                                 Want to browse all our content in one organized place?
                             </p>
-                            <a href="../all-articles.html" style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-6); background: var(--gradient-primary); color: white; text-decoration: none; border-radius: 25px; font-size: var(--font-size-base); font-weight: var(--font-weight-semibold); transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(34, 211, 238, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(34, 211, 238, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(34, 211, 238, 0.3)'">
+                            <a href="all-articles.html" style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-6); background: var(--gradient-primary); color: white; text-decoration: none; border-radius: 25px; font-size: var(--font-size-base); font-weight: var(--font-weight-semibold); transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(34, 211, 238, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(34, 211, 238, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(34, 211, 238, 0.3)'"">
                                 <span>📚</span>
                                 <span>View All Articles</span>
                                 <span>→</span>
@@ -722,7 +723,7 @@
                             </div>
                             
                             <div class="cta-actions">
-                                <a href="../coming-soon.html" class="premium-cta-btn primary">
+                                <a href="coming-soon.html" class="premium-cta-btn primary">
                                     <span class="btn-text">Access Premium Tools</span>
                                     <span class="btn-icon">→</span>
                                     <div class="btn-shine"></div>
@@ -937,15 +938,15 @@
                     <ul class="footer__links">
                         <li><a href="news.html" class="footer__link">AI News</a></li>
                         <li><a href="tools.html" class="footer__link">Tool Reviews</a></li>
-                        <li><a href="../coming-soon.html" class="footer__link">Free Templates</a></li>
-                        <li><a href="../all-articles.html" class="footer__link">All Categories</a></li>
+                        <li><a href="coming-soon.html" class="footer__link">Free Templates</a></li>
+                        <li><a href="all-articles.html" class="footer__link">All Categories</a></li>
                     </ul>
                 </div>
 
                 <div class="footer__section">
                     <h3 class="footer__heading">Resources</h3>
                     <ul class="footer__links">
-                        <li><a href="../about.html" class="footer__link">About</a></li>
+                        <li><a href="about.html" class="footer__link">About</a></li>
                         <li><a href="mailto:hello@myaibuffet.com" class="footer__link">Contact</a></li>
                     </ul>
                 </div>
@@ -1301,7 +1302,7 @@
                                 </div>
                             </div>
                             <h3 class="hero-card-title">
-                                <a href="../article-template.html?id=${article.slug || article.id}" rel="noopener">${article.title}</a>
+                                <a href="../templates/article-template.html?id=${article.slug || article.id}" rel="noopener">${article.title}</a>
                             </h3>
                             <p class="hero-card-excerpt">${truncateText(article.description || article.content_snippet, 200)}</p>
                             <div class="hero-card-meta">
@@ -1342,7 +1343,7 @@
                             `}
                         </div>
                         <h4 class="secondary-card-title">
-                            <a href="../article-template.html?id=${article.slug || article.id}" rel="noopener">${article.title}</a>
+                            <a href="../templates/article-template.html?id=${article.slug || article.id}" rel="noopener">${article.title}</a>
                         </h4>
                         <div class="secondary-card-meta">
                             <span class="meta-time">${formatDate(article.pub_date)}</span>
@@ -1374,7 +1375,7 @@
                     </div>
                     <div class="news-card-content">
                         <h3 class="news-card-title">
-                            <a href="../article-template.html?id=${article.slug || article.id}" rel="noopener">${article.title}</a>
+                            <a href="../templates/article-template.html?id=${article.slug || article.id}" rel="noopener">${article.title}</a>
                         </h3>
                         <p class="news-card-excerpt">${truncateText(article.description || article.content_snippet)}</p>
                         <div class="news-card-insights">
