@@ -1,0 +1,48 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://myaibuffet.com/sitemap.xml
+
+# Crawl-delay for politeness
+Crawl-delay: 1
+
+# Allow all major search engine bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Block admin and test pages
+Disallow: /test-integration.html
+Disallow: /generate-sitemap.html
+Disallow: /*?utm_*
+
+# Allow RSS feed
+Allow: /rss.xml
+
+# Allow verification files
+Allow: /BingSiteAuth.xml
+Allow: /realBingSiteAuth.xml
+Allow: /google*.html
+Allow: /googlebc*.html
+
+# Encourage frequent crawling of news
+User-agent: *
+Crawl-delay: 1
+Allow: /categories/news.html
+Allow: /articles/
+Allow: /posts/

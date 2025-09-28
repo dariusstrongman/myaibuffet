@@ -30,7 +30,9 @@
       "Bash(tree:*)",
       "Bash(do echo:*)",
       "Bash(mkdir:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Read(//c/Users/Darius/Desktop/**)",
+      "Bash(perl:*)"
     ],
     "deny": [],
     "ask": []
