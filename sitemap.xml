@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Static Pages -->
+    <url>
+        <loc>https://myaibuffet.com/</loc>
+        <lastmod>2025-09-26</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://myaibuffet.com/categories/news.html</loc>
+        <lastmod>2025-09-26</lastmod>
+        <changefreq>hourly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://myaibuffet.com/categories/tools.html</loc>
+        <lastmod>2025-09-26</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://myaibuffet.com/pages/prompts.html</loc>
+        <lastmod>2025-09-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://myaibuffet.com/pages/battle.html</loc>
+        <lastmod>2025-09-26</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://myaibuffet.com/guides/ai-use-cases.html</loc>
+        <lastmod>2025-09-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://myaibuffet.com/pages/faq.html</loc>
+        <lastmod>2025-09-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://myaibuffet.com/pages/about.html</loc>
+        <lastmod>2025-09-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://myaibuffet.com/pages/coming-soon.html</loc>
+        <lastmod>2025-09-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Blog Posts -->
+    <url>
+        <loc>https://myaibuffet.com/posts/chatgpt-vs-claude-2025-complete-comparison.html</loc>
+        <lastmod>2025-09-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://myaibuffet.com/posts/best-ai-tools-small-business-2025.html</loc>
+        <lastmod>2025-09-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Sample Articles -->
+    <url>
+        <loc>https://myaibuffet.com/articles/openai-gpt5-release-multimodal.html</loc>
+        <lastmod>2025-09-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Article Template Pages (for RSS articles) -->
+    <url>
+        <loc>https://myaibuffet.com/templates/article-template.html</loc>
+        <lastmod>2025-09-26</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+</urlset>
