@@ -1,0 +1,27 @@
+{
+  "name": "ai-buffet-website",
+  "version": "1.0.0",
+  "description": "AI Buffet - Premium AI news and tool reviews website",
+  "main": "index.html",
+  "scripts": {
+    "generate-articles": "node scripts/generate-article-pages.js",
+    "generate-articles-cron": "node scripts/generate-article-pages.js",
+    "serve": "python3 -m http.server 8000",
+    "serve-alt": "python3 -m http.server 8001"
+  },
+  "keywords": [
+    "ai",
+    "artificial intelligence",
+    "news",
+    "tools",
+    "reviews"
+  ],
+  "author": "AI Buffet Team",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
