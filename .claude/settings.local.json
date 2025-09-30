@@ -36,7 +36,9 @@
       "WebFetch(domain:myaibuffet.com)",
       "Bash(chmod:*)",
       "Bash(npm install:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(echo:*)",
+      "Bash(npm run generate-articles:*)"
     ],
     "deny": [],
     "ask": []
