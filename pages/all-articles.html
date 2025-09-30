@@ -153,6 +153,9 @@
                         Explore our complete collection of AI insights, tool reviews, and breaking news. Search, filter, and discover content organized by category for easy navigation.
                     </p>
 
+                    <!-- Search Container -->
+                    <div id="advanced-search-container" style="max-width: 600px; margin: 0 auto var(--space-8) auto;"></div>
+
                     <!-- Article Stats -->
                     <div class="article-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--space-6); margin-bottom: var(--space-12); max-width: 600px; margin-left: auto; margin-right: auto;">
                         <div class="stat" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-align: center;">
@@ -262,6 +265,7 @@
 
     <!-- JavaScript -->
     <script src="../assets/js/tools-database.js"></script>
+    <script src="../assets/js/simple-search.js"></script>
     <script src="../assets/js/main.js"></script>
     <script>
         // Navigate to article template
@@ -513,6 +517,11 @@
 
             // Start the page
             init();
+
+            // Initialize search system
+            if (window.SimpleSearch) {
+                const searchInstance = new window.SimpleSearch('advanced-search-container');
+            }
         });
     </script>
 
