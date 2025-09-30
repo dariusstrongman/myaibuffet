@@ -98,6 +98,9 @@
     <link rel="preload" href="../assets/css/main.css" as="style">
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/components.css">
+
+    <!-- Simple Search System (Working Version) -->
+    <script src="../assets/js/simple-search.js"></script>
     
     <!-- Critical CSS -->
     <style>
@@ -251,6 +254,11 @@
                     <div class="scroll-icon">↓</div>
                     <span class="scroll-text">Scroll for latest news</span>
                 </div>
+            </section>
+
+            <!-- Advanced Search Section -->
+            <section class="search-section" style="margin: 2rem 0;">
+                <div id="advanced-search-container"></div>
             </section>
 
             <!-- Premium Navigation Tabs -->
@@ -987,7 +995,9 @@
 
 
         const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-        
+
+        // Simple search will initialize automatically
+
         // Global state
         let allArticles = [];
         let filteredArticles = [];
@@ -1727,9 +1737,15 @@
             document.body.appendChild(toast);
             setTimeout(() => toast.remove(), 3000);
         }
-        
+
         // Premium News Page JavaScript
         document.addEventListener('DOMContentLoaded', function() {
+
+            // Initialize search system
+            if (window.SimpleSearch) {
+                const searchInstance = new window.SimpleSearch('advanced-search-container');
+            }
+
             // Premium Tab System
             const premiumTabs = document.querySelectorAll('.premium-tab-button');
             const tabPanels = document.querySelectorAll('.premium-tab-panel');
