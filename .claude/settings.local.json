@@ -32,7 +32,11 @@
       "Bash(mkdir:*)",
       "Bash(python3:*)",
       "Read(//c/Users/Darius/Desktop/**)",
-      "Bash(perl:*)"
+      "Bash(perl:*)",
+      "WebFetch(domain:myaibuffet.com)",
+      "Bash(chmod:*)",
+      "Bash(npm install:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": [],
     "ask": []
