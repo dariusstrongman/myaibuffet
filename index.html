@@ -4410,6 +4410,7 @@
             // Add our featured original article at the top
             const originalArticle = {
                 id: 'top-10-ai-tools-2025',
+                slug: 'direct-link',
                 title: 'Top 10 AI Tools 2025: Best Artificial Intelligence Software for Professionals',
                 description: 'Discover the top 10 AI tools dominating 2025. From ChatGPT Plus to Claude 3.5 Sonnet, Midjourney V6, and more - complete reviews, pricing, and use cases.',
                 link: 'articles/top-10-ai-tools-2025.html',
@@ -4417,7 +4418,8 @@
                 word_count: 2847,
                 featured: true,
                 breaking_news: false,
-                source: 'AI Buffet Original'
+                source: 'AI Buffet Original',
+                direct_link: true
             };
 
             // Combine original article with RSS articles (show top 5 RSS + 1 original = 6 total)
@@ -4514,8 +4516,12 @@
             return `${Math.floor(hours / 24)} days ago`;
         }
 
-        function goToArticle(idOrSlug) {
-            window.location.href = `templates/article-template.html?id=${idOrSlug}`;
+        function goToArticle(idOrSlug, directLink = false) {
+            if (idOrSlug === 'direct-link') {
+                window.location.href = 'articles/top-10-ai-tools-2025.html';
+            } else {
+                window.location.href = `templates/article-template.html?id=${idOrSlug}`;
+            }
         }
 
         // ==========================================================================
