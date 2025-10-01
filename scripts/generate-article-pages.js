@@ -8,6 +8,13 @@
 
 const fs = require('fs').promises;
 const path = require('path');
+const {
+    calculateReadingTime,
+    findRelatedArticles,
+    generateBreadcrumbSchema,
+    generateArticleSchema,
+    generateRelatedArticlesHTML
+} = require('./seo-enhancements');
 
 // Supabase configuration
 const SUPABASE_URL = 'https://npetaroffoyjohjiwssf.supabase.co';
@@ -62,7 +69,7 @@ function generateSlug(title) {
 }
 
 // Generate SEO-optimized HTML for an article
-function generateArticleHTML(article) {
+function generateArticleHTML(article, allArticles = []) {
     const slug = generateSlug(article.title || 'untitled');
     const title = article.title || 'AI News Article';
     const description = (article.description || article.content_snippet || 'Latest AI news and insights from AI Buffet').substring(0, 160);
@@ -73,6 +80,23 @@ function generateArticleHTML(article) {
     const canonicalUrl = `https://myaibuffet.com/articles/rss/${slug}.html`;
     const content = article.content_snippet || article.description || 'Article content not available.';
     const originalLink = article.link || '#';
+
+    // Calculate reading time
+    const readingTime = calculateReadingTime(content);
+
+    // Find related articles
+    const relatedArticles = findRelatedArticles(article, allArticles, 3);
+
+    // Generate breadcrumb schema
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', url: 'https://myaibuffet.com' },
+        { name: 'AI News', url: 'https://myaibuffet.com/pages/news.html' },
+        { name: title.substring(0, 50), url: canonicalUrl }
+    ]);
+
+    // Generate enhanced article schema
+    const wordCount = content.split(/\s+/).length;
+    const articleSchema = generateArticleSchema(article, canonicalUrl, wordCount);
 
     // Extract keywords from title and content for SEO
     const keywords = [
@@ -118,31 +142,14 @@ function generateArticleHTML(article) {
     <meta name="twitter:description" content="${description}">
     <meta name="twitter:image" content="https://myaibuffet.com/og-image.jpg">
 
-    <!-- Structured Data -->
+    <!-- Structured Data - Article Schema -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "NewsArticle",
-        "headline": "${title}",
-        "description": "${description}",
-        "author": {
-            "@type": "Person",
-            "name": "${author}"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "AI Buffet",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://myaibuffet.com/img/Logo.png"
-            }
-        },
-        "datePublished": "${pubDate}",
-        "dateModified": "${modDate}",
-        "mainEntityOfPage": "${canonicalUrl}",
-        "image": "https://myaibuffet.com/og-image.jpg",
-        "url": "${canonicalUrl}"
-    }
+    ${JSON.stringify(articleSchema, null, 4)}
+    </script>
+
+    <!-- Structured Data - Breadcrumb Schema -->
+    <script type="application/ld+json">
+    ${JSON.stringify(breadcrumbSchema, null, 4)}
     </script>
 
     <!-- Favicon and CSS -->
@@ -218,6 +225,9 @@ function generateArticleHTML(article) {
                         <time datetime="${pubDate}" style="color: var(--color-text-tertiary);">
                             ${new Date(pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                         </time>
+                        <span style="color: var(--color-text-tertiary);">•</span>
+                        <span style="color: var(--color-text-tertiary);">${readingTime} min read</span>
+                        <span style="color: var(--color-text-tertiary);">•</span>
                         <span style="color: var(--color-text-tertiary);">by ${author}</span>
                     </div>
 
@@ -262,21 +272,7 @@ function generateArticleHTML(article) {
             </article>
 
             <!-- Related Articles -->
-            <section style="margin-top: var(--space-12);">
-                <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-6); text-align: center; color: var(--color-text-primary);">
-                    📰 More AI News
-                </h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6);">
-                    <a href="../../pages/news.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'">
-                        <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary);">Latest AI News</h3>
-                        <p style="color: var(--color-text-secondary);">Stay updated with the latest developments in artificial intelligence</p>
-                    </a>
-                    <a href="../../pages/tools.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'">
-                        <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary);">AI Tools</h3>
-                        <p style="color: var(--color-text-secondary);">Discover and review the best AI tools for productivity</p>
-                    </a>
-                </div>
-            </section>
+            ${generateRelatedArticlesHTML(relatedArticles, slug)}
 
         </div>
     </main>
@@ -378,7 +374,7 @@ async function generateArticlePages(articles) {
                 continue;
             }
 
-            const html = generateArticleHTML(article);
+            const html = generateArticleHTML(article, articles);
             await fs.writeFile(filepath, html, 'utf8');
             generatedCount++;
 
