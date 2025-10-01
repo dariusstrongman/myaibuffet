@@ -1,0 +1,84 @@
+<!--
+    AI Buffet - Optimized <head> Template
+    Copy this into your HTML files for optimal performance
+
+    Performance optimizations included:
+    ✅ Critical CSS inlined
+    ✅ Deferred non-critical CSS
+    ✅ Optimized font loading
+    ✅ Resource hints (preconnect, dns-prefetch)
+    ✅ Service worker registration
+    ✅ Minified assets
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title and Meta Tags (keep your existing ones) -->
+    <title>AI Buffet — Best AI Tools 2025 | Premium AI News & Reviews</title>
+    <meta name="description" content="Discover the top 50+ AI tools 2025: ChatGPT Plus, Claude 3.5 Sonnet, Midjourney V6, Gemini Pro reviews. Breaking AI news, enterprise strategies, expert insights.">
+
+    <!-- Critical CSS - Inline for immediate render -->
+    <style>
+        /* PASTE CONTENTS OF assets/css/critical.css HERE */
+        /* This ensures above-the-fold content renders immediately */
+    </style>
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+    <!-- Deferred CSS Loading - Non-blocking -->
+    <!-- Main CSS loads after critical render path -->
+    <link rel="preload" href="/assets/css/main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/main.min.css"></noscript>
+
+    <!-- Font Loading Script - Non-blocking -->
+    <script>
+        /*! loadCSS rel=preload polyfill. Depends on loadCSS function */
+        !function(e){"use strict";e.loadCSS||(e.loadCSS=function(){});var t=loadCSS.relpreload={};if(t.support=function(){var t;try{t=e.document.createElement("link").relList.supports("preload")}catch(e){t=!1}return function(){return t}}(),t.bindMediaToggle=function(e){var t=e.media||"all";function a(){e.addEventListener?e.removeEventListener("load",a):e.attachEvent&&e.detachEvent("onload",a),e.setAttribute("onload",null),e.media=t}e.addEventListener?e.addEventListener("load",a):e.attachEvent&&e.attachEvent("onload",a),setTimeout(function(){e.rel="stylesheet",e.media="only x"}),setTimeout(a,3e3)},!t.support()){t.poly=function(){if(!e.document.getElementsByTagName)return;for(var t=e.document.getElementsByTagName("link"),a=0;a<t.length;a++){var n=t[a];"preload"!==n.rel||"style"!==n.getAttribute("as")||n.getAttribute("data-loadcss")||(n.setAttribute("data-loadcss",!0),t.bindMediaToggle(n))}};var a=e.setInterval(t.poly,500);e.addEventListener?e.addEventListener("load",function(){t.poly(),e.clearInterval(a)}):e.attachEvent&&e.attachEvent("onload",function(){t.poly(),e.clearInterval(a)}),"undefined"!=typeof exports?exports.loadCSS=loadCSS:e.loadCSS=loadCSS}}("undefined"!=typeof global?global:this);
+    </script>
+
+    <!-- Optimized Font Loading -->
+    <script async src="/assets/js/font-loader.js"></script>
+
+    <!-- Favicon and Icons (keep your existing ones) -->
+    <link rel="icon" type="image/png" href="/img/Logo.png">
+    <link rel="manifest" href="/static/site.webmanifest">
+
+    <!-- Service Worker Registration -->
+    <script>
+        // Register service worker for offline support and caching
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registered:', registration.scope);
+                    })
+                    .catch(function(error) {
+                        console.log('ServiceWorker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/assets/js/main.min.js" as="script">
+
+    <!-- Keep all your existing meta tags, OG tags, structured data, etc. -->
+</head>
+
+<!--
+    IMPORTANT: Update <body> to load minified JS
+    Place this before closing </body> tag:
+
+    <script src="/assets/js/main.min.js" defer></script>
+
+    The 'defer' attribute ensures:
+    ✅ Non-blocking download
+    ✅ Executes after HTML parsing
+    ✅ Maintains script execution order
+-->

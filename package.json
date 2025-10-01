@@ -6,6 +6,9 @@
   "scripts": {
     "generate-articles": "node scripts/generate-article-pages.js",
     "generate-articles-cron": "node scripts/generate-article-pages.js",
+    "build": "node scripts/build.js",
+    "minify": "node scripts/minify-assets.js",
+    "critical-css": "node scripts/extract-critical-css.js",
     "serve": "python3 -m http.server 8000",
     "serve-alt": "python3 -m http.server 8001"
   },

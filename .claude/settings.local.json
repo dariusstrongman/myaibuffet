@@ -38,7 +38,8 @@
       "Bash(npm install:*)",
       "Bash(git checkout:*)",
       "Bash(echo:*)",
-      "Bash(npm run generate-articles:*)"
+      "Bash(npm run generate-articles:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []
