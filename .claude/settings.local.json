@@ -50,7 +50,8 @@
       "Bash(then)",
       "Bash(else)",
       "Bash(fi)",
-      "Bash(git pull:*)"
+      "Bash(git pull:*)",
+      "Bash(xargs:*)"
     ],
     "deny": [],
     "ask": []
