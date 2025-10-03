@@ -42,7 +42,14 @@
       "Bash(npm run build:*)",
       "Bash(git push:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(kill:*)",
+      "Bash(bash:*)",
+      "Bash(do)",
+      "Bash(if ! grep -q \"clarity.ms\" \"$file\")",
+      "Bash(then)",
+      "Bash(else)",
+      "Bash(fi)"
     ],
     "deny": [],
     "ask": []
