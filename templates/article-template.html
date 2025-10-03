@@ -412,6 +412,24 @@
             }
         }
     </style>
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W16M076SX3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W16M076SX3');
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "tkfgls2nk8");
+    </script>
 </head>
 <body>
     <header class="header" role="banner">
@@ -524,6 +542,31 @@
                 <div class="related-grid" id="related-grid">
                     <!-- Related articles will be populated here -->
                 </div>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="comments-section" style="margin-top: var(--space-16); padding: var(--space-8); background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 20px; backdrop-filter: blur(20px);">
+                <h2 style="font-family: var(--font-family-display); font-size: var(--font-size-2xl); margin-bottom: var(--space-6); color: var(--color-text-primary);">
+                    💬 Discussion
+                </h2>
+                <p style="color: var(--color-text-secondary); margin-bottom: var(--space-6); font-size: var(--font-size-base);">
+                    Share your thoughts and discuss this article with the community. Sign in with GitHub to comment.
+                </p>
+                <script src="https://giscus.app/client.js"
+                    data-repo="dariusstrongman/myaibuffet"
+                    data-repo-id="R_kgDOPvbwZw"
+                    data-category="Announcements"
+                    data-category-id="DIC_kwDOPvbwZ84CwNJf"
+                    data-mapping="url"
+                    data-strict="0"
+                    data-reactions-enabled="1"
+                    data-emit-metadata="1"
+                    data-input-position="bottom"
+                    data-theme="dark"
+                    data-lang="en"
+                    crossorigin="anonymous"
+                    async>
+                </script>
             </div>
 
             <!-- Newsletter CTA -->
