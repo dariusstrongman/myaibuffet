@@ -265,6 +265,21 @@ function generateArticleHTML(article, allArticles = []) {
                         <span style="color: var(--color-text-tertiary);">${readingTime} min read</span>
                         <span style="color: var(--color-text-tertiary);">•</span>
                         <span style="color: var(--color-text-tertiary);">by ${author}</span>
+                        <span style="color: var(--color-text-tertiary);">•</span>
+                        <span style="color: var(--color-text-tertiary);">
+                            <span id="viewCount">...</span> views
+                        </span>
+                    </div>
+
+                    <!-- Featured Image -->
+                    <div style="margin-bottom: var(--space-6); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-lg);">
+                        <img
+                            src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop&auto=format"
+                            alt="${title}"
+                            loading="lazy"
+                            style="width: 100%; height: auto; display: block; aspect-ratio: 1200/630; object-fit: cover;"
+                            onerror="this.style.display='none'"
+                        />
                     </div>
 
                     <h1 style="font-family: var(--font-family-display); font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: var(--line-height-tight); margin-bottom: var(--space-6);">
@@ -309,6 +324,31 @@ function generateArticleHTML(article, allArticles = []) {
 
             <!-- Related Articles -->
             ${generateRelatedArticlesHTML(relatedArticles, slug)}
+
+            <!-- Comments Section -->
+            <div class="comments-section" style="margin-top: var(--space-16); padding: var(--space-8); background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 20px; backdrop-filter: blur(20px);">
+                <h2 style="font-family: var(--font-family-display); font-size: var(--font-size-2xl); margin-bottom: var(--space-6); color: var(--color-text-primary);">
+                    💬 Discussion
+                </h2>
+                <p style="color: var(--color-text-secondary); margin-bottom: var(--space-6); font-size: var(--font-size-base);">
+                    Share your thoughts and discuss this article with the community. Sign in with GitHub to comment.
+                </p>
+                <script src="https://giscus.app/client.js"
+                    data-repo="yourusername/myaibuffet"
+                    data-repo-id="R_placeholder"
+                    data-category="Comments"
+                    data-category-id="DIC_placeholder"
+                    data-mapping="pathname"
+                    data-strict="0"
+                    data-reactions-enabled="1"
+                    data-emit-metadata="0"
+                    data-input-position="bottom"
+                    data-theme="dark"
+                    data-lang="en"
+                    crossorigin="anonymous"
+                    async>
+                </script>
+            </div>
 
         </div>
     </main>
@@ -371,6 +411,47 @@ function generateArticleHTML(article, allArticles = []) {
 
     <!-- JavaScript -->
     <script src="../../assets/js/main.js"></script>
+
+    <!-- View Counter Script -->
+    <script>
+        (async function() {
+            const articleSlug = '${slug}';
+            const SUPABASE_URL = 'https://npetaroffoyjohjiwssf.supabase.co';
+            const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wZXRhcm9mZm95am9oaml3c3NmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcwMDk5OTgsImV4cCI6MjA3MjU4NTk5OH0.oYJ4ETV_zIDx_7KWJlEtcrIrRqy72HYEFzAs37pPzB8';
+
+            try {
+                // Increment view count
+                const response = await fetch(SUPABASE_URL + '/rest/v1/rpc/increment_article_views', {
+                    method: 'POST',
+                    headers: {
+                        'apikey': SUPABASE_KEY,
+                        'Authorization': 'Bearer ' + SUPABASE_KEY,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ article_slug: articleSlug })
+                });
+
+                // Get view count
+                const countResponse = await fetch(SUPABASE_URL + '/rest/v1/article_views?article_slug=eq.' + articleSlug + '&select=view_count', {
+                    headers: {
+                        'apikey': SUPABASE_KEY,
+                        'Authorization': 'Bearer ' + SUPABASE_KEY
+                    }
+                });
+
+                if (countResponse.ok) {
+                    const data = await countResponse.json();
+                    const viewCount = data[0]?.view_count || 0;
+                    document.getElementById('viewCount').textContent = viewCount.toLocaleString();
+                } else {
+                    document.getElementById('viewCount').textContent = '—';
+                }
+            } catch (error) {
+                console.log('View counter unavailable');
+                document.getElementById('viewCount').textContent = '—';
+            }
+        })();
+    </script>
 </body>
 </html>`;
 }
