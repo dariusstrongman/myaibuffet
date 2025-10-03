@@ -68,11 +68,38 @@ function generateSlug(title) {
         .substring(0, 100); // Limit length
 }
 
+// Generate SEO-optimized meta description
+function generateMetaDescription(article) {
+    let desc = article.description || article.content_snippet || '';
+
+    // Clean up the description
+    desc = desc.trim();
+
+    // If too short, add context
+    if (desc.length < 50) {
+        desc = `${desc} - Latest AI news and expert insights from AI Buffet`.trim();
+    }
+
+    // Ensure it ends cleanly (not mid-sentence) and is 150-160 chars
+    if (desc.length > 160) {
+        desc = desc.substring(0, 157) + '...';
+    } else if (desc.length > 150 && desc.length < 160) {
+        // Perfect length - keep as is
+    } else if (desc.length < 150) {
+        // Add period if missing
+        if (!desc.match(/[.!?]$/)) {
+            desc += '.';
+        }
+    }
+
+    return desc;
+}
+
 // Generate SEO-optimized HTML for an article
 function generateArticleHTML(article, allArticles = []) {
     const slug = generateSlug(article.title || 'untitled');
     const title = article.title || 'AI News Article';
-    const description = (article.description || article.content_snippet || 'Latest AI news and insights from AI Buffet').substring(0, 160);
+    const description = generateMetaDescription(article);
     const author = article.author || 'AI Buffet Team';
     const source = article.source || 'AI Buffet';
     const pubDate = article.pub_date ? new Date(article.pub_date).toISOString() : new Date().toISOString();
@@ -169,6 +196,15 @@ function generateArticleHTML(article, allArticles = []) {
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-W16M076SX3');
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "p5y8qh9w8m");
     </script>
 </head>
 <body>

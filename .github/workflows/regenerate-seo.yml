@@ -101,6 +101,7 @@ jobs:
           git config --local user.name "github-actions[bot]"
 
           git add articles/rss/
+          git add sitemap.xml
 
           # Check if there are changes to commit
           if git diff --staged --quiet; then
