@@ -31,31 +31,75 @@
     <meta name="twitter:description" content="A conversation with Cameron Adams, Chief Product Officer and Co-founder of Canva.">
     <meta name="twitter:image" content="https://myaibuffet.com/og-image.jpg">
 
-    <!-- Structured Data -->
+    <!-- Structured Data - Article Schema -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "NewsArticle",
-        "headline": "Canva enables creativity with AI",
-        "description": "A conversation with Cameron Adams, Chief Product Officer and Co-founder of Canva.",
-        "author": {
-            "@type": "Person",
-            "name": "Unknown"
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Canva enables creativity with AI",
+    "description": "A conversation with Cameron Adams, Chief Product Officer and Co-founder of Canva.",
+    "articleBody": "A conversation with Cameron Adams, Chief Product Officer and Co-founder of Canva.",
+    "author": {
+        "@type": "Person",
+        "name": "Unknown"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "AI Buffet",
+        "url": "https://myaibuffet.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://myaibuffet.com/img/Logo.png",
+            "width": 512,
+            "height": 512
+        }
+    },
+    "datePublished": "2025-04-07T00:00:00.000Z",
+    "dateModified": "2025-04-07T00:00:00.000Z",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://myaibuffet.com/articles/rss/canva-enables-creativity-with-ai.html"
+    },
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://myaibuffet.com/og-image.jpg",
+        "width": 1200,
+        "height": 630
+    },
+    "url": "https://myaibuffet.com/articles/rss/canva-enables-creativity-with-ai.html",
+    "articleSection": "AI News",
+    "wordCount": 12,
+    "keywords": "canva, enables, creativity",
+    "inLanguage": "en-US"
+}
+    </script>
+
+    <!-- Structured Data - Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://myaibuffet.com"
         },
-        "publisher": {
-            "@type": "Organization",
-            "name": "AI Buffet",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://myaibuffet.com/img/Logo.png"
-            }
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "AI News",
+            "item": "https://myaibuffet.com/pages/news.html"
         },
-        "datePublished": "2025-04-07T00:00:00.000Z",
-        "dateModified": "2025-04-07T00:00:00.000Z",
-        "mainEntityOfPage": "https://myaibuffet.com/articles/rss/canva-enables-creativity-with-ai.html",
-        "image": "https://myaibuffet.com/og-image.jpg",
-        "url": "https://myaibuffet.com/articles/rss/canva-enables-creativity-with-ai.html"
-    }
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Canva enables creativity with AI",
+            "item": "https://myaibuffet.com/articles/rss/canva-enables-creativity-with-ai.html"
+        }
+    ]
+}
     </script>
 
     <!-- Favicon and CSS -->
@@ -129,8 +173,11 @@
                             AI Buffet
                         </span>
                         <time datetime="2025-04-07T00:00:00.000Z" style="color: var(--color-text-tertiary);">
-                            April 6, 2025
+                            April 7, 2025
                         </time>
+                        <span style="color: var(--color-text-tertiary);">•</span>
+                        <span style="color: var(--color-text-tertiary);">1 min read</span>
+                        <span style="color: var(--color-text-tertiary);">•</span>
                         <span style="color: var(--color-text-tertiary);">by Unknown</span>
                     </div>
 
@@ -163,7 +210,7 @@
                 <footer style="margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--glass-border);">
                     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4);">
                         <div style="color: var(--color-text-tertiary); font-size: var(--font-size-sm);">
-                            Published on April 6, 2025
+                            Published on April 7, 2025
                         </div>
                         <div style="display: flex; gap: var(--space-3);">
                             <a href="../../pages/news.html" style="color: var(--color-text-secondary); text-decoration: none; font-size: var(--font-size-sm);">← Back to News</a>
@@ -175,21 +222,37 @@
             </article>
 
             <!-- Related Articles -->
-            <section style="margin-top: var(--space-12);">
-                <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-6); text-align: center; color: var(--color-text-primary);">
-                    📰 More AI News
-                </h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6);">
-                    <a href="../../pages/news.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'">
-                        <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary);">Latest AI News</h3>
-                        <p style="color: var(--color-text-secondary);">Stay updated with the latest developments in artificial intelligence</p>
-                    </a>
-                    <a href="../../pages/tools.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'">
-                        <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary);">AI Tools</h3>
-                        <p style="color: var(--color-text-secondary);">Discover and review the best AI tools for productivity</p>
-                    </a>
-                </div>
-            </section>
+            
+        <section style="margin-top: var(--space-12);">
+            <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-6); color: var(--color-text-primary);">
+                🔗 Related Articles
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6);">
+                
+            <a href="uber-enables-outstanding-on-demand-experiences-with-ai.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease; display: block;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'; this.style.boxShadow='var(--glow-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'; this.style.boxShadow=''">
+                <div style="color: var(--color-text-tertiary); font-size: var(--font-size-sm); margin-bottom: var(--space-2);">Feb 20, 2025</div>
+                <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary); line-height: var(--line-height-snug);">Uber enables outstanding on-demand experiences with AI</h3>
+                <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); line-height: var(--line-height-relaxed);">A conversation with Jai Malkani, Head of AI and Product, Customer Obsession at Uber....</p>
+                <span style="display: inline-block; margin-top: var(--space-4); color: var(--neon-blue); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Read more →</span>
+            </a>
+        
+            <a href="bertelsmann-powers-creativity-and-productivity-with-openai.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease; display: block;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'; this.style.boxShadow='var(--glow-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'; this.style.boxShadow=''">
+                <div style="color: var(--color-text-tertiary); font-size: var(--font-size-sm); margin-bottom: var(--space-2);">Jan 22, 2025</div>
+                <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary); line-height: var(--line-height-snug);">Bertelsmann powers creativity and productivity with OpenAI</h3>
+                <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); line-height: var(--line-height-relaxed);">Bertelsmann, the global media, services, and education company headquartered in Germany, will integrate OpenAI’s technol...</p>
+                <span style="display: inline-block; margin-top: var(--space-4); color: var(--neon-blue); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Read more →</span>
+            </a>
+        
+            <a href="data-driven-beauty-and-creativity-with-chatgpt.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease; display: block;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'; this.style.boxShadow='var(--glow-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'; this.style.boxShadow=''">
+                <div style="color: var(--color-text-tertiary); font-size: var(--font-size-sm); margin-bottom: var(--space-2);">Nov 13, 2024</div>
+                <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary); line-height: var(--line-height-snug);">Data-driven beauty and creativity with ChatGPT</h3>
+                <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); line-height: var(--line-height-relaxed);">Data-driven beauty: How The Estée Lauder Companies unlocks insights with ChatGPT...</p>
+                <span style="display: inline-block; margin-top: var(--space-4); color: var(--neon-blue); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Read more →</span>
+            </a>
+        
+            </div>
+        </section>
+    
 
         </div>
     </main>

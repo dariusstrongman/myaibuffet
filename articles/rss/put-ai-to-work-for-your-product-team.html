@@ -31,31 +31,75 @@
     <meta name="twitter:description" content="Put AI to work for your product team">
     <meta name="twitter:image" content="https://myaibuffet.com/og-image.jpg">
 
-    <!-- Structured Data -->
+    <!-- Structured Data - Article Schema -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "NewsArticle",
-        "headline": "Put AI to work for your product team",
-        "description": "Put AI to work for your product team",
-        "author": {
-            "@type": "Person",
-            "name": "Unknown"
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Put AI to work for your product team",
+    "description": "Put AI to work for your product team",
+    "articleBody": "Put AI to work for your product team",
+    "author": {
+        "@type": "Person",
+        "name": "Unknown"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "AI Buffet",
+        "url": "https://myaibuffet.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://myaibuffet.com/img/Logo.png",
+            "width": 512,
+            "height": 512
+        }
+    },
+    "datePublished": "2024-12-09T00:00:00.000Z",
+    "dateModified": "2024-12-09T00:00:00.000Z",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://myaibuffet.com/articles/rss/put-ai-to-work-for-your-product-team.html"
+    },
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://myaibuffet.com/og-image.jpg",
+        "width": 1200,
+        "height": 630
+    },
+    "url": "https://myaibuffet.com/articles/rss/put-ai-to-work-for-your-product-team.html",
+    "articleSection": "AI News",
+    "wordCount": 8,
+    "keywords": "work, your, product, team",
+    "inLanguage": "en-US"
+}
+    </script>
+
+    <!-- Structured Data - Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://myaibuffet.com"
         },
-        "publisher": {
-            "@type": "Organization",
-            "name": "AI Buffet",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://myaibuffet.com/img/Logo.png"
-            }
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "AI News",
+            "item": "https://myaibuffet.com/pages/news.html"
         },
-        "datePublished": "2024-12-09T00:00:00.000Z",
-        "dateModified": "2024-12-09T00:00:00.000Z",
-        "mainEntityOfPage": "https://myaibuffet.com/articles/rss/put-ai-to-work-for-your-product-team.html",
-        "image": "https://myaibuffet.com/og-image.jpg",
-        "url": "https://myaibuffet.com/articles/rss/put-ai-to-work-for-your-product-team.html"
-    }
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Put AI to work for your product team",
+            "item": "https://myaibuffet.com/articles/rss/put-ai-to-work-for-your-product-team.html"
+        }
+    ]
+}
     </script>
 
     <!-- Favicon and CSS -->
@@ -129,8 +173,11 @@
                             AI Buffet
                         </span>
                         <time datetime="2024-12-09T00:00:00.000Z" style="color: var(--color-text-tertiary);">
-                            December 8, 2024
+                            December 9, 2024
                         </time>
+                        <span style="color: var(--color-text-tertiary);">•</span>
+                        <span style="color: var(--color-text-tertiary);">1 min read</span>
+                        <span style="color: var(--color-text-tertiary);">•</span>
                         <span style="color: var(--color-text-tertiary);">by Unknown</span>
                     </div>
 
@@ -163,7 +210,7 @@
                 <footer style="margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--glass-border);">
                     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4);">
                         <div style="color: var(--color-text-tertiary); font-size: var(--font-size-sm);">
-                            Published on December 8, 2024
+                            Published on December 9, 2024
                         </div>
                         <div style="display: flex; gap: var(--space-3);">
                             <a href="../../pages/news.html" style="color: var(--color-text-secondary); text-decoration: none; font-size: var(--font-size-sm);">← Back to News</a>
@@ -175,21 +222,37 @@
             </article>
 
             <!-- Related Articles -->
-            <section style="margin-top: var(--space-12);">
-                <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-6); text-align: center; color: var(--color-text-primary);">
-                    📰 More AI News
-                </h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6);">
-                    <a href="../../pages/news.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'">
-                        <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary);">Latest AI News</h3>
-                        <p style="color: var(--color-text-secondary);">Stay updated with the latest developments in artificial intelligence</p>
-                    </a>
-                    <a href="../../pages/tools.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'">
-                        <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary);">AI Tools</h3>
-                        <p style="color: var(--color-text-secondary);">Discover and review the best AI tools for productivity</p>
-                    </a>
-                </div>
-            </section>
+            
+        <section style="margin-top: var(--space-12);">
+            <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-6); color: var(--color-text-primary);">
+                🔗 Related Articles
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6);">
+                
+            <a href="more-ways-to-work-with-your-team-and-tools-in-chatgpt.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease; display: block;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'; this.style.boxShadow='var(--glow-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'; this.style.boxShadow=''">
+                <div style="color: var(--color-text-tertiary); font-size: var(--font-size-sm); margin-bottom: var(--space-2);">Sep 25, 2025</div>
+                <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary); line-height: var(--line-height-snug);">More ways to work with your team and tools in ChatGPT</h3>
+                <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); line-height: var(--line-height-relaxed);">ChatGPT business plans now support shared projects, smarter connectors, and enhanced compliance features to help teams w...</p>
+                <span style="display: inline-block; margin-top: var(--space-4); color: var(--neon-blue); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Read more →</span>
+            </a>
+        
+            <a href="less-than-48-hours-to-grab-your-techcrunch-disrupt-2025-ticket-savings.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease; display: block;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'; this.style.boxShadow='var(--glow-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'; this.style.boxShadow=''">
+                <div style="color: var(--color-text-tertiary); font-size: var(--font-size-sm); margin-bottom: var(--space-2);">Sep 25, 2025</div>
+                <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary); line-height: var(--line-height-snug);">Less than 48 hours to grab your TechCrunch Disrupt 2025 ticket savings</h3>
+                <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); line-height: var(--line-height-relaxed);">Ticktock! Less than 2 days remain to secure savings of up to $668 on your TechCrunch Disrupt 2025 pass. This offer ends ...</p>
+                <span style="display: inline-block; margin-top: var(--space-4); color: var(--neon-blue); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Read more →</span>
+            </a>
+        
+            <a href="it-isnt-your-imagination-google-cloud-is-flooding-the-zone.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease; display: block;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'; this.style.boxShadow='var(--glow-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'; this.style.boxShadow=''">
+                <div style="color: var(--color-text-tertiary); font-size: var(--font-size-sm); margin-bottom: var(--space-2);">Sep 25, 2025</div>
+                <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary); line-height: var(--line-height-snug);">It isn’t your imagination: Google Cloud is flooding the zone</h3>
+                <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); line-height: var(--line-height-relaxed);">While the industry's biggest players cement ever-tighter partnerships, Google is hellbent on capturing the next generati...</p>
+                <span style="display: inline-block; margin-top: var(--space-4); color: var(--neon-blue); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Read more →</span>
+            </a>
+        
+            </div>
+        </section>
+    
 
         </div>
     </main>

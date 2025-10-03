@@ -31,31 +31,75 @@
     <meta name="twitter:description" content="Though the month is only half over, Gemini's app has already gained 12.6 million downloads in September, up from 8.7 million in August.">
     <meta name="twitter:image" content="https://myaibuffet.com/og-image.jpg">
 
-    <!-- Structured Data -->
+    <!-- Structured Data - Article Schema -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "NewsArticle",
-        "headline": "Gemini tops the App Store thanks to new AI image model, Nano Banana",
-        "description": "Though the month is only half over, Gemini's app has already gained 12.6 million downloads in September, up from 8.7 million in August.",
-        "author": {
-            "@type": "Person",
-            "name": "Sarah Perez"
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Gemini tops the App Store thanks to new AI image model, Nano Banana",
+    "description": "Though the month is only half over, Gemini's app has already gained 12.6 million downloads in September, up from 8.7 million in August.",
+    "articleBody": "Though the month is only half over, Gemini's app has already gained 12.6 million downloads in September, up from 8.7 million in August.",
+    "author": {
+        "@type": "Person",
+        "name": "Sarah Perez"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "AI Buffet",
+        "url": "https://myaibuffet.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://myaibuffet.com/img/Logo.png",
+            "width": 512,
+            "height": 512
+        }
+    },
+    "datePublished": "2025-09-16T18:07:40.000Z",
+    "dateModified": "2025-09-16T18:07:40.000Z",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://myaibuffet.com/articles/rss/gemini-tops-the-app-store-thanks-to-new-ai-image-model-nano-banana.html"
+    },
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://myaibuffet.com/og-image.jpg",
+        "width": 1200,
+        "height": 630
+    },
+    "url": "https://myaibuffet.com/articles/rss/gemini-tops-the-app-store-thanks-to-new-ai-image-model-nano-banana.html",
+    "articleSection": "AI News",
+    "wordCount": 23,
+    "keywords": "gemini, tops, store, thanks, image, model, nano, banana",
+    "inLanguage": "en-US"
+}
+    </script>
+
+    <!-- Structured Data - Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://myaibuffet.com"
         },
-        "publisher": {
-            "@type": "Organization",
-            "name": "AI Buffet",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://myaibuffet.com/img/Logo.png"
-            }
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "AI News",
+            "item": "https://myaibuffet.com/pages/news.html"
         },
-        "datePublished": "2025-09-16T18:07:40.000Z",
-        "dateModified": "2025-09-16T18:07:40.000Z",
-        "mainEntityOfPage": "https://myaibuffet.com/articles/rss/gemini-tops-the-app-store-thanks-to-new-ai-image-model-nano-banana.html",
-        "image": "https://myaibuffet.com/og-image.jpg",
-        "url": "https://myaibuffet.com/articles/rss/gemini-tops-the-app-store-thanks-to-new-ai-image-model-nano-banana.html"
-    }
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Gemini tops the App Store thanks to new AI image m",
+            "item": "https://myaibuffet.com/articles/rss/gemini-tops-the-app-store-thanks-to-new-ai-image-model-nano-banana.html"
+        }
+    ]
+}
     </script>
 
     <!-- Favicon and CSS -->
@@ -131,6 +175,9 @@
                         <time datetime="2025-09-16T18:07:40.000Z" style="color: var(--color-text-tertiary);">
                             September 16, 2025
                         </time>
+                        <span style="color: var(--color-text-tertiary);">•</span>
+                        <span style="color: var(--color-text-tertiary);">1 min read</span>
+                        <span style="color: var(--color-text-tertiary);">•</span>
                         <span style="color: var(--color-text-tertiary);">by Sarah Perez</span>
                     </div>
 
@@ -175,21 +222,37 @@
             </article>
 
             <!-- Related Articles -->
-            <section style="margin-top: var(--space-12);">
-                <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-6); text-align: center; color: var(--color-text-primary);">
-                    📰 More AI News
-                </h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6);">
-                    <a href="../../pages/news.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'">
-                        <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary);">Latest AI News</h3>
-                        <p style="color: var(--color-text-secondary);">Stay updated with the latest developments in artificial intelligence</p>
-                    </a>
-                    <a href="../../pages/tools.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'">
-                        <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary);">AI Tools</h3>
-                        <p style="color: var(--color-text-secondary);">Discover and review the best AI tools for productivity</p>
-                    </a>
-                </div>
-            </section>
+            
+        <section style="margin-top: var(--space-12);">
+            <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-6); color: var(--color-text-primary);">
+                🔗 Related Articles
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6);">
+                
+            <a href="google-revamps-its-play-store-with-ai-features-and-more.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease; display: block;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'; this.style.boxShadow='var(--glow-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'; this.style.boxShadow=''">
+                <div style="color: var(--color-text-tertiary); font-size: var(--font-size-sm); margin-bottom: var(--space-2);">Sep 23, 2025</div>
+                <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary); line-height: var(--line-height-snug);">Google revamps its Play Store with AI features and more</h3>
+                <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); line-height: var(--line-height-relaxed);">Users can expect more personalization, a redesigned Apps tab, new Play Games experience, and other features that leverag...</p>
+                <span style="display: inline-block; margin-top: var(--space-4); color: var(--neon-blue); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Read more →</span>
+            </a>
+        
+            <a href="india-leads-the-way-on-googles-nano-banana-with-a-local-creative-twist.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease; display: block;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'; this.style.boxShadow='var(--glow-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'; this.style.boxShadow=''">
+                <div style="color: var(--color-text-tertiary); font-size: var(--font-size-sm); margin-bottom: var(--space-2);">Sep 18, 2025</div>
+                <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary); line-height: var(--line-height-snug);">India leads the way on Google’s Nano Banana with a local creative twist</h3>
+                <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); line-height: var(--line-height-relaxed);">Indian users turning Google’s Nano Banana into a viral trend engine, from retro AI portraits to figurine-style selfies....</p>
+                <span style="display: inline-block; margin-top: var(--space-4); color: var(--neon-blue); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Read more →</span>
+            </a>
+        
+            <a href="introducing-our-latest-image-generation-model-in-the-api.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease; display: block;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'; this.style.boxShadow='var(--glow-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'; this.style.boxShadow=''">
+                <div style="color: var(--color-text-tertiary); font-size: var(--font-size-sm); margin-bottom: var(--space-2);">Apr 23, 2025</div>
+                <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary); line-height: var(--line-height-snug);">Introducing our latest image generation model in the API</h3>
+                <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); line-height: var(--line-height-relaxed);">Our latest image generation model is now available in the API via ‘gpt-image-1’—enabling developers and businesses to bu...</p>
+                <span style="display: inline-block; margin-top: var(--space-4); color: var(--neon-blue); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Read more →</span>
+            </a>
+        
+            </div>
+        </section>
+    
 
         </div>
     </main>

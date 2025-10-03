@@ -51,8 +51,8 @@
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
     
     <!-- Resource hints for better performance -->
-    <link rel="preload" href="assets/css/main.css" as="style">
-    <link rel="preload" href="assets/js/main.js" as="script">
+    <link rel="preload" href="assets/css/main.min.css" as="style">
+    <link rel="preload" href="assets/js/main.min.js" as="script">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Serif+Display:wght@400&display=swap" as="style">
     
     <!-- Open Graph -->
@@ -274,11 +274,11 @@
     </script>
 
     
-    <!-- Google Fonts - Futuristic Typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Serif+Display:wght@400&display=swap" rel="stylesheet">
+    <!-- Font Loader - Optimized async loading -->
+    <script src="assets/js/font-loader.js" async></script>
     
     <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.min.css">
     <link rel="stylesheet" href="assets/css/components.css">
     
     <!-- Critical CSS for above-the-fold content -->
@@ -320,12 +320,6 @@
             right: 0;
             bottom: 0;
             background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%2322D3EE" fill-opacity="0.03"><rect width="1" height="1"/></g></g></svg>');
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
         }
 
         .hero-content-enhanced {
@@ -347,33 +341,6 @@
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: glow-pulse 3s ease-in-out infinite;
-        }
-
-        @keyframes glow-pulse {
-            0%, 100% {
-                filter: drop-shadow(0 0 20px rgba(34, 211, 238, 0.5));
-            }
-            50% {
-                filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.7));
-            }
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.1); }
-        }
-
-        @keyframes particleFloat {
-            0%, 100% { transform: translateY(0px) translateX(0px); }
-            25% { transform: translateY(-20px) translateX(10px); }
-            50% { transform: translateY(-10px) translateX(-15px); }
-            75% { transform: translateY(-30px) translateX(5px); }
         }
 
         .hero-subtitle-enhanced {
@@ -429,6 +396,60 @@
         .btn-primary-enhanced:hover {
             transform: translateY(-3px);
             box-shadow: 0 20px 40px rgba(34, 211, 238, 0.4);
+        }
+
+        /* Header Search Styles */
+        .header-search {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        .header-search-input {
+            width: 200px;
+            padding: 8px 40px 8px 16px;
+            background: rgba(15, 20, 25, 0.8);
+            border: 1px solid var(--color-border);
+            border-radius: 24px;
+            color: var(--color-text-primary);
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .header-search-input:focus {
+            outline: none;
+            width: 280px;
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.2);
+        }
+
+        .header-search-btn {
+            position: absolute;
+            right: 8px;
+            background: none;
+            border: none;
+            color: var(--color-text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+            transition: color 0.2s ease;
+        }
+
+        .header-search-btn:hover {
+            color: var(--neon-blue);
+        }
+
+        @media (max-width: 768px) {
+            .header-search-input {
+                width: 160px;
+            }
+
+            .header-search-input:focus {
+                width: 200px;
+            }
         }
 
         .btn-secondary-enhanced {
@@ -3627,6 +3648,23 @@
                 </ul>
 
                 <div class="nav-actions">
+                    <!-- Search bar -->
+                    <div class="header-search">
+                        <input
+                            type="search"
+                            placeholder="Search AI news..."
+                            class="header-search-input"
+                            aria-label="Search articles"
+                            id="headerSearch"
+                        />
+                        <button class="header-search-btn" aria-label="Search">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </div>
+
                     <!-- Mobile menu button -->
                     <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
                         <span class="hamburger"></span>
@@ -4316,7 +4354,7 @@
 
     <!-- JavaScript -->
     <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/main.min.js" defer></script>
     
     <script>
         // Load featured articles for homepage
@@ -4695,6 +4733,29 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Load featured articles
             loadFeaturedArticles();
+
+            // Header search functionality
+            const headerSearch = document.getElementById('headerSearch');
+            const headerSearchBtn = document.querySelector('.header-search-btn');
+
+            function performHeaderSearch() {
+                const query = headerSearch.value.trim();
+                if (query) {
+                    window.location.href = `pages/news.html?search=${encodeURIComponent(query)}`;
+                }
+            }
+
+            if (headerSearch) {
+                headerSearch.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        performHeaderSearch();
+                    }
+                });
+            }
+
+            if (headerSearchBtn) {
+                headerSearchBtn.addEventListener('click', performHeaderSearch);
+            }
 
             // Initialize cinematic hero features
             initializeCinematicHero();

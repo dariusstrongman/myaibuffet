@@ -31,31 +31,75 @@
     <meta name="twitter:description" content="We’re testing SearchGPT, a temporary prototype of new search features that give you fast and timely answers with clear and relevant sources.">
     <meta name="twitter:image" content="https://myaibuffet.com/og-image.jpg">
 
-    <!-- Structured Data -->
+    <!-- Structured Data - Article Schema -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "NewsArticle",
-        "headline": "SearchGPT is a prototype of new AI search features",
-        "description": "We’re testing SearchGPT, a temporary prototype of new search features that give you fast and timely answers with clear and relevant sources.",
-        "author": {
-            "@type": "Person",
-            "name": "Unknown"
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "SearchGPT is a prototype of new AI search features",
+    "description": "We’re testing SearchGPT, a temporary prototype of new search features that give you fast and timely answers with clear and relevant sources.",
+    "articleBody": "We’re testing SearchGPT, a temporary prototype of new search features that give you fast and timely answers with clear and relevant sources.",
+    "author": {
+        "@type": "Person",
+        "name": "Unknown"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "AI Buffet",
+        "url": "https://myaibuffet.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://myaibuffet.com/img/Logo.png",
+            "width": 512,
+            "height": 512
+        }
+    },
+    "datePublished": "2024-07-25T00:00:00.000Z",
+    "dateModified": "2024-07-25T00:00:00.000Z",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://myaibuffet.com/articles/rss/searchgpt-is-a-prototype-of-new-ai-search-features.html"
+    },
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://myaibuffet.com/og-image.jpg",
+        "width": 1200,
+        "height": 630
+    },
+    "url": "https://myaibuffet.com/articles/rss/searchgpt-is-a-prototype-of-new-ai-search-features.html",
+    "articleSection": "AI News",
+    "wordCount": 22,
+    "keywords": "searchgpt, prototype, search, features",
+    "inLanguage": "en-US"
+}
+    </script>
+
+    <!-- Structured Data - Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://myaibuffet.com"
         },
-        "publisher": {
-            "@type": "Organization",
-            "name": "AI Buffet",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://myaibuffet.com/img/Logo.png"
-            }
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "AI News",
+            "item": "https://myaibuffet.com/pages/news.html"
         },
-        "datePublished": "2024-07-25T00:00:00.000Z",
-        "dateModified": "2024-07-25T00:00:00.000Z",
-        "mainEntityOfPage": "https://myaibuffet.com/articles/rss/searchgpt-is-a-prototype-of-new-ai-search-features.html",
-        "image": "https://myaibuffet.com/og-image.jpg",
-        "url": "https://myaibuffet.com/articles/rss/searchgpt-is-a-prototype-of-new-ai-search-features.html"
-    }
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "SearchGPT is a prototype of new AI search features",
+            "item": "https://myaibuffet.com/articles/rss/searchgpt-is-a-prototype-of-new-ai-search-features.html"
+        }
+    ]
+}
     </script>
 
     <!-- Favicon and CSS -->
@@ -129,8 +173,11 @@
                             AI Buffet
                         </span>
                         <time datetime="2024-07-25T00:00:00.000Z" style="color: var(--color-text-tertiary);">
-                            July 24, 2024
+                            July 25, 2024
                         </time>
+                        <span style="color: var(--color-text-tertiary);">•</span>
+                        <span style="color: var(--color-text-tertiary);">1 min read</span>
+                        <span style="color: var(--color-text-tertiary);">•</span>
                         <span style="color: var(--color-text-tertiary);">by Unknown</span>
                     </div>
 
@@ -163,7 +210,7 @@
                 <footer style="margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--glass-border);">
                     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4);">
                         <div style="color: var(--color-text-tertiary); font-size: var(--font-size-sm);">
-                            Published on July 24, 2024
+                            Published on July 25, 2024
                         </div>
                         <div style="display: flex; gap: var(--space-3);">
                             <a href="../../pages/news.html" style="color: var(--color-text-secondary); text-decoration: none; font-size: var(--font-size-sm);">← Back to News</a>
@@ -175,21 +222,37 @@
             </article>
 
             <!-- Related Articles -->
-            <section style="margin-top: var(--space-12);">
-                <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-6); text-align: center; color: var(--color-text-primary);">
-                    📰 More AI News
-                </h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6);">
-                    <a href="../../pages/news.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'">
-                        <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary);">Latest AI News</h3>
-                        <p style="color: var(--color-text-secondary);">Stay updated with the latest developments in artificial intelligence</p>
-                    </a>
-                    <a href="../../pages/tools.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'">
-                        <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary);">AI Tools</h3>
-                        <p style="color: var(--color-text-secondary);">Discover and review the best AI tools for productivity</p>
-                    </a>
-                </div>
-            </section>
+            
+        <section style="margin-top: var(--space-12);">
+            <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-6); color: var(--color-text-primary);">
+                🔗 Related Articles
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6);">
+                
+            <a href="brave-updates-its-ai-powered-search-with-a-detailed-answers-feature.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease; display: block;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'; this.style.boxShadow='var(--glow-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'; this.style.boxShadow=''">
+                <div style="color: var(--color-text-tertiary); font-size: var(--font-size-sm); margin-bottom: var(--space-2);">Sep 29, 2025</div>
+                <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary); line-height: var(--line-height-snug);">Brave updates its AI-powered search with a detailed answers feature</h3>
+                <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); line-height: var(--line-height-relaxed);">The search company said that this new feature will co-exist next to its AI Answers feature, which was introduced last ye...</p>
+                <span style="display: inline-block; margin-top: var(--space-4); color: var(--neon-blue); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Read more →</span>
+            </a>
+        
+            <a href="juicebox-raises-30m-from-sequoia-to-revolutionize-hiring-with-llm-powered-search.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease; display: block;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'; this.style.boxShadow='var(--glow-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'; this.style.boxShadow=''">
+                <div style="color: var(--color-text-tertiary); font-size: var(--font-size-sm); margin-bottom: var(--space-2);">Sep 25, 2025</div>
+                <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary); line-height: var(--line-height-snug);">Juicebox raises $30M from Sequoia to revolutionize hiring with LLM-powered searc</h3>
+                <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); line-height: var(--line-height-relaxed);">The recruiting startup has over 2,500 customers, including recruiters at Perplexity, Ramp, and OpenAI....</p>
+                <span style="display: inline-block; margin-top: var(--space-4); color: var(--neon-blue); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Read more →</span>
+            </a>
+        
+            <a href="google-revamps-its-play-store-with-ai-features-and-more.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease; display: block;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'; this.style.boxShadow='var(--glow-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'; this.style.boxShadow=''">
+                <div style="color: var(--color-text-tertiary); font-size: var(--font-size-sm); margin-bottom: var(--space-2);">Sep 23, 2025</div>
+                <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary); line-height: var(--line-height-snug);">Google revamps its Play Store with AI features and more</h3>
+                <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); line-height: var(--line-height-relaxed);">Users can expect more personalization, a redesigned Apps tab, new Play Games experience, and other features that leverag...</p>
+                <span style="display: inline-block; margin-top: var(--space-4); color: var(--neon-blue); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Read more →</span>
+            </a>
+        
+            </div>
+        </section>
+    
 
         </div>
     </main>

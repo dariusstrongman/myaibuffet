@@ -31,31 +31,75 @@
     <meta name="twitter:description" content="Color Health is working with OpenAI to pioneer a new way of accelerating cancer patients’ access to treatment. Their new Cancer Copilot application uses GPT-4o ">
     <meta name="twitter:image" content="https://myaibuffet.com/og-image.jpg">
 
-    <!-- Structured Data -->
+    <!-- Structured Data - Article Schema -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "NewsArticle",
-        "headline": "Using GPT-4o reasoning to transform cancer care",
-        "description": "Color Health is working with OpenAI to pioneer a new way of accelerating cancer patients’ access to treatment. Their new Cancer Copilot application uses GPT-4o ",
-        "author": {
-            "@type": "Person",
-            "name": "Unknown"
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Using GPT-4o reasoning to transform cancer care",
+    "description": "Color Health is working with OpenAI to pioneer a new way of accelerating cancer patients’ access to treatment. Their new Cancer Copilot application uses GPT-4o to identify missing diagnostics and create tailored workup plans, enabling healthcare providers to make evidence-based decisions about cancer screening and treatment.",
+    "articleBody": "Color Health is working with OpenAI to pioneer a new way of accelerating cancer patients’ access to treatment. Their new Cancer Copilot application uses GPT-4o to identify missing diagnostics and create tailored workup plans, enabling healthcare providers to make evidence-based decisions about cancer screening and treatment.",
+    "author": {
+        "@type": "Person",
+        "name": "Unknown"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "AI Buffet",
+        "url": "https://myaibuffet.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://myaibuffet.com/img/Logo.png",
+            "width": 512,
+            "height": 512
+        }
+    },
+    "datePublished": "2024-06-17T04:15:00.000Z",
+    "dateModified": "2024-06-17T04:15:00.000Z",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://myaibuffet.com/articles/rss/using-gpt-4o-reasoning-to-transform-cancer-care.html"
+    },
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://myaibuffet.com/og-image.jpg",
+        "width": 1200,
+        "height": 630
+    },
+    "url": "https://myaibuffet.com/articles/rss/using-gpt-4o-reasoning-to-transform-cancer-care.html",
+    "articleSection": "AI News",
+    "wordCount": 46,
+    "keywords": "gpt-4, openai, reasoning, using, transform, cancer, care",
+    "inLanguage": "en-US"
+}
+    </script>
+
+    <!-- Structured Data - Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://myaibuffet.com"
         },
-        "publisher": {
-            "@type": "Organization",
-            "name": "AI Buffet",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://myaibuffet.com/img/Logo.png"
-            }
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "AI News",
+            "item": "https://myaibuffet.com/pages/news.html"
         },
-        "datePublished": "2024-06-17T04:15:00.000Z",
-        "dateModified": "2024-06-17T04:15:00.000Z",
-        "mainEntityOfPage": "https://myaibuffet.com/articles/rss/using-gpt-4o-reasoning-to-transform-cancer-care.html",
-        "image": "https://myaibuffet.com/og-image.jpg",
-        "url": "https://myaibuffet.com/articles/rss/using-gpt-4o-reasoning-to-transform-cancer-care.html"
-    }
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Using GPT-4o reasoning to transform cancer care",
+            "item": "https://myaibuffet.com/articles/rss/using-gpt-4o-reasoning-to-transform-cancer-care.html"
+        }
+    ]
+}
     </script>
 
     <!-- Favicon and CSS -->
@@ -129,8 +173,11 @@
                             AI Buffet
                         </span>
                         <time datetime="2024-06-17T04:15:00.000Z" style="color: var(--color-text-tertiary);">
-                            June 16, 2024
+                            June 17, 2024
                         </time>
+                        <span style="color: var(--color-text-tertiary);">•</span>
+                        <span style="color: var(--color-text-tertiary);">1 min read</span>
+                        <span style="color: var(--color-text-tertiary);">•</span>
                         <span style="color: var(--color-text-tertiary);">by Unknown</span>
                     </div>
 
@@ -163,7 +210,7 @@
                 <footer style="margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--glass-border);">
                     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4);">
                         <div style="color: var(--color-text-tertiary); font-size: var(--font-size-sm);">
-                            Published on June 16, 2024
+                            Published on June 17, 2024
                         </div>
                         <div style="display: flex; gap: var(--space-3);">
                             <a href="../../pages/news.html" style="color: var(--color-text-secondary); text-decoration: none; font-size: var(--font-size-sm);">← Back to News</a>
@@ -175,21 +222,37 @@
             </article>
 
             <!-- Related Articles -->
-            <section style="margin-top: var(--space-12);">
-                <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-6); text-align: center; color: var(--color-text-primary);">
-                    📰 More AI News
-                </h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6);">
-                    <a href="../../pages/news.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'">
-                        <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary);">Latest AI News</h3>
-                        <p style="color: var(--color-text-secondary);">Stay updated with the latest developments in artificial intelligence</p>
-                    </a>
-                    <a href="../../pages/tools.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'">
-                        <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary);">AI Tools</h3>
-                        <p style="color: var(--color-text-secondary);">Discover and review the best AI tools for productivity</p>
-                    </a>
-                </div>
-            </section>
+            
+        <section style="margin-top: var(--space-12);">
+            <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-6); color: var(--color-text-primary);">
+                🔗 Related Articles
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6);">
+                
+            <a href="creating-a-safe-observable-ai-infrastructure-for-1-million-classrooms.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease; display: block;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'; this.style.boxShadow='var(--glow-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'; this.style.boxShadow=''">
+                <div style="color: var(--color-text-tertiary); font-size: var(--font-size-sm); margin-bottom: var(--space-2);">Sep 22, 2025</div>
+                <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary); line-height: var(--line-height-snug);">Creating a safe, observable AI infrastructure for 1 million classrooms</h3>
+                <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); line-height: var(--line-height-relaxed);">Discover how SchoolAI, built on OpenAI’s GPT-4.1, image generation, and TTS, powers safe, teacher-guided AI tools for 1 ...</p>
+                <span style="display: inline-block; margin-top: var(--space-4); color: var(--neon-blue); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Read more →</span>
+            </a>
+        
+            <a href="accelerating-life-sciences-research.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease; display: block;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'; this.style.boxShadow='var(--glow-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'; this.style.boxShadow=''">
+                <div style="color: var(--color-text-tertiary); font-size: var(--font-size-sm); margin-bottom: var(--space-2);">Aug 22, 2025</div>
+                <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary); line-height: var(--line-height-snug);">Accelerating life sciences research</h3>
+                <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); line-height: var(--line-height-relaxed);">Discover how a specialized AI model, GPT-4b micro, helped OpenAI and Retro Bio engineer more effective proteins for stem...</p>
+                <span style="display: inline-block; margin-top: var(--space-4); color: var(--neon-blue); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Read more →</span>
+            </a>
+        
+            <a href="scaling-accounting-capacity-with-openai.html" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-6); text-decoration: none; transition: all 0.3s ease; display: block;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--neon-blue)'; this.style.boxShadow='var(--glow-blue)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--glass-border)'; this.style.boxShadow=''">
+                <div style="color: var(--color-text-tertiary); font-size: var(--font-size-sm); margin-bottom: var(--space-2);">Aug 12, 2025</div>
+                <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary); line-height: var(--line-height-snug);">Scaling accounting capacity with OpenAI</h3>
+                <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); line-height: var(--line-height-relaxed);">Built with OpenAI o3, o3-Pro, GPT-4.1, and GPT-5, Basis’ AI agents help accounting firms save up to 30% of their time an...</p>
+                <span style="display: inline-block; margin-top: var(--space-4); color: var(--neon-blue); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Read more →</span>
+            </a>
+        
+            </div>
+        </section>
+    
 
         </div>
     </main>

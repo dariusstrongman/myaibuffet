@@ -40,7 +40,9 @@
       "Bash(echo:*)",
       "Bash(npm run generate-articles:*)",
       "Bash(npm run build:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
