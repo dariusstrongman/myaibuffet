@@ -51,7 +51,8 @@
       "Bash(else)",
       "Bash(fi)",
       "Bash(git pull:*)",
-      "Bash(xargs:*)"
+      "Bash(xargs:*)",
+      "Bash(do grep -n \"</head>\" \"$file\")"
     ],
     "deny": [],
     "ask": []
