@@ -1,0 +1,44 @@
+name: Scan Articles on Push
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'articles/**/*.html'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  scan-and-update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Scan articles and generate articles.json
+        run: npm run scan-articles
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code articles.json || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push if changed
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add articles.json
+          git commit -m "🤖 Auto-update articles.json [skip ci]"
+          git push

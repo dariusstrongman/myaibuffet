@@ -4273,22 +4273,48 @@
     <script src="assets/js/main.min.js" defer></script>
     
     <script>
-        // Load featured articles for homepage
+        // Load featured articles for homepage (combines local articles + RSS)
         async function loadFeaturedArticles() {
             try {
-                const SUPABASE_URL = 'https://npetaroffoyjohjiwssf.supabase.co';
-                const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wZXRhcm9mZm95am9oaml3c3NmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcwMDk5OTgsImV4cCI6MjA3MjU4NTk5OH0.oYJ4ETV_zIDx_7KWJlEtcrIrRqy72HYEFzAs37pPzB8';
-                const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                // Load local articles from articles.json
+                let localArticles = [];
+                try {
+                    const localResponse = await fetch('/articles.json');
+                    if (localResponse.ok) {
+                        const localData = await localResponse.json();
+                        localArticles = localData.articles || [];
+                        console.log(`✅ Loaded ${localArticles.length} local articles`);
+                    }
+                } catch (e) {
+                    console.warn('Could not load local articles:', e);
+                }
 
-                // Get a mix of content: top trending + recent from different categories
-                const { data, error } = await supabase
-                    .from('articles')
-                    .select('*')
-                    .order('created_at', { ascending: false })
-                    .limit(8);
+                // Load RSS articles from Supabase
+                let rssArticles = [];
+                try {
+                    const SUPABASE_URL = 'https://npetaroffoyjohjiwssf.supabase.co';
+                    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wZXRhcm9mZm95am9oaml3c3NmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcwMDk5OTgsImV4cCI6MjA3MjU4NTk5OH0.oYJ4ETV_zIDx_7KWJlEtcrIrRqy72HYEFzAs37pPzB8';
+                    const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-                if (data && data.length > 0) {
-                    displayFeaturedArticles(data);
+                    const { data, error } = await supabase
+                        .from('articles')
+                        .select('*')
+                        .order('created_at', { ascending: false })
+                        .limit(5);
+
+                    if (data && data.length > 0) {
+                        rssArticles = data;
+                        console.log(`✅ Loaded ${rssArticles.length} RSS articles`);
+                    }
+                } catch (e) {
+                    console.warn('Could not load RSS articles:', e);
+                }
+
+                // Combine articles: local articles first, then RSS
+                const allArticles = [...localArticles, ...rssArticles];
+
+                if (allArticles.length > 0) {
+                    displayFeaturedArticles(allArticles);
                 } else {
                     const loadingElement = document.getElementById('articles-loading');
                     if (loadingElement) {
@@ -4313,32 +4339,25 @@
                 loadingElement.style.display = 'none';
             }
 
-            // Add our featured original article at the top
-            const originalArticle = {
-                id: 'top-10-ai-tools-2025',
-                slug: 'direct-link',
-                title: 'Top 10 AI Tools 2025: Best Artificial Intelligence Software for Professionals',
-                description: 'Discover the top 10 AI tools dominating 2025. From ChatGPT Plus to Claude 3.5 Sonnet, Midjourney V6, and more - complete reviews, pricing, and use cases.',
-                link: 'articles/top-10-ai-tools-2025.html',
-                pub_date: '2025-09-30T10:00:00Z',
-                word_count: 2847,
-                featured: true,
-                breaking_news: false,
-                source: 'AI Buffet Original',
-                direct_link: true
-            };
-
-            // Combine original article with RSS articles (show top 5 RSS + 1 original = 6 total)
-            const featuredArticles = [originalArticle, ...articles.slice(0, 5)];
+            // Show top 6 articles (mix of local and RSS)
+            const featuredArticles = articles.slice(0, 6);
 
             container.innerHTML = `<div class="articles-grid-premium">${featuredArticles.map(article => {
-                const readTime = Math.max(1, Math.ceil((article.word_count || 300) / 200));
-                const timeAgo = formatTime(article.pub_date);
+                // Normalize article format (handle both local and RSS articles)
+                const isLocal = !!article.url; // Local articles have 'url' field
+                const articleUrl = isLocal ? article.url : `templates/article-template.html?id=${article.slug || article.id}`;
+                const articleTitle = article.title || 'Untitled Article';
+                const articleDesc = article.description || article.content_snippet || 'No description available.';
+                const articleDate = article.pubDate || article.pub_date || new Date().toISOString();
+                const articleAuthor = article.author || 'AI Buffet';
+                const wordCount = article.readingTime ? article.readingTime * 200 : (article.word_count || 300);
+                const readTime = Math.max(1, Math.ceil(wordCount / 200));
+                const timeAgo = formatTime(articleDate);
 
                 // Determine content type based on title/content
-                let contentType = 'News';
+                let contentType = article.category || 'News';
                 let typeColor = 'var(--gradient-primary)';
-                const text = (article.title + ' ' + (article.description || '')).toLowerCase();
+                const text = (articleTitle + ' ' + articleDesc).toLowerCase();
 
                 if (text.includes('tutorial') || text.includes('guide') || text.includes('how to')) {
                     contentType = 'Tutorial';
@@ -4352,7 +4371,7 @@
                 }
 
                 return `
-                    <article class="featured-article-card-premium" onclick="goToArticle('${article.slug || article.id}')" data-article-type="${contentType.toLowerCase()}">
+                    <article class="featured-article-card-premium" onclick="window.location.href='${articleUrl}'" data-article-type="${contentType.toLowerCase()}">
                         <div class="article-meta" style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4); font-size: var(--font-size-sm);">
                             <span style="background: ${typeColor}; color: white; padding: var(--space-1) var(--space-3); border-radius: 12px; font-weight: var(--font-weight-medium); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
                                 ${contentType}
@@ -4364,17 +4383,18 @@
 
                         <div class="article-content">
                             <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); color: var(--color-text-primary); line-height: var(--line-height-tight);">
-                                ${article.title || 'Untitled Article'}
+                                ${articleTitle}
                             </h3>
 
                             <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: var(--line-height-relaxed);">
-                                ${(article.description || article.content_snippet || 'No description available.').substring(0, 120)}...
+                                ${articleDesc.substring(0, 120)}...
                             </p>
 
                             <div style="display: flex; justify-content: space-between; align-items: center;">
                                 <span style="color: var(--color-text-tertiary); font-size: var(--font-size-sm);">
-                                    By ${article.author || 'AI Buffet'}
+                                    By ${articleAuthor}
                                 </span>
+                                ${article.featured ? '<span style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: var(--space-1) var(--space-2); border-radius: 8px; font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);">⭐ Featured</span>' : ''}
                                 ${article.trending_score > 80 ? '<span style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: var(--space-1) var(--space-2); border-radius: 8px; font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);">🔥 Trending</span>' : ''}
                             </div>
                         </div>
@@ -4388,7 +4408,7 @@
                                     ${readTime <= 3 ? '<span class="preview-tag">⚡ Quick Read</span>' : ''}
                                 </div>
                                 <div class="preview-excerpt">
-                                    ${(article.description || article.content_snippet || 'Discover insights about the latest in AI technology and tools.').substring(0, 200)}...
+                                    ${articleDesc.substring(0, 200)}...
                                 </div>
                             </div>
                             <div class="preview-stats">
