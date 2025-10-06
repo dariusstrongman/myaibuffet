@@ -4,8 +4,10 @@
   "description": "AI Buffet - Premium AI news and tool reviews website",
   "main": "index.html",
   "scripts": {
+    "scan-articles": "node scripts/scan-articles.js",
     "generate-articles": "node scripts/generate-article-pages.js",
     "generate-articles-cron": "node scripts/generate-article-pages.js",
+    "prebuild": "npm run scan-articles",
     "build": "node scripts/build.js",
     "minify": "node scripts/minify-assets.js",
     "critical-css": "node scripts/extract-critical-css.js",

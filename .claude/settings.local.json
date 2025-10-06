@@ -52,7 +52,8 @@
       "Bash(fi)",
       "Bash(git pull:*)",
       "Bash(xargs:*)",
-      "Bash(do grep -n \"</head>\" \"$file\")"
+      "Bash(do grep -n \"</head>\" \"$file\")",
+      "Bash(npm run scan-articles:*)"
     ],
     "deny": [],
     "ask": []

@@ -1,0 +1,43 @@
+{
+  "generated": "2025-10-06T12:40:56.899Z",
+  "count": 2,
+  "articles": [
+    {
+      "slug": "top-5-ai-marketing-tools",
+      "title": "Top 5 AI Marketing Tools",
+      "description": "Explore the leading AI marketing tools to enhance your marketing strategies, improve customer engagement, and drive sales growth. This comprehensive guide provides insights into the top tools availabl",
+      "author": "AI Buffet",
+      "category": "AI Tools",
+      "keywords": [
+        "AI tools",
+        "Top 5 AI Marketing Tools",
+        "artificial intelligence",
+        "AI software"
+      ],
+      "image": "https://myaibuffet.com/og-image.jpg",
+      "pubDate": "2025-10-04T05:00:00.000Z",
+      "readingTime": 5,
+      "url": "/articles/top-5-ai-marketing-tools.html",
+      "featured": true
+    },
+    {
+      "slug": "top-10-ai-tools-2025",
+      "title": "Top 10 AI Tools 2025: Best Artificial Intelligence Software for Professionals",
+      "description": "Discover the top 10 AI tools dominating 2025. From ChatGPT Plus to Claude 3.5 Sonnet, Midjourney V6, and more - complete reviews, pricing, and use cases for professionals and businesses.",
+      "author": "AI Buffet",
+      "category": "AI Tools",
+      "keywords": [
+        "best AI tools 2025",
+        "top AI software",
+        "ChatGPT Plus",
+        "Claude 3.5 Sonnet",
+        "Midjourney V6"
+      ],
+      "image": "https://myaibuffet.com/images/top-10-ai-tools-2025.jpg",
+      "pubDate": "2025-09-30T05:00:00.000Z",
+      "readingTime": 10,
+      "url": "/articles/top-10-ai-tools-2025.html",
+      "featured": true
+    }
+  ]
+}
