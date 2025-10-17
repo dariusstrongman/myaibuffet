@@ -1,7 +1,25 @@
 {
-  "generated": "2025-10-07T00:25:45.796Z",
-  "count": 3,
+  "generated": "2025-10-17T17:50:05.915Z",
+  "count": 4,
   "articles": [
+    {
+      "slug": "top-5-ai-video-creation-tools",
+      "title": "Top 5 AI Video Creation Tools",
+      "description": "Explore the top 5 AI video creation tools that are transforming video production with automation, ease of use, and powerful features. Whether you're a marketer, educator, or content creator, these too",
+      "author": "AI Buffet",
+      "category": "AI Tools",
+      "keywords": [
+        "AI tools",
+        "Top 5 AI Video Creation Tools",
+        "artificial intelligence",
+        "AI software"
+      ],
+      "image": "https://myaibuffet.com/og-image.jpg",
+      "pubDate": "2025-10-17T00:00:00.000Z",
+      "readingTime": 5,
+      "url": "/articles/top-5-ai-video-creation-tools.html",
+      "featured": true
+    },
     {
       "slug": "top-10-ai-chatbots",
       "title": "Top 10 AI ChatBots: Your Ultimate Guide to Conversational AI Tools",
@@ -55,7 +73,7 @@
       "pubDate": "2025-09-30T00:00:00.000Z",
       "readingTime": 10,
       "url": "/articles/top-10-ai-tools-2025.html",
-      "featured": true
+      "featured": false
     }
   ]
 }
