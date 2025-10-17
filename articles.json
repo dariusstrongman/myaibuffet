@@ -1,7 +1,25 @@
 {
-  "generated": "2025-10-06T12:40:56.899Z",
-  "count": 2,
+  "generated": "2025-10-07T00:25:45.796Z",
+  "count": 3,
   "articles": [
+    {
+      "slug": "top-10-ai-chatbots",
+      "title": "Top 10 AI ChatBots: Your Ultimate Guide to Conversational AI Tools",
+      "description": "Explore the top 10 AI ChatBots that are transforming customer service, marketing, and user engagement. This comprehensive guide reviews each tool's features, pros and cons, pricing, and best use cases",
+      "author": "AI Buffet",
+      "category": "AI Tools",
+      "keywords": [
+        "AI tools",
+        "Top 10 AI ChatBots",
+        "artificial intelligence",
+        "AI software"
+      ],
+      "image": "https://myaibuffet.com/og-image.jpg",
+      "pubDate": "2025-10-07T00:00:00.000Z",
+      "readingTime": 8,
+      "url": "/articles/top-10-ai-chatbots.html",
+      "featured": true
+    },
     {
       "slug": "top-5-ai-marketing-tools",
       "title": "Top 5 AI Marketing Tools",
@@ -15,7 +33,7 @@
         "AI software"
       ],
       "image": "https://myaibuffet.com/og-image.jpg",
-      "pubDate": "2025-10-04T05:00:00.000Z",
+      "pubDate": "2025-10-04T00:00:00.000Z",
       "readingTime": 5,
       "url": "/articles/top-5-ai-marketing-tools.html",
       "featured": true
@@ -34,7 +52,7 @@
         "Midjourney V6"
       ],
       "image": "https://myaibuffet.com/images/top-10-ai-tools-2025.jpg",
-      "pubDate": "2025-09-30T05:00:00.000Z",
+      "pubDate": "2025-09-30T00:00:00.000Z",
       "readingTime": 10,
       "url": "/articles/top-10-ai-tools-2025.html",
       "featured": true
